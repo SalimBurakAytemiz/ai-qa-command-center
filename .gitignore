@@ -61,3 +61,5 @@ temp/
 
 secrets/
 credentials/
+!05-outputs/**/
+!05-outputs/**/*-template.md
