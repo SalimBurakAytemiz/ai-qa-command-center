@@ -1,56 +1,493 @@
-token_policy:
-  main_goal: Produce high-quality QA outputs with minimum unnecessary token usage.
+# AI QA Command Center - Token Policy
+#
+# Purpose:
+# This file defines how token usage, context size, cost control,
+# fallback review, and sensitive data handling should work across
+# AI QA agents.
+#
+# Important:
+# - This file does not execute anything by itself.
+# - This file defines policy for future orchestrators, scripts,
+#   AI tools, and human operators.
+# - This policy must work together with:
+#   - 02-agent-registry/model-routing.yaml
+#   - 02-agent-registry/agents.yaml
+#   - 02-agent-registry/workflow-routing.yaml
+#   - 03-prompts/01-management-team/token-controller-agent.md
 
-  principles:
-    - Large raw documents must not be sent directly to all agents.
-    - Product Intake Agent must create a compact product context first.
-    - Token Controller Agent must filter context for each target agent.
-    - Only required agents should be selected for each task.
-    - Each agent must work only within its own responsibility area.
-    - Agent outputs must be reviewed before moving to the next workflow stage.
-    - Previous outputs should be reused when possible.
-    - Long context must be summarized before handoff.
+version: "1.0"
 
-  model_profiles:
-    small:
-      use_for:
-        - short summaries
-        - classification
-        - checklist generation
-        - Jira or Trello descriptions
-        - daily status notes
-      max_output_tokens: 700
+core_principles:
+  - "Never send full product documentation to every agent."
+  - "Use compact context packages for specialist agents."
+  - "Use the smallest useful context for the task."
+  - "Preserve acceptance criteria, business rules, user roles, platforms, and risks."
+  - "Remove unrelated modules, duplicate descriptions, and long background sections."
+  - "Use stronger models for strategy, routing, review, and release-risk decisions."
+  - "Use cheaper or faster models for bulk generation when quality risk is acceptable."
+  - "Require review for critical outputs, fallback-generated outputs, and high-risk assumptions."
+  - "Do not send sensitive or private data to external AI providers without human approval."
+  - "Generated outputs are not executed test results."
+
+context_policy:
+  default_context_mode: "compact"
+
+  allowed_context_modes:
+    - "minimal"
+    - "compact"
+    - "standard"
+    - "extended"
+    - "full_requires_approval"
+
+  mode_definitions:
+    minimal:
+      description: "Only the exact task, short feature summary, and required output format."
+      recommended_for:
+        - "small edits"
+        - "format conversion"
+        - "simple summaries"
+        - "single test case improvement"
+      human_approval_required: false
+
+    compact:
+      description: "Feature summary, relevant acceptance criteria, relevant user roles, relevant platforms, relevant risks, and expected output."
+      recommended_for:
+        - "specialist agent execution"
+        - "test case generation"
+        - "API validation planning"
+        - "DB validation planning"
+        - "web functional validation"
+      human_approval_required: false
+
+    standard:
+      description: "Compact context plus selected workflow notes, related previous outputs, and selected technical notes."
+      recommended_for:
+        - "test planning"
+        - "feature validation"
+        - "product flow validation"
+        - "daily reporting"
+      human_approval_required: false
+
+    extended:
+      description: "Standard context plus broader product context and multiple related outputs."
+      recommended_for:
+        - "test strategy"
+        - "agent routing"
+        - "output review"
+        - "risk analysis"
+      human_approval_required: false
+
+    full_requires_approval:
+      description: "Full raw PRD, full API documentation, full Figma notes, full product documentation, or large multi-file context."
+      recommended_for:
+        - "rare deep review"
+        - "major release planning"
+        - "complex cross-module analysis"
+      human_approval_required: true
+
+context_reduction_rules:
+  always_keep:
+    - "feature name"
+    - "feature purpose"
+    - "acceptance criteria"
+    - "critical business rules"
+    - "user roles"
+    - "affected platforms"
+    - "critical user flows"
+    - "known risks"
+    - "missing information"
+    - "expected output format"
+    - "human instruction"
+
+  keep_when_relevant:
+    - "API endpoints"
+    - "request and response rules"
+    - "database expected state changes"
+    - "Figma screen notes"
+    - "CMS behavior"
+    - "admin panel behavior"
+    - "notification rules"
+    - "Firebase event rules"
+    - "socket or realtime behavior"
+    - "security and permission rules"
+    - "performance expectations"
+    - "previous defects"
+    - "environment notes"
+
+  remove_by_default:
+    - "unrelated modules"
+    - "duplicate descriptions"
+    - "long marketing background"
+    - "irrelevant product history"
+    - "unrelated previous outputs"
+    - "full raw documents when a compact summary is enough"
+    - "implementation details not needed by the target agent"
+    - "large logs unless specifically requested"
+    - "large code blocks unless the task is code review or automation generation"
+
+agent_context_profiles:
+  management_agents:
+    product_intake_agent:
+      default_context_mode: "extended"
+      max_context_policy: "full_requires_approval"
+      notes: "May need broad raw input, but should output compact product testing context."
+
+    test_strategy_agent:
+      default_context_mode: "extended"
+      max_context_policy: "extended"
+      notes: "Needs product context, acceptance criteria, risk notes, and platform scope."
+
+    task_router_agent:
+      default_context_mode: "standard"
+      max_context_policy: "extended"
+      notes: "Needs enough context to choose agents, not full raw documents."
+
+    token_controller_agent:
+      default_context_mode: "extended"
+      max_context_policy: "full_requires_approval"
+      notes: "May inspect broad context to create compact packages, but should not pass broad context downstream."
+
+    output_reviewer_agent:
+      default_context_mode: "extended"
+      max_context_policy: "extended"
+      notes: "Needs generated output, expected format, and relevant context for review."
+
+  phase_1_specialist_agents:
+    test_planning_agent:
+      default_context_mode: "standard"
+      max_context_policy: "extended"
+
+    happy_path_test_case_agent:
+      default_context_mode: "compact"
+      max_context_policy: "standard"
+
+    edge_case_negative_case_agent:
+      default_context_mode: "compact"
+      max_context_policy: "standard"
+
+    product_flow_test_agent:
+      default_context_mode: "standard"
+      max_context_policy: "extended"
+
+    feature_validation_agent:
+      default_context_mode: "standard"
+      max_context_policy: "extended"
+
+    web_functional_test_agent:
+      default_context_mode: "compact"
+      max_context_policy: "standard"
+
+    api_test_agent:
+      default_context_mode: "compact"
+      max_context_policy: "standard"
+
+    database_validation_agent:
+      default_context_mode: "compact"
+      max_context_policy: "standard"
+
+    environment_health_agent:
+      default_context_mode: "minimal"
+      max_context_policy: "standard"
+
+    jira_trello_work_tracking_agent:
+      default_context_mode: "standard"
+      max_context_policy: "extended"
+
+    daily_quality_report_agent:
+      default_context_mode: "standard"
+      max_context_policy: "extended"
+
+  ai_tool_compatible_agents:
+    qa_orchestrator_agent:
+      default_context_mode: "extended"
+      max_context_policy: "extended"
+
+    test_case_designer_agent:
+      default_context_mode: "compact"
+      max_context_policy: "standard"
+
+    api_test_agent_tool:
+      default_context_mode: "compact"
+      max_context_policy: "standard"
+
+    db_validation_agent_tool:
+      default_context_mode: "compact"
+      max_context_policy: "standard"
+
+    web_functional_test_agent_tool:
+      default_context_mode: "compact"
+      max_context_policy: "standard"
+
+task_token_profiles:
+  orchestration_and_strategy:
+    default_context_mode: "extended"
+    cost_sensitivity: "medium"
+    quality_sensitivity: "very_high"
+    review_required: true
+    preferred_model_profile: "reasoning"
+
+  output_review_and_quality:
+    default_context_mode: "extended"
+    cost_sensitivity: "medium"
+    quality_sensitivity: "very_high"
+    review_required: false
+    preferred_model_profile: "reasoning"
+
+  bulk_test_generation:
+    default_context_mode: "compact"
+    cost_sensitivity: "high"
+    quality_sensitivity: "medium"
+    review_required: true
+    preferred_model_profile: "fast_or_cost_effective"
+
+  api_and_backend_analysis:
+    default_context_mode: "compact"
+    cost_sensitivity: "medium"
+    quality_sensitivity: "high"
+    review_required: true
+    preferred_model_profile: "balanced"
+
+  database_validation:
+    default_context_mode: "compact"
+    cost_sensitivity: "medium"
+    quality_sensitivity: "high"
+    review_required: true
+    preferred_model_profile: "reasoning"
+
+  ui_and_web_validation:
+    default_context_mode: "compact"
+    cost_sensitivity: "high"
+    quality_sensitivity: "medium"
+    review_required: true
+    preferred_model_profile: "balanced"
+
+  reporting_and_summaries:
+    default_context_mode: "standard"
+    cost_sensitivity: "medium"
+    quality_sensitivity: "high"
+    review_required: false
+    preferred_model_profile: "balanced"
+
+  private_context_local:
+    default_context_mode: "compact"
+    cost_sensitivity: "low"
+    quality_sensitivity: "medium"
+    privacy_sensitivity: "very_high"
+    review_required: true
+    preferred_model_profile: "local"
+
+budget_rules:
+  token_budget_levels:
+    low:
+      description: "Small task with limited context."
+      recommended_for:
+        - "single test case edit"
+        - "small summary"
+        - "format cleanup"
+        - "simple checklist"
 
     medium:
-      use_for:
-        - test case generation
-        - edge case generation
-        - API analysis
-        - database validation planning
-        - feature validation
-      max_output_tokens: 1500
+      description: "Normal specialist agent task."
+      recommended_for:
+        - "test case generation"
+        - "API validation planning"
+        - "DB validation planning"
+        - "web validation planning"
+        - "daily report"
 
-    strong:
-      use_for:
-        - release readiness
-        - complex root cause analysis
-        - executive summary
-        - critical architecture review
-        - coverage gap analysis
-      max_output_tokens: 2500
+    high:
+      description: "Complex reasoning or review task."
+      recommended_for:
+        - "test strategy"
+        - "agent routing"
+        - "output review"
+        - "risk analysis"
+        - "cross-module product flow"
 
-  handoff_rules:
-    summarize_before_handoff: true
-    never_send_full_raw_documents: true
-    send_only_relevant_context: true
-    preserve_acceptance_criteria: true
-    preserve_critical_business_rules: true
-    preserve_security_related_requirements: true
+    approval_required:
+      description: "Large full-context work that may be expensive or sensitive."
+      recommended_for:
+        - "full PRD analysis"
+        - "major release planning"
+        - "full product review"
+        - "large multi-file analysis"
+      human_approval_required: true
 
-  cost_control:
-    default_agent_mode: medium
-    use_strong_model_only_for_critical_tasks: true
-    skip_unnecessary_agents: true
-    reuse_previous_outputs: true
-    store_summaries_for_future_use: true
-    prefer_structured_outputs: true
+  default_budget_by_agent_type:
+    management_agent: "high"
+    specialist_agent: "medium"
+    reviewer_agent: "high"
+    reporting_agent: "medium"
+    bulk_generation_agent: "medium"
+
+  escalation_rules:
+    - "Escalate to high budget if multiple platforms, user roles, and technical layers are involved."
+    - "Escalate to high budget if security, payment, permission, or database integrity risk exists."
+    - "Require approval if full raw product documentation is needed."
+    - "Require approval if sensitive data is present."
+    - "Require approval if external AI provider is needed for private product context."
+
+fallback_token_rules:
+  when_fallback_provider_is_used:
+    - "Do not increase context size automatically."
+    - "Reuse the same compact context package."
+    - "Do not add new assumptions."
+    - "Preserve original output format."
+    - "Add fallback metadata to the output."
+    - "Require output review for critical outputs."
+
+  fallback_metadata_required:
+    - "primary_provider"
+    - "fallback_provider_used"
+    - "fallback_reason"
+    - "retry_count"
+    - "context_mode_used"
+    - "quality_review_required"
+    - "human_review_required"
+
+  critical_outputs_requiring_review_after_fallback:
+    - "test_strategy"
+    - "agent_routing_plan"
+    - "test_plan"
+    - "api_validation_plan"
+    - "database_validation_plan"
+    - "security_review"
+    - "performance_review"
+    - "release_readiness_report"
+    - "executive_summary"
+
+sensitive_data_policy:
+  sensitive_data_types:
+    - "production credentials"
+    - "API keys"
+    - "database passwords"
+    - "personal customer data"
+    - "payment data"
+    - "security architecture details"
+    - "private customer documents"
+    - "internal incident reports"
+    - "production logs"
+    - "access tokens"
+
+  rules:
+    - "Do not send sensitive data to external AI providers without human approval."
+    - "Prefer local model routing for private or sensitive context."
+    - "Mask secrets before using AI assistance."
+    - "Use synthetic test data when possible."
+    - "Never commit real secrets to the repository."
+    - "If sensitive data is detected, stop and request human approval."
+
+  approved_safe_data:
+    - "synthetic test users"
+    - "fake API payload examples"
+    - "mock database state"
+    - "sanitized logs"
+    - "public documentation"
+    - "non-sensitive product descriptions"
+
+full_context_approval_policy:
+  approval_required_for:
+    - "full PRD"
+    - "full Figma export"
+    - "full API specification across many modules"
+    - "full database schema"
+    - "full codebase analysis"
+    - "production logs"
+    - "security-sensitive documentation"
+    - "customer-specific private documentation"
+
+  approval_prompt_required_fields:
+    - "why full context is needed"
+    - "which files will be included"
+    - "which provider will process it"
+    - "whether sensitive data exists"
+    - "estimated risk"
+    - "expected output"
+
+quality_control_rules:
+  output_review_required_when:
+    - "fallback provider was used"
+    - "cheap model was used for a critical task"
+    - "missing information exists"
+    - "high-risk assumption exists"
+    - "security-sensitive area detected"
+    - "database destructive validation detected"
+    - "release-impacting risk detected"
+    - "P0 or P1 priority is assigned"
+    - "external ticket creation is suggested"
+
+  reviewer_should_check:
+    - "completeness"
+    - "clarity"
+    - "risk coverage"
+    - "actionability"
+    - "duplicate control"
+    - "format compliance"
+    - "traceability"
+    - "human approval needs"
+
+reporting_language_rules:
+  allowed_status_words:
+    - "generated"
+    - "planned"
+    - "reviewed"
+    - "blocked"
+    - "executed"
+    - "approved"
+    - "needs revision"
+
+  forbidden_without_execution_evidence:
+    - "passed"
+    - "verified"
+    - "tested successfully"
+    - "execution completed"
+    - "release ready"
+
+  rules:
+    - "Generated plans must be reported as generated, not executed."
+    - "Test cases must not be reported as passed unless execution evidence exists."
+    - "Release readiness must not be declared without human approval."
+
+cost_control_rules:
+  rules:
+    - "Use Token Controller Agent before specialist agent execution."
+    - "Use compact context for bulk generation."
+    - "Use fast or cost-effective model profiles for bulk test case generation."
+    - "Use reasoning model profiles for strategy, routing, and review."
+    - "Avoid repeated full-context calls."
+    - "Reuse previous outputs where relevant."
+    - "Summarize raw documents before sending to specialist agents."
+    - "Do not regenerate the same output unless revision is needed."
+
+agent_execution_limits:
+  default_rules:
+    - "Do not run all 44 agents by default."
+    - "Run management agents first."
+    - "Run only selected specialist agents."
+    - "Run Output Reviewer Agent for important outputs."
+    - "Run reporting agents after outputs are reviewed."
+
+  maximum_default_phase:
+    default_phase: "phase_1"
+    rule: "Use Phase 1 agents by default. Use Phase 2 or Phase 3 only when the request clearly requires them."
+
+  phase_escalation_requires_reason: true
+
+traceability_requirements:
+  every_output_should_reference_when_possible:
+    - "product module"
+    - "feature"
+    - "acceptance criteria"
+    - "user role"
+    - "platform"
+    - "risk area"
+    - "source context"
+    - "owner agent"
+
+  missing_traceability_should_be_listed: true
+
+policy_usage_notes:
+  - "This token policy should be read together with model-routing.yaml."
+  - "Model routing decides which provider/profile should be used."
+  - "Token policy decides how much context should be used and when review or approval is required."
+  - "The Token Controller Agent is responsible for applying this policy during manual or automated workflows."
