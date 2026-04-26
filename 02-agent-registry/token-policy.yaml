@@ -1,0 +1,56 @@
+token_policy:
+  main_goal: Produce high-quality QA outputs with minimum unnecessary token usage.
+
+  principles:
+    - Large raw documents must not be sent directly to all agents.
+    - Product Intake Agent must create a compact product context first.
+    - Token Controller Agent must filter context for each target agent.
+    - Only required agents should be selected for each task.
+    - Each agent must work only within its own responsibility area.
+    - Agent outputs must be reviewed before moving to the next workflow stage.
+    - Previous outputs should be reused when possible.
+    - Long context must be summarized before handoff.
+
+  model_profiles:
+    small:
+      use_for:
+        - short summaries
+        - classification
+        - checklist generation
+        - Jira or Trello descriptions
+        - daily status notes
+      max_output_tokens: 700
+
+    medium:
+      use_for:
+        - test case generation
+        - edge case generation
+        - API analysis
+        - database validation planning
+        - feature validation
+      max_output_tokens: 1500
+
+    strong:
+      use_for:
+        - release readiness
+        - complex root cause analysis
+        - executive summary
+        - critical architecture review
+        - coverage gap analysis
+      max_output_tokens: 2500
+
+  handoff_rules:
+    summarize_before_handoff: true
+    never_send_full_raw_documents: true
+    send_only_relevant_context: true
+    preserve_acceptance_criteria: true
+    preserve_critical_business_rules: true
+    preserve_security_related_requirements: true
+
+  cost_control:
+    default_agent_mode: medium
+    use_strong_model_only_for_critical_tasks: true
+    skip_unnecessary_agents: true
+    reuse_previous_outputs: true
+    store_summaries_for_future_use: true
+    prefer_structured_outputs: true

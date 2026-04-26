@@ -1,0 +1,40 @@
+teams:
+  - id: test-planning
+    number: 1
+    name: Test Planning, Scenario and Documentation AI Team
+    purpose: Creates test plans, happy path scenarios, edge cases, regression scope and structured test documentation.
+
+  - id: product-flow
+    number: 2
+    name: Product Flow and User Experience AI Team
+    purpose: Validates product behavior, user journeys, CMS flows, admin panel processes and cross-platform consistency.
+
+  - id: design-ui-visual
+    number: 3
+    name: Design, UI and Visual Quality AI Team
+    purpose: Reviews pixel-perfect quality, responsive behavior, iOS and Android UI, visual regression and accessibility risks.
+
+  - id: web-mobile-notification
+    number: 4
+    name: Web, Mobile and Notification AI Team
+    purpose: Validates web behavior, native mobile apps, notifications, deep links and Firebase analytics events.
+
+  - id: backend-db-realtime
+    number: 5
+    name: Backend, Database and Realtime AI Team
+    purpose: Validates API behavior, backend integrations, socket events, database integrity, test data and environment health.
+
+  - id: security-performance
+    number: 6
+    name: Security and Performance AI Team
+    purpose: Analyzes security risks, role and permission issues, session behavior and performance or load risks.
+
+  - id: automation-development-in-test
+    number: 7
+    name: Automation and Development-in-Test AI Team
+    purpose: Produces web automation, mobile automation, backend testability, mobile testability and developer-in-test recommendations.
+
+  - id: operations-reporting
+    number: 8
+    name: Operations, Work Tracking and Reporting AI Team
+    purpose: Handles defect triage, Jira and Trello work tracking, daily reports, weekly reports, monthly trends, release readiness and coverage gap analysis.

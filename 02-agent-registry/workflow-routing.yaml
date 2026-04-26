@@ -1,0 +1,87 @@
+routes:
+  new_product_or_feature:
+    description: Main workflow for a new product, module or feature request.
+    agents:
+      - product-intake-agent
+      - test-strategy-agent
+      - task-router-agent
+      - token-controller-agent
+      - test-planning-agent
+      - happy-path-test-case-agent
+      - edge-negative-case-agent
+      - feature-validation-agent
+      - output-reviewer-agent
+      - jira-trello-agent
+      - daily-quality-report-agent
+
+  web_feature:
+    description: Workflow for web site, responsive web or admin panel changes.
+    agents:
+      - product-intake-agent
+      - test-strategy-agent
+      - task-router-agent
+      - token-controller-agent
+      - web-functional-test-agent
+      - web-design-pixel-perfect-agent
+      - responsive-design-agent
+      - api-test-agent
+      - db-validation-agent
+      - web-automation-agent
+      - output-reviewer-agent
+      - defect-triage-agent
+
+  mobile_feature:
+    description: Workflow for iOS, Android, mobile responsive or notification-related changes.
+    agents:
+      - product-intake-agent
+      - test-strategy-agent
+      - task-router-agent
+      - token-controller-agent
+      - ios-mobile-app-test-agent
+      - android-mobile-app-test-agent
+      - mobile-responsive-design-agent
+      - notification-messaging-test-agent
+      - firebase-event-analytics-agent
+      - mobile-automation-agent
+      - output-reviewer-agent
+      - defect-triage-agent
+
+  backend_feature:
+    description: Workflow for backend, API, database, socket or service integration changes.
+    agents:
+      - product-intake-agent
+      - test-strategy-agent
+      - task-router-agent
+      - token-controller-agent
+      - api-test-agent
+      - backend-integration-test-agent
+      - socket-realtime-test-agent
+      - db-validation-agent
+      - test-data-management-agent
+      - log-root-cause-agent
+      - output-reviewer-agent
+      - defect-triage-agent
+
+  design_review:
+    description: Workflow for Figma, UI, responsive behavior or visual regression review.
+    agents:
+      - product-intake-agent
+      - token-controller-agent
+      - web-design-pixel-perfect-agent
+      - mobile-responsive-design-agent
+      - ios-ui-design-review-agent
+      - android-ui-design-review-agent
+      - visual-regression-agent
+      - accessibility-test-agent
+      - output-reviewer-agent
+
+  release_check:
+    description: Workflow for release readiness and final quality decision support.
+    agents:
+      - regression-scope-agent
+      - security-scan-agent
+      - performance-load-test-agent
+      - coverage-gap-risk-analysis-agent
+      - release-readiness-agent
+      - weekly-quality-summary-agent
+      - output-reviewer-agent

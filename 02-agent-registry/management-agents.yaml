@@ -1,0 +1,30 @@
+management_agents:
+  - id: product-intake-agent
+    title: Product Intake Agent
+    purpose: Converts product documents, PRD, Figma notes, backend information, frontend information, mobile information, CMS details and service details into a compact test-ready product context.
+    phase: 1
+    active: true
+
+  - id: test-strategy-agent
+    title: Test Strategy Agent
+    purpose: Defines test scope, quality risks, platform coverage and test priorities based on the product context.
+    phase: 1
+    active: true
+
+  - id: task-router-agent
+    title: Task Router Agent
+    purpose: Selects which AI agent teams and individual agent profiles should work on a given product, feature or release request.
+    phase: 1
+    active: true
+
+  - id: token-controller-agent
+    title: Token Controller Agent
+    purpose: Reduces token usage by filtering and summarizing context before it is sent to specialist agents.
+    phase: 1
+    active: true
+
+  - id: output-reviewer-agent
+    title: Output Reviewer Agent
+    purpose: Reviews agent outputs for quality, consistency, coverage, clarity, duplication and actionability.
+    phase: 1
+    active: true
