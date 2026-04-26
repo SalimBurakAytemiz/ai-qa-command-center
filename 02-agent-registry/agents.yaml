@@ -1,0 +1,1090 @@
+agents:
+  - id: test-planning-agent
+    number: 1
+    team: test-planning
+    title: Test Planning Agent
+    purpose: Defines the test scope, platform coverage, quality priorities and high-level test strategy for a product, module or feature.
+    phase: 1
+    active: true
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - product_context_reader
+      - test_scope_builder
+      - risk_matrix_builder
+      - task_plan_writer
+    inputs:
+      - product_context
+      - business_goals
+      - user_roles
+      - modules
+      - acceptance_criteria
+      - platform_list
+    outputs:
+      - test_scope
+      - test_strategy
+      - platform_coverage_plan
+      - initial_risk_matrix
+      - team_task_plan
+    reviewer: output-reviewer-agent
+
+  - id: happy-path-test-case-agent
+    number: 2
+    team: test-planning
+    title: Happy Path Test Case Agent
+    purpose: Generates normal user journey test cases for successful and expected product behavior.
+    phase: 1
+    active: true
+    model_profile: medium
+    token_budget: low
+    tools:
+      - test_case_writer
+      - acceptance_criteria_mapper
+    inputs:
+      - product_context
+      - user_roles
+      - acceptance_criteria
+      - critical_user_flows
+    outputs:
+      - happy_path_test_cases
+      - expected_results
+      - preconditions
+    reviewer: output-reviewer-agent
+
+  - id: edge-negative-case-agent
+    number: 3
+    team: test-planning
+    title: Edge Case and Negative Case Agent
+    purpose: Generates boundary, invalid input, exception, permission, state transition and failure-oriented test scenarios.
+    phase: 1
+    active: true
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - edge_case_generator
+      - negative_case_generator
+      - risk_analysis
+    inputs:
+      - product_context
+      - business_rules
+      - acceptance_criteria
+      - platform_constraints
+      - known_risks
+    outputs:
+      - edge_case_test_cases
+      - negative_test_cases
+      - boundary_conditions
+      - failure_scenarios
+    reviewer: output-reviewer-agent
+
+  - id: regression-scope-agent
+    number: 4
+    team: test-planning
+    title: Regression Scope Agent
+    purpose: Analyzes product or code changes and identifies the regression areas that must be retested.
+    phase: 1
+    active: true
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - change_impact_analyzer
+      - regression_scope_builder
+    inputs:
+      - change_summary
+      - affected_modules
+      - previous_bugs
+      - release_notes
+      - test_history
+    outputs:
+      - regression_scope
+      - impacted_modules
+      - must_run_tests
+      - optional_regression_tests
+      - regression_risk_notes
+    reviewer: output-reviewer-agent
+
+  - id: test-documentation-checklist-agent
+    number: 5
+    team: test-planning
+    title: Test Documentation and Checklist Agent
+    purpose: Produces structured test plans, smoke checklists, release checklists and validation documents.
+    phase: 1
+    active: true
+    model_profile: small
+    token_budget: low
+    tools:
+      - checklist_writer
+      - documentation_formatter
+      - markdown_report_writer
+    inputs:
+      - test_scope
+      - test_cases
+      - release_scope
+      - risk_matrix
+    outputs:
+      - test_plan_document
+      - smoke_checklist
+      - release_checklist
+      - validation_checklist
+    reviewer: output-reviewer-agent
+
+  - id: product-flow-test-agent
+    number: 6
+    team: product-flow
+    title: Product Flow Test Agent
+    purpose: Validates end-to-end product journeys such as onboarding, login, profile, content consumption and primary user flows.
+    phase: 1
+    active: true
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - user_journey_analyzer
+      - flow_test_case_writer
+    inputs:
+      - product_context
+      - user_roles
+      - critical_user_flows
+      - acceptance_criteria
+    outputs:
+      - end_to_end_flow_tests
+      - user_journey_risks
+      - flow_breakpoints
+    reviewer: output-reviewer-agent
+
+  - id: feature-validation-agent
+    number: 7
+    team: product-flow
+    title: Feature Validation Agent
+    purpose: Validates whether a feature satisfies acceptance criteria, business rules and expected product behavior.
+    phase: 1
+    active: true
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - acceptance_criteria_checker
+      - feature_test_mapper
+    inputs:
+      - feature_description
+      - acceptance_criteria
+      - business_rules
+      - test_cases
+    outputs:
+      - acceptance_criteria_coverage
+      - feature_validation_notes
+      - missing_test_scenarios
+      - unclear_requirements
+    reviewer: output-reviewer-agent
+
+  - id: cms-content-management-test-agent
+    number: 8
+    team: product-flow
+    title: CMS Content and Management Test Agent
+    purpose: Validates CMS-managed content creation, editing, publishing, visibility and synchronization across web, mobile and admin surfaces.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - cms_flow_analyzer
+      - content_visibility_checker
+      - sync_risk_analyzer
+    inputs:
+      - cms_docs
+      - content_rules
+      - platform_list
+      - admin_panel_flows
+    outputs:
+      - cms_test_cases
+      - content_sync_risks
+      - cms_validation_checklist
+    reviewer: output-reviewer-agent
+
+  - id: admin-panel-process-test-agent
+    number: 9
+    team: product-flow
+    title: Admin Panel Process Test Agent
+    purpose: Validates admin panel workflows including CRUD, role permissions, approvals, bulk actions and audit logs.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - admin_flow_analyzer
+      - permission_matrix_builder
+      - audit_log_checker
+    inputs:
+      - admin_panel_docs
+      - user_roles
+      - permission_rules
+      - audit_requirements
+    outputs:
+      - admin_panel_test_cases
+      - permission_matrix
+      - audit_log_validation_plan
+      - admin_risk_notes
+    reviewer: output-reviewer-agent
+
+  - id: cross-platform-sync-agent
+    number: 10
+    team: product-flow
+    title: Cross-Platform Synchronization Agent
+    purpose: Validates whether state and data changes remain consistent across admin panel, web, mobile, backend and realtime layers.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - state_sync_analyzer
+      - platform_consistency_checker
+    inputs:
+      - platform_list
+      - business_flows
+      - api_contracts
+      - database_rules
+      - socket_events
+    outputs:
+      - cross_platform_sync_tests
+      - consistency_risks
+      - stale_state_scenarios
+    reviewer: output-reviewer-agent
+
+  - id: web-design-pixel-perfect-agent
+    number: 11
+    team: design-ui-visual
+    title: Web Design and Pixel Perfect Agent
+    purpose: Reviews desktop web screens for spacing, typography, alignment, layout, visual consistency and design-system compliance.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - design_review_checklist
+      - screenshot_comparison
+      - ui_consistency_analyzer
+    inputs:
+      - figma_notes
+      - web_screens
+      - design_tokens
+      - screenshot_artifacts
+    outputs:
+      - web_design_review
+      - visual_defect_candidates
+      - pixel_perfect_checklist
+    reviewer: output-reviewer-agent
+
+  - id: mobile-responsive-design-agent
+    number: 12
+    team: design-ui-visual
+    title: Mobile Responsive Design Agent
+    purpose: Reviews responsive web behavior, tablet layouts, mobile breakpoints, overflow, clipping and layout adaptation issues.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - responsive_breakpoint_checker
+      - layout_risk_analyzer
+    inputs:
+      - figma_notes
+      - responsive_screens
+      - supported_viewports
+      - screenshot_artifacts
+    outputs:
+      - responsive_design_review
+      - breakpoint_risks
+      - overflow_and_clipping_findings
+    reviewer: output-reviewer-agent
+
+  - id: ios-ui-design-review-agent
+    number: 13
+    team: design-ui-visual
+    title: iOS UI Design Review Agent
+    purpose: Reviews native iOS screens for design-system compliance, component consistency, spacing, typography and platform-specific UI quality.
+    phase: 3
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - ios_ui_review_checklist
+      - mobile_screenshot_analyzer
+    inputs:
+      - ios_screens
+      - figma_notes
+      - design_tokens
+      - ios_platform_guidelines
+    outputs:
+      - ios_ui_review
+      - ios_visual_risks
+      - ios_design_defect_candidates
+    reviewer: output-reviewer-agent
+
+  - id: android-ui-design-review-agent
+    number: 14
+    team: design-ui-visual
+    title: Android UI Design Review Agent
+    purpose: Reviews native Android screens for visual consistency, component behavior, spacing, typography and Android-specific UI quality.
+    phase: 3
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - android_ui_review_checklist
+      - mobile_screenshot_analyzer
+    inputs:
+      - android_screens
+      - figma_notes
+      - design_tokens
+      - android_platform_guidelines
+    outputs:
+      - android_ui_review
+      - android_visual_risks
+      - android_design_defect_candidates
+    reviewer: output-reviewer-agent
+
+  - id: visual-regression-agent
+    number: 15
+    team: design-ui-visual
+    title: Visual Regression Agent
+    purpose: Compares baseline and new build screenshots to identify unintended visual changes and regression risks.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - screenshot_diff
+      - baseline_comparison
+      - visual_defect_classifier
+    inputs:
+      - baseline_screenshots
+      - current_screenshots
+      - changed_components
+      - release_scope
+    outputs:
+      - visual_regression_report
+      - visual_diff_summary
+      - baseline_update_candidates
+    reviewer: output-reviewer-agent
+
+  - id: accessibility-test-agent
+    number: 16
+    team: design-ui-visual
+    title: Accessibility Test Agent
+    purpose: Reviews web and mobile accessibility risks such as focus order, labels, contrast, readability, keyboard usage and screen reader concerns.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - accessibility_checklist
+      - contrast_review
+      - form_label_analyzer
+    inputs:
+      - web_screens
+      - mobile_screens
+      - component_list
+      - form_elements
+    outputs:
+      - accessibility_review
+      - accessibility_risk_list
+      - accessibility_test_cases
+    reviewer: output-reviewer-agent
+
+  - id: web-functional-test-agent
+    number: 17
+    team: web-mobile-notification
+    title: Web Functional Test Agent
+    purpose: Validates web site behavior including forms, filters, navigation, states, validation, loading, empty states and user interactions.
+    phase: 1
+    active: true
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - web_flow_analyzer
+      - form_validation_checker
+      - state_transition_checker
+    inputs:
+      - product_context
+      - web_docs
+      - acceptance_criteria
+      - user_roles
+    outputs:
+      - web_functional_test_cases
+      - web_state_test_cases
+      - web_regression_risks
+    reviewer: output-reviewer-agent
+
+  - id: ios-mobile-app-test-agent
+    number: 18
+    team: web-mobile-notification
+    title: iOS Mobile App Test Agent
+    purpose: Validates native iOS features, navigation, permissions, lifecycle behavior, notifications, error states and platform-specific risks.
+    phase: 3
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - ios_mobile_test_checklist
+      - permission_flow_analyzer
+      - lifecycle_scenario_builder
+    inputs:
+      - ios_docs
+      - mobile_requirements
+      - user_flows
+      - device_matrix
+    outputs:
+      - ios_mobile_test_cases
+      - ios_permission_tests
+      - ios_lifecycle_tests
+      - ios_device_risks
+    reviewer: output-reviewer-agent
+
+  - id: android-mobile-app-test-agent
+    number: 19
+    team: web-mobile-notification
+    title: Android Mobile App Test Agent
+    purpose: Validates native Android features, permissions, lifecycle behavior, navigation, device behavior and platform-specific risks.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - android_mobile_test_checklist
+      - permission_flow_analyzer
+      - lifecycle_scenario_builder
+    inputs:
+      - android_docs
+      - mobile_requirements
+      - user_flows
+      - device_matrix
+    outputs:
+      - android_mobile_test_cases
+      - android_permission_tests
+      - android_lifecycle_tests
+      - android_device_risks
+    reviewer: output-reviewer-agent
+
+  - id: notification-messaging-test-agent
+    number: 20
+    team: web-mobile-notification
+    title: Notification and Messaging Test Agent
+    purpose: Validates push, in-app, email, SMS and deep link notification flows across supported platforms.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - notification_flow_analyzer
+      - deeplink_checker
+      - messaging_test_builder
+    inputs:
+      - notification_requirements
+      - user_roles
+      - platform_list
+      - firebase_events
+      - deeplink_rules
+    outputs:
+      - notification_test_cases
+      - deeplink_validation_plan
+      - notification_risk_notes
+    reviewer: output-reviewer-agent
+
+  - id: firebase-event-analytics-agent
+    number: 21
+    team: web-mobile-notification
+    title: Firebase Event and Analytics Validation Agent
+    purpose: Validates Firebase events, event names, parameters, screen views, funnel events, conversion events and tracking consistency.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - analytics_event_mapper
+      - firebase_event_checker
+      - funnel_validation_builder
+    inputs:
+      - firebase_event_catalog
+      - product_flows
+      - platform_list
+      - analytics_requirements
+    outputs:
+      - firebase_event_validation_matrix
+      - missing_event_risks
+      - analytics_test_cases
+      - funnel_risk_notes
+    reviewer: output-reviewer-agent
+
+  - id: api-test-agent
+    number: 22
+    team: backend-db-realtime
+    title: API Test Agent
+    purpose: Validates request and response behavior, authentication, authorization, validation, error handling, pagination, sorting and filtering.
+    phase: 1
+    active: true
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - api_spec_reader
+      - api_test_case_writer
+      - contract_risk_analyzer
+    inputs:
+      - api_specs
+      - auth_rules
+      - user_roles
+      - acceptance_criteria
+    outputs:
+      - api_test_cases
+      - api_contract_risks
+      - auth_validation_cases
+      - error_handling_cases
+    reviewer: output-reviewer-agent
+
+  - id: backend-integration-test-agent
+    number: 23
+    team: backend-db-realtime
+    title: Backend Integration Test Agent
+    purpose: Validates service-to-service flows, business rules, retries, timeouts, failover behavior and integration breakage risks.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - integration_flow_mapper
+      - service_dependency_analyzer
+      - retry_timeout_risk_checker
+    inputs:
+      - backend_docs
+      - service_map
+      - api_specs
+      - business_rules
+    outputs:
+      - backend_integration_test_matrix
+      - service_dependency_risks
+      - retry_timeout_test_cases
+    reviewer: output-reviewer-agent
+
+  - id: socket-realtime-test-agent
+    number: 24
+    team: backend-db-realtime
+    title: Socket and Realtime Test Agent
+    purpose: Validates socket connections, subscriptions, event order, reconnect behavior, duplicate events, missing events and stale state risks.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - socket_event_catalog_reader
+      - realtime_scenario_builder
+      - stale_state_analyzer
+    inputs:
+      - socket_event_catalog
+      - realtime_requirements
+      - user_flows
+      - multi_client_scenarios
+    outputs:
+      - socket_test_cases
+      - realtime_risk_matrix
+      - reconnect_scenarios
+      - multi_client_consistency_tests
+    reviewer: output-reviewer-agent
+
+  - id: db-validation-agent
+    number: 25
+    team: backend-db-realtime
+    title: Database Validation and Data Integrity Agent
+    purpose: Validates insert, update, delete, soft delete, relationships, duplicate records, orphan records, transactions and data integrity.
+    phase: 1
+    active: true
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - db_schema_reader
+      - before_after_state_planner
+      - data_integrity_checker
+    inputs:
+      - database_schema
+      - api_specs
+      - business_rules
+      - test_data
+      - expected_state_changes
+    outputs:
+      - db_validation_plan
+      - db_test_cases
+      - data_integrity_risks
+      - transaction_risk_notes
+    reviewer: output-reviewer-agent
+
+  - id: test-data-management-agent
+    number: 26
+    team: backend-db-realtime
+    title: Test Data Management Agent
+    purpose: Defines test users, edge-case data, seed data, cleanup strategy and reset flows needed for reliable testing.
+    phase: 2
+    active: false
+    model_profile: small
+    token_budget: low
+    tools:
+      - test_data_planner
+      - seed_data_builder
+      - cleanup_strategy_writer
+    inputs:
+      - user_roles
+      - business_rules
+      - test_scenarios
+      - environment_constraints
+    outputs:
+      - test_data_plan
+      - seed_data_requirements
+      - cleanup_plan
+      - test_user_matrix
+    reviewer: output-reviewer-agent
+
+  - id: environment-health-agent
+    number: 27
+    team: backend-db-realtime
+    title: Test Environment and System Health Agent
+    purpose: Validates whether the test environment, services, API, database, socket, CMS and key dependencies are available and healthy.
+    phase: 1
+    active: true
+    model_profile: small
+    token_budget: low
+    tools:
+      - environment_checklist
+      - service_health_checker
+      - dependency_status_builder
+    inputs:
+      - environment_config
+      - service_list
+      - dependency_list
+      - test_run_context
+    outputs:
+      - environment_health_report
+      - blocked_test_areas
+      - dependency_risk_notes
+    reviewer: output-reviewer-agent
+
+  - id: log-root-cause-agent
+    number: 28
+    team: backend-db-realtime
+    title: Log, Observability and Root Cause Analysis Agent
+    purpose: Reviews logs, traces, failed test output and error patterns to identify likely root causes and affected layers.
+    phase: 2
+    active: false
+    model_profile: strong
+    token_budget: medium
+    tools:
+      - log_analyzer
+      - trace_reader
+      - failure_classifier
+    inputs:
+      - failed_tests
+      - logs
+      - traces
+      - screenshots
+      - environment_report
+    outputs:
+      - root_cause_hypothesis
+      - affected_layer
+      - evidence_summary
+      - recommended_next_actions
+    reviewer: output-reviewer-agent
+
+  - id: security-scan-agent
+    number: 29
+    team: security-performance
+    title: Security Vulnerability Scan Agent
+    purpose: Identifies basic security risks such as input validation weaknesses, exposed endpoints, misconfiguration signs and common vulnerability patterns.
+    phase: 3
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - security_checklist
+      - input_validation_analyzer
+      - endpoint_exposure_checker
+    inputs:
+      - api_specs
+      - user_roles
+      - auth_rules
+      - application_surface
+    outputs:
+      - security_risk_report
+      - security_test_cases
+      - vulnerability_candidates
+    reviewer: output-reviewer-agent
+
+  - id: role-permission-session-security-agent
+    number: 30
+    team: security-performance
+    title: Role, Permission and Session Security Agent
+    purpose: Validates authorization boundaries, role-based access, session handling, token expiration and privilege escalation risks.
+    phase: 3
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - permission_matrix_checker
+      - session_flow_analyzer
+      - auth_risk_builder
+    inputs:
+      - user_roles
+      - permission_rules
+      - auth_rules
+      - admin_panel_docs
+      - api_specs
+    outputs:
+      - permission_security_matrix
+      - session_security_tests
+      - authorization_risk_notes
+    reviewer: output-reviewer-agent
+
+  - id: performance-load-test-agent
+    number: 31
+    team: security-performance
+    title: Performance and Load Test Agent
+    purpose: Plans and reviews load, stress, spike and soak testing for APIs, socket flows and critical business journeys.
+    phase: 3
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - load_model_builder
+      - jmeter_plan_advisor
+      - performance_threshold_analyzer
+    inputs:
+      - performance_requirements
+      - critical_flows
+      - api_specs
+      - expected_traffic
+      - system_constraints
+    outputs:
+      - performance_test_plan
+      - jmeter_scenario_outline
+      - performance_thresholds
+      - bottleneck_hypotheses
+    reviewer: output-reviewer-agent
+
+  - id: web-automation-agent
+    number: 32
+    team: automation-development-in-test
+    title: Web Automation Agent
+    purpose: Produces Playwright or Selenium automation candidates, suite structure, locator strategy and smoke or regression automation plans.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - playwright_test_planner
+      - locator_strategy_builder
+      - automation_candidate_selector
+    inputs:
+      - web_test_cases
+      - web_screens
+      - acceptance_criteria
+      - automation_priority
+    outputs:
+      - web_automation_plan
+      - playwright_test_outline
+      - locator_recommendations
+      - smoke_regression_suite_plan
+    reviewer: output-reviewer-agent
+
+  - id: mobile-automation-agent
+    number: 33
+    team: automation-development-in-test
+    title: Mobile Automation Agent
+    purpose: Produces Appium automation candidates, screen object structure, locator recommendations and mobile smoke or regression suite plans.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - appium_test_planner
+      - mobile_locator_strategy_builder
+      - screen_object_designer
+    inputs:
+      - mobile_test_cases
+      - ios_screens
+      - android_screens
+      - device_matrix
+      - automation_priority
+    outputs:
+      - mobile_automation_plan
+      - appium_test_outline
+      - locator_recommendations
+      - mobile_smoke_suite_plan
+    reviewer: output-reviewer-agent
+
+  - id: backend-developer-in-test-agent
+    number: 34
+    team: automation-development-in-test
+    title: Backend Developer-in-Test Agent
+    purpose: Reviews backend code and architecture from a testability perspective and identifies integration tests, test hooks and contract risks.
+    phase: 3
+    active: false
+    model_profile: strong
+    token_budget: medium
+    tools:
+      - backend_testability_reviewer
+      - contract_risk_analyzer
+      - integration_test_recommender
+    inputs:
+      - backend_code_summary
+      - api_specs
+      - service_map
+      - business_rules
+    outputs:
+      - backend_testability_report
+      - integration_test_recommendations
+      - test_hook_requirements
+      - contract_risks
+    reviewer: output-reviewer-agent
+
+  - id: android-development-in-test-agent
+    number: 35
+    team: automation-development-in-test
+    title: Android Development-in-Test Agent
+    purpose: Reviews Android implementation from a testability perspective and identifies locator, instrumentation, QA hook and automation support needs.
+    phase: 3
+    active: false
+    model_profile: strong
+    token_budget: medium
+    tools:
+      - android_testability_reviewer
+      - mobile_locator_checker
+      - instrumentation_recommender
+    inputs:
+      - android_code_summary
+      - android_screens
+      - mobile_test_cases
+      - automation_requirements
+    outputs:
+      - android_testability_report
+      - locator_gap_list
+      - instrumentation_recommendations
+      - qa_hook_requirements
+    reviewer: output-reviewer-agent
+
+  - id: ios-development-in-test-agent
+    number: 36
+    team: automation-development-in-test
+    title: iOS Development-in-Test Agent
+    purpose: Reviews iOS implementation from a testability perspective and identifies accessibility identifiers, QA hooks and automation support needs.
+    phase: 3
+    active: false
+    model_profile: strong
+    token_budget: medium
+    tools:
+      - ios_testability_reviewer
+      - accessibility_identifier_checker
+      - qa_hook_recommender
+    inputs:
+      - ios_code_summary
+      - ios_screens
+      - mobile_test_cases
+      - automation_requirements
+    outputs:
+      - ios_testability_report
+      - accessibility_id_gap_list
+      - qa_hook_requirements
+      - automation_support_recommendations
+    reviewer: output-reviewer-agent
+
+  - id: testability-code-review-agent
+    number: 37
+    team: automation-development-in-test
+    title: Testability and Code Review Agent
+    purpose: Reviews the system for testability gaps, missing locators, missing debug hooks, poor observability and QA-blocking implementation risks.
+    phase: 3
+    active: false
+    model_profile: strong
+    token_budget: medium
+    tools:
+      - testability_gap_analyzer
+      - qa_blocker_detector
+      - observability_recommender
+    inputs:
+      - code_summary
+      - architecture_notes
+      - automation_failures
+      - qa_feedback
+    outputs:
+      - testability_gap_report
+      - qa_blocker_list
+      - developer_action_items
+      - observability_recommendations
+    reviewer: output-reviewer-agent
+
+  - id: defect-triage-agent
+    number: 38
+    team: operations-reporting
+    title: Defect Triage Agent
+    purpose: Classifies bugs, detects duplicates, suggests severity, identifies affected modules and recommends the likely owner team.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - bug_classifier
+      - duplicate_detector
+      - severity_advisor
+    inputs:
+      - bug_reports
+      - failed_tests
+      - logs
+      - screenshots
+      - module_map
+    outputs:
+      - defect_triage_report
+      - severity_recommendations
+      - duplicate_candidates
+      - owner_team_suggestions
+    reviewer: output-reviewer-agent
+
+  - id: jira-trello-agent
+    number: 39
+    team: operations-reporting
+    title: Jira and Trello Work Tracking Agent
+    purpose: Creates and updates Jira or Trello task drafts, bug cards, test tasks, checklist items and workflow status summaries.
+    phase: 1
+    active: true
+    model_profile: small
+    token_budget: low
+    tools:
+      - jira_task_draft_builder
+      - trello_card_draft_builder
+      - status_summary_writer
+    inputs:
+      - test_outputs
+      - defect_reports
+      - task_plan
+      - release_scope
+    outputs:
+      - jira_task_drafts
+      - trello_card_drafts
+      - work_tracking_summary
+      - checklist_items
+    reviewer: output-reviewer-agent
+
+  - id: daily-quality-report-agent
+    number: 40
+    team: operations-reporting
+    title: Daily Quality Report Agent
+    purpose: Produces a short daily quality summary including completed work, generated test cases, blockers, risks and next actions.
+    phase: 1
+    active: true
+    model_profile: small
+    token_budget: low
+    tools:
+      - daily_report_writer
+      - status_summarizer
+    inputs:
+      - daily_test_outputs
+      - defect_summary
+      - task_status
+      - risk_notes
+    outputs:
+      - daily_quality_report
+      - blocker_summary
+      - next_day_actions
+    reviewer: output-reviewer-agent
+
+  - id: weekly-quality-summary-agent
+    number: 41
+    team: operations-reporting
+    title: Weekly Quality Summary Agent
+    purpose: Produces weekly quality summaries including test progress, defect trends, automation progress and major risks.
+    phase: 2
+    active: false
+    model_profile: medium
+    token_budget: medium
+    tools:
+      - weekly_report_writer
+      - trend_summarizer
+    inputs:
+      - weekly_test_outputs
+      - defect_trends
+      - automation_status
+      - risk_history
+    outputs:
+      - weekly_quality_summary
+      - trend_notes
+      - management_summary
+    reviewer: output-reviewer-agent
+
+  - id: monthly-quality-risk-trend-agent
+    number: 42
+    team: operations-reporting
+    title: Monthly Quality and Risk Trend Agent
+    purpose: Produces monthly quality trend reports including defect trends, stability signals, system gaps and process improvement opportunities.
+    phase: 3
+    active: false
+    model_profile: strong
+    token_budget: medium
+    tools:
+      - monthly_trend_analyzer
+      - quality_metric_summarizer
+      - process_gap_analyzer
+    inputs:
+      - monthly_test_history
+      - escaped_defects
+      - defect_trends
+      - release_history
+      - quality_metrics
+    outputs:
+      - monthly_quality_trend_report
+      - process_improvement_recommendations
+      - systemic_quality_gaps
+    reviewer: output-reviewer-agent
+
+  - id: release-readiness-agent
+    number: 43
+    team: operations-reporting
+    title: Release Readiness Agent
+    purpose: Combines test results, open defects, risk reports, performance signals and security findings to suggest go, conditional go or no-go.
+    phase: 3
+    active: false
+    model_profile: strong
+    token_budget: medium
+    tools:
+      - release_signal_aggregator
+      - go_no_go_advisor
+      - risk_summary_writer
+    inputs:
+      - release_scope
+      - test_results
+      - open_defects
+      - risk_matrix
+      - performance_results
+      - security_findings
+    outputs:
+      - release_readiness_report
+      - go_no_go_recommendation
+      - critical_release_risks
+      - required_actions
+    reviewer: output-reviewer-agent
+
+  - id: coverage-gap-risk-analysis-agent
+    number: 44
+    team: operations-reporting
+    title: Test Coverage Gap and Risk Analysis Agent
+    purpose: Identifies untested areas, duplicated test effort, missing regression coverage and high-risk gaps across product modules.
+    phase: 3
+    active: false
+    model_profile: strong
+    token_budget: medium
+    tools:
+      - coverage_gap_analyzer
+      - risk_gap_mapper
+      - regression_gap_detector
+    inputs:
+      - test_scope
+      - test_cases
+      - release_scope
+      - defect_history
+      - module_map
+    outputs:
+      - coverage_gap_report
+      - high_risk_untested_areas
+      - duplicate_test_notes
+      - recommended_coverage_improvements
+    reviewer: output-reviewer-agent
