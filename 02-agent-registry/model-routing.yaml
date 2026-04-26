@@ -1,0 +1,490 @@
+# AI QA Command Center - Model Routing Configuration
+#
+# Purpose:
+# This file defines how AI model providers should be selected for different
+# agent types, task categories, cost profiles, and fallback scenarios.
+#
+# Important:
+# - This file does not contain real API keys.
+# - API keys must be stored in local .env files only.
+# - Public repositories must never include real secrets.
+# - Model names can be adjusted based on available provider access.
+#
+# Core idea:
+# Use stronger reasoning models for critical planning, strategy, review,
+# routing, and release-risk decisions.
+#
+# Use faster and cheaper models for bulk generation tasks such as large
+# test case generation, repetitive documentation drafts, and initial summaries.
+#
+# Use local models for private or sensitive product context when possible.
+
+version: "1.0"
+
+routing_principles:
+  - "Use the smallest capable model for the task."
+  - "Use stronger reasoning models for strategy, routing, review, and release-risk decisions."
+  - "Use cheaper models for bulk test case generation when quality risk is acceptable."
+  - "Use local models for sensitive or private product context when possible."
+  - "Never send production secrets, credentials, or sensitive data to external AI providers without human approval."
+  - "If fallback provider is used, mark output as fallback-generated and require output review."
+  - "Do not treat model-generated outputs as executed test results."
+
+providers:
+  openai:
+    enabled_env: "OPENAI_API_KEY"
+    type: "cloud"
+    strengths:
+      - "reasoning"
+      - "structured_output"
+      - "code_generation"
+      - "test_strategy"
+      - "output_review"
+    default_model_env: "OPENAI_DEFAULT_MODEL"
+    fast_model_env: "OPENAI_FAST_MODEL"
+    reasoning_model_env: "OPENAI_REASONING_MODEL"
+
+  anthropic:
+    enabled_env: "ANTHROPIC_API_KEY"
+    type: "cloud"
+    strengths:
+      - "long_context"
+      - "reasoning"
+      - "review"
+      - "documentation"
+      - "risk_analysis"
+    default_model_env: "ANTHROPIC_DEFAULT_MODEL"
+    fast_model_env: "ANTHROPIC_FAST_MODEL"
+    reasoning_model_env: "ANTHROPIC_REASONING_MODEL"
+
+  google:
+    enabled_env: "GOOGLE_AI_API_KEY"
+    type: "cloud"
+    strengths:
+      - "fast_generation"
+      - "bulk_generation"
+      - "summarization"
+      - "cost_effective_generation"
+    default_model_env: "GOOGLE_DEFAULT_MODEL"
+    fast_model_env: "GOOGLE_FAST_MODEL"
+    reasoning_model_env: "GOOGLE_REASONING_MODEL"
+
+  azure_openai:
+    enabled_env: "AZURE_OPENAI_API_KEY"
+    type: "cloud_enterprise"
+    strengths:
+      - "enterprise_control"
+      - "reasoning"
+      - "structured_output"
+      - "security_controlled_deployment"
+    endpoint_env: "AZURE_OPENAI_ENDPOINT"
+    deployment_env: "AZURE_OPENAI_DEPLOYMENT_NAME"
+
+  openrouter:
+    enabled_env: "OPENROUTER_API_KEY"
+    type: "multi_model_gateway"
+    strengths:
+      - "fallback_gateway"
+      - "model_variety"
+      - "cost_control"
+      - "provider_flexibility"
+    default_model_env: "OPENROUTER_DEFAULT_MODEL"
+    fallback_model_env: "OPENROUTER_FALLBACK_MODEL"
+
+  mistral:
+    enabled_env: "MISTRAL_API_KEY"
+    type: "cloud"
+    strengths:
+      - "fast_generation"
+      - "cost_effective_generation"
+      - "summarization"
+    default_model_env: "MISTRAL_DEFAULT_MODEL"
+    fast_model_env: "MISTRAL_FAST_MODEL"
+
+  groq:
+    enabled_env: "GROQ_API_KEY"
+    type: "cloud"
+    strengths:
+      - "very_fast_generation"
+      - "bulk_generation"
+      - "low_latency"
+    default_model_env: "GROQ_DEFAULT_MODEL"
+    fast_model_env: "GROQ_FAST_MODEL"
+
+  together:
+    enabled_env: "TOGETHER_API_KEY"
+    type: "cloud"
+    strengths:
+      - "open_model_access"
+      - "bulk_generation"
+      - "cost_control"
+    default_model_env: "TOGETHER_DEFAULT_MODEL"
+
+  perplexity:
+    enabled_env: "PERPLEXITY_API_KEY"
+    type: "cloud_search_augmented"
+    strengths:
+      - "research"
+      - "current_information"
+      - "source_augmented_answers"
+    default_model_env: "PERPLEXITY_DEFAULT_MODEL"
+
+  cohere:
+    enabled_env: "COHERE_API_KEY"
+    type: "cloud"
+    strengths:
+      - "summarization"
+      - "classification"
+      - "enterprise_text_workflows"
+    default_model_env: "COHERE_DEFAULT_MODEL"
+
+  deepseek:
+    enabled_env: "DEEPSEEK_API_KEY"
+    type: "cloud"
+    strengths:
+      - "code_reasoning"
+      - "cost_effective_generation"
+      - "technical_analysis"
+    default_model_env: "DEEPSEEK_DEFAULT_MODEL"
+
+  xai:
+    enabled_env: "XAI_API_KEY"
+    type: "cloud"
+    strengths:
+      - "general_reasoning"
+      - "fast_generation"
+    default_model_env: "XAI_DEFAULT_MODEL"
+
+  ollama:
+    enabled_env: "OLLAMA_BASE_URL"
+    type: "local"
+    strengths:
+      - "private_context"
+      - "local_execution"
+      - "offline_capability"
+      - "cost_control"
+    base_url_env: "OLLAMA_BASE_URL"
+    default_model_env: "OLLAMA_DEFAULT_MODEL"
+    fast_model_env: "OLLAMA_FAST_MODEL"
+    reasoning_model_env: "OLLAMA_REASONING_MODEL"
+
+  lmstudio:
+    enabled_env: "LMSTUDIO_BASE_URL"
+    type: "local"
+    strengths:
+      - "private_context"
+      - "local_execution"
+      - "manual_model_control"
+    base_url_env: "LMSTUDIO_BASE_URL"
+    default_model_env: "LMSTUDIO_DEFAULT_MODEL"
+
+routing_profiles:
+  orchestration_and_strategy:
+    purpose: "High-quality planning, strategy, routing, risk reasoning, and workflow control."
+    preferred_model_class: "reasoning"
+    primary_provider: "openai"
+    fallback_providers:
+      - "anthropic"
+      - "google"
+      - "openrouter"
+      - "azure_openai"
+    require_output_review: true
+    allow_local_fallback: false
+    cost_sensitivity: "medium"
+    quality_sensitivity: "very_high"
+
+  output_review_and_quality:
+    purpose: "Reviewing AI outputs for correctness, completeness, risk coverage, clarity, and format compliance."
+    preferred_model_class: "reasoning"
+    primary_provider: "anthropic"
+    fallback_providers:
+      - "openai"
+      - "google"
+      - "openrouter"
+    require_output_review: false
+    allow_local_fallback: false
+    cost_sensitivity: "medium"
+    quality_sensitivity: "very_high"
+
+  bulk_test_generation:
+    purpose: "Generating many structured test cases, edge cases, negative cases, and scenario drafts."
+    preferred_model_class: "fast"
+    primary_provider: "google"
+    fallback_providers:
+      - "groq"
+      - "mistral"
+      - "openrouter"
+      - "together"
+      - "openai"
+    require_output_review: true
+    allow_local_fallback: true
+    local_fallback_provider: "ollama"
+    cost_sensitivity: "high"
+    quality_sensitivity: "medium"
+
+  api_and_backend_analysis:
+    purpose: "API test planning, endpoint validation, contract risk analysis, and backend behavior review."
+    preferred_model_class: "balanced"
+    primary_provider: "openai"
+    fallback_providers:
+      - "anthropic"
+      - "deepseek"
+      - "google"
+      - "openrouter"
+    require_output_review: true
+    allow_local_fallback: true
+    local_fallback_provider: "ollama"
+    cost_sensitivity: "medium"
+    quality_sensitivity: "high"
+
+  database_validation:
+    purpose: "Database state validation, data integrity analysis, transaction risk analysis, and API-DB consistency planning."
+    preferred_model_class: "reasoning"
+    primary_provider: "openai"
+    fallback_providers:
+      - "anthropic"
+      - "deepseek"
+      - "google"
+      - "openrouter"
+    require_output_review: true
+    allow_local_fallback: true
+    local_fallback_provider: "ollama"
+    cost_sensitivity: "medium"
+    quality_sensitivity: "high"
+
+  ui_and_web_validation:
+    purpose: "Web functional validation, responsive behavior, UI state validation, and Playwright-oriented planning."
+    preferred_model_class: "balanced"
+    primary_provider: "google"
+    fallback_providers:
+      - "openai"
+      - "anthropic"
+      - "groq"
+      - "openrouter"
+    require_output_review: true
+    allow_local_fallback: true
+    local_fallback_provider: "ollama"
+    cost_sensitivity: "high"
+    quality_sensitivity: "medium"
+
+  reporting_and_summaries:
+    purpose: "Daily reports, executive summaries, Jira/Trello summaries, and management-readable communication."
+    preferred_model_class: "balanced"
+    primary_provider: "anthropic"
+    fallback_providers:
+      - "openai"
+      - "google"
+      - "openrouter"
+    require_output_review: false
+    allow_local_fallback: true
+    local_fallback_provider: "ollama"
+    cost_sensitivity: "medium"
+    quality_sensitivity: "high"
+
+  research_augmented:
+    purpose: "Tasks requiring current external information, vendor documentation, or recent public information."
+    preferred_model_class: "research"
+    primary_provider: "perplexity"
+    fallback_providers:
+      - "openai"
+      - "google"
+      - "openrouter"
+    require_output_review: true
+    allow_local_fallback: false
+    cost_sensitivity: "medium"
+    quality_sensitivity: "high"
+
+  private_context_local:
+    purpose: "Sensitive product context, customer-specific data, security-sensitive notes, and private documents."
+    preferred_model_class: "local"
+    primary_provider: "ollama"
+    fallback_providers:
+      - "lmstudio"
+    require_output_review: true
+    allow_external_fallback: false
+    cost_sensitivity: "low"
+    quality_sensitivity: "medium"
+    privacy_sensitivity: "very_high"
+
+agent_routing:
+  management_agents:
+    product_intake_agent:
+      profile: "orchestration_and_strategy"
+      reason: "Needs strong reasoning to compress product context without losing risk-critical information."
+
+    test_strategy_agent:
+      profile: "orchestration_and_strategy"
+      reason: "Needs strong reasoning to define test scope, risk, and validation approach."
+
+    task_router_agent:
+      profile: "orchestration_and_strategy"
+      reason: "Needs strong reasoning to select only necessary agents and avoid token waste."
+
+    token_controller_agent:
+      profile: "orchestration_and_strategy"
+      reason: "Needs strong reasoning to reduce context safely for each specialist agent."
+
+    output_reviewer_agent:
+      profile: "output_review_and_quality"
+      reason: "Needs strong review quality, risk awareness, and format checking."
+
+  phase_1_specialist_agents:
+    test_planning_agent:
+      profile: "orchestration_and_strategy"
+      reason: "Needs risk-based planning and coverage control."
+
+    happy_path_test_case_agent:
+      profile: "bulk_test_generation"
+      reason: "Generates structured successful-flow test cases."
+
+    edge_case_negative_case_agent:
+      profile: "bulk_test_generation"
+      reason: "Generates many boundary, edge, and failure scenarios."
+
+    product_flow_test_agent:
+      profile: "orchestration_and_strategy"
+      reason: "Needs end-to-end flow reasoning across product layers."
+
+    feature_validation_agent:
+      profile: "orchestration_and_strategy"
+      reason: "Needs acceptance criteria and business rule coverage reasoning."
+
+    web_functional_test_agent:
+      profile: "ui_and_web_validation"
+      reason: "Focuses on browser-visible behavior, UI state, responsive behavior, and web validation."
+
+    api_test_agent:
+      profile: "api_and_backend_analysis"
+      reason: "Focuses on endpoint behavior, auth, validation, contract risk, and API consistency."
+
+    database_validation_agent:
+      profile: "database_validation"
+      reason: "Focuses on DB state, data integrity, transaction risk, and API-DB consistency."
+
+    environment_health_agent:
+      profile: "reporting_and_summaries"
+      reason: "Summarizes environment readiness and blockers."
+
+    jira_trello_work_tracking_agent:
+      profile: "reporting_and_summaries"
+      reason: "Creates management-readable and work-tracking-ready drafts."
+
+    daily_quality_report_agent:
+      profile: "reporting_and_summaries"
+      reason: "Creates management-readable QA summaries."
+
+  ai_tool_compatible_agents:
+    qa_orchestrator_agent:
+      profile: "orchestration_and_strategy"
+      reason: "Coordinates workflow, routing, context reduction, and human approval points."
+
+    test_case_designer_agent:
+      profile: "bulk_test_generation"
+      reason: "Generates structured test case packages."
+
+    api_test_agent_tool:
+      profile: "api_and_backend_analysis"
+      reason: "Generates API validation plans."
+
+    db_validation_agent_tool:
+      profile: "database_validation"
+      reason: "Generates database validation plans."
+
+    web_functional_test_agent_tool:
+      profile: "ui_and_web_validation"
+      reason: "Generates web functional validation plans."
+
+fallback_policy:
+  enabled_env: "ENABLE_AI_FALLBACK"
+  max_retry_per_provider_env: "MAX_RETRY_PER_PROVIDER"
+  timeout_seconds_env: "PROVIDER_TIMEOUT_SECONDS"
+
+  fallback_triggers:
+    - "provider_rate_limit"
+    - "provider_timeout"
+    - "provider_auth_error"
+    - "provider_quota_exceeded"
+    - "provider_model_unavailable"
+    - "provider_internal_error"
+    - "response_format_failure_after_retry"
+
+  fallback_rules:
+    - "Retry the same provider before switching, based on MAX_RETRY_PER_PROVIDER."
+    - "When switching provider, preserve the original task instruction and compact context."
+    - "Do not add new assumptions during fallback."
+    - "Mark the output with fallback metadata."
+    - "Require Output Reviewer Agent review after fallback-generated critical outputs."
+    - "If all providers fail, stop and request human decision."
+
+  fallback_metadata_required:
+    - "primary_provider"
+    - "fallback_provider_used"
+    - "fallback_reason"
+    - "retry_count"
+    - "quality_review_required"
+    - "human_review_required"
+
+cost_optimization:
+  enabled_env: "ENABLE_COST_OPTIMIZATION"
+
+  rules:
+    - "Use cheaper/faster models for bulk test case generation."
+    - "Use stronger models for strategy, orchestration, review, security-sensitive reasoning, and release-risk decisions."
+    - "Do not send full product documentation to every agent."
+    - "Use Token Controller Agent before specialist execution."
+    - "Prefer local models for private context when quality risk is acceptable."
+    - "Run Output Reviewer Agent on important outputs created by cheaper or fallback models."
+
+privacy_and_safety:
+  allow_external_ai_for_sensitive_data_env: "ALLOW_EXTERNAL_AI_FOR_SENSITIVE_DATA"
+  allow_local_ai_for_private_data_env: "ALLOW_LOCAL_AI_FOR_PRIVATE_DATA"
+
+  sensitive_data_rules:
+    - "Do not send production credentials to any AI provider."
+    - "Do not send real customer personal data to external AI providers without explicit approval."
+    - "Do not send security-sensitive architecture details externally unless approved."
+    - "Prefer local model profile for private or sensitive product context."
+    - "If sensitive data is detected, stop and request human approval."
+
+  blocked_without_human_approval:
+    - "production_data"
+    - "customer_personal_data"
+    - "security_credentials"
+    - "payment_data"
+    - "destructive_database_operations"
+    - "release_go_no_go_decision"
+    - "external_ticket_creation"
+
+output_requirements:
+  fallback_output_note: true
+  require_model_metadata: true
+  require_quality_review_for_critical_outputs: true
+
+  metadata_format:
+    provider_used: ""
+    model_profile_used: ""
+    fallback_used: false
+    fallback_reason: ""
+    quality_review_required: true
+    human_review_required: false
+
+quality_gates:
+  critical_outputs_requiring_review:
+    - "test_strategy"
+    - "agent_routing_plan"
+    - "test_plan"
+    - "api_validation_plan"
+    - "database_validation_plan"
+    - "security_review"
+    - "performance_review"
+    - "release_readiness_report"
+    - "executive_summary"
+
+  review_required_when:
+    - "fallback_provider_used"
+    - "cheap_model_used_for_critical_task"
+    - "missing_information_exists"
+    - "high_risk_assumption_exists"
+    - "security_sensitive_area_detected"
+    - "database_destructive_validation_detected"
+    - "release_impacting_risk_detected"
