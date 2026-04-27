@@ -8,6 +8,45 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.24.0] - Maintainers Guide Layer
+
+### Added
+
+- Added MAINTAINERS.md.
+- Added maintainer guidance for repository hygiene, validation, versioning, and release candidate preparation.
+- Added release candidate audit guidance.
+- Added temporary file handling rules.
+- Added documentation consistency rules for README, ROADMAP, and CHANGELOG.
+- Added maintainer safety language review guidance.
+- Added v1.0 readiness criteria.
+- Updated validation coverage for MAINTAINERS.md.
+
+### Changed
+
+- Improved long-term repository maintainability.
+- Clarified how maintainers should manage meaningful capability releases.
+- Clarified how maintainers should prevent temporary files, secrets, and unsafe claims from entering the repository.
+- Reinforced generated vs executed safety rules at maintainer level.
+- Reinforced that release readiness requires execution evidence and human approval.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Maintainers guide validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+This phase improves release management readiness.
+
+The repository now includes contributor guidance and maintainer guidance.
+
+This prepares the project for v1.0 release candidate audit and final documentation cleanup.
+
+---
+
+
 ## [0.23.0] - Phase 2 and Phase 3 Minimum Agent Prompts Layer
 
 ### Added
@@ -928,6 +967,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 

@@ -2154,3 +2154,107 @@ The AI QA Command Center now includes:
 - Future live integrations
 - Future dashboard implementation
 - Post-v1.0 implementation roadmap
+
+---
+
+## Maintainers Guide Layer
+
+The repository now includes maintainer guidance added in the v0.24.0 layer.
+
+Current maintainer guide:
+
+- MAINTAINERS.md
+
+## Maintainers Guide Purpose
+
+The maintainers guide explains how maintainers should manage the AI QA Command Center repository safely and consistently.
+
+It covers:
+
+- Maintainer responsibilities
+- Core maintainer principle
+- Versioning approach
+- Required release files
+- Validation before push
+- GitHub Actions checks
+- Temporary file handling
+- Repository hygiene checklist
+- Release candidate audit flow
+- Documentation consistency rules
+- Safety language review
+- External action safety
+- Automation safety
+- Maintainer release flow
+- Commit message examples
+- v1.0 readiness criteria
+
+## Maintainer Safety Rule
+
+Maintainers must not make the repository look more mature than it is.
+
+The repository should become more useful, safer, clearer, and easier to operate.
+
+Generated QA artifacts are not executed test results.
+
+Reviewed artifacts are not release approval.
+
+Release readiness requires execution evidence and human approval.
+
+## Current v0.24.0 Capability Summary
+
+The AI QA Command Center now includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Phase 2 specialist prompts
+- Phase 3 operations prompts
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Output review examples
+- Permissions policy
+- Input templates
+- Complete login feature demo
+- Complete content publishing feature demo
+- Release readiness demo outputs
+- Sample output library
+- Reference examples
+- Risk analysis patterns
+- Release readiness patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Integration configuration examples
+- Integration dry-run examples
+- Automation candidate selection patterns
+- Automation generation templates
+- Automation draft examples
+- Dashboard mockup documentation
+- Dashboard operator workflow documentation
+- Sample GitHub Actions workflow examples
+- Product packaging documentation
+- Pricing and packaging documentation
+- Sales one-pager documentation
+- Onboarding documentation
+- Contributor guide
+- Maintainers guide
+- Validation scripts
+- GitHub Actions CI
+
+## Next Major Development Areas
+
+- v1.0 release candidate audit
+- v1.0 final documentation cleanup
+- v1.0 release notes
+- v1.0 tag after validation and GitHub Actions pass
+- Post-v1.0 automation generation scripts
+- Post-v1.0 live integrations
+- Post-v1.0 dashboard application
+- Post-v1.0 SaaS/product implementation plan
