@@ -41,6 +41,12 @@ REQUIRED_FILES: Dict[str, List[str]] = {
         "03-prompts/phase-2-specialists/firebase-analytics-agent.md",
     ],
 
+    "DIT specialist prompts": [
+        "03-prompts/phase-2-specialists/dit/backend-dit-agent.md",
+        "03-prompts/phase-2-specialists/dit/android-dit-agent.md",
+        "03-prompts/phase-2-specialists/dit/ios-dit-agent.md",
+        "03-prompts/phase-2-specialists/dit/testability-agent.md",
+    ],
     "Design UI specialist prompts": [
         "03-prompts/phase-2-specialists/design-ui/web-pixel-perfect-agent.md",
         "03-prompts/phase-2-specialists/design-ui/mobile-responsive-agent.md",
@@ -211,5 +217,6 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
 
 
