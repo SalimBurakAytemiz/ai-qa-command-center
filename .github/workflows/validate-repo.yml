@@ -1,0 +1,36 @@
+﻿name: Validate AI QA Command Center Repository
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-repository:
+    name: Validate repository structure and agent coverage
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python requirements
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Validate agent registry
+        run: |
+          python 10-scripts/validation/check-agent-registry.py
+
+      - name: Validate agent prompt coverage
+        run: |
+          python 10-scripts/validation/check-agent-prompt-coverage.py
