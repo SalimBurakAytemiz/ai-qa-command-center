@@ -1,7 +1,7 @@
-# AI QA Command Center - Model Routing Configuration
+﻿# AI QA Command Center - Model Routing Configuration
 #
 # Purpose:
-# This file defines how AI model providers should be selected for different
+# Defines how AI model providers should be selected for different
 # agent types, task categories, cost profiles, and fallback scenarios.
 #
 # Important:
@@ -9,15 +9,6 @@
 # - API keys must be stored in local .env files only.
 # - Public repositories must never include real secrets.
 # - Model names can be adjusted based on available provider access.
-#
-# Core idea:
-# Use stronger reasoning models for critical planning, strategy, review,
-# routing, and release-risk decisions.
-#
-# Use faster and cheaper models for bulk generation tasks such as large
-# test case generation, repetitive documentation drafts, and initial summaries.
-#
-# Use local models for private or sensitive product context when possible.
 
 version: "1.0"
 
@@ -34,149 +25,149 @@ providers:
   openai:
     enabled_env: "OPENAI_API_KEY"
     type: "cloud"
+    default_model_env: "OPENAI_DEFAULT_MODEL"
+    fast_model_env: "OPENAI_FAST_MODEL"
+    reasoning_model_env: "OPENAI_REASONING_MODEL"
     strengths:
       - "reasoning"
       - "structured_output"
       - "code_generation"
       - "test_strategy"
       - "output_review"
-    default_model_env: "OPENAI_DEFAULT_MODEL"
-    fast_model_env: "OPENAI_FAST_MODEL"
-    reasoning_model_env: "OPENAI_REASONING_MODEL"
 
   anthropic:
     enabled_env: "ANTHROPIC_API_KEY"
     type: "cloud"
+    default_model_env: "ANTHROPIC_DEFAULT_MODEL"
+    fast_model_env: "ANTHROPIC_FAST_MODEL"
+    reasoning_model_env: "ANTHROPIC_REASONING_MODEL"
     strengths:
       - "long_context"
       - "reasoning"
       - "review"
       - "documentation"
       - "risk_analysis"
-    default_model_env: "ANTHROPIC_DEFAULT_MODEL"
-    fast_model_env: "ANTHROPIC_FAST_MODEL"
-    reasoning_model_env: "ANTHROPIC_REASONING_MODEL"
 
   google:
     enabled_env: "GOOGLE_AI_API_KEY"
     type: "cloud"
+    default_model_env: "GOOGLE_DEFAULT_MODEL"
+    fast_model_env: "GOOGLE_FAST_MODEL"
+    reasoning_model_env: "GOOGLE_REASONING_MODEL"
     strengths:
       - "fast_generation"
       - "bulk_generation"
       - "summarization"
       - "cost_effective_generation"
-    default_model_env: "GOOGLE_DEFAULT_MODEL"
-    fast_model_env: "GOOGLE_FAST_MODEL"
-    reasoning_model_env: "GOOGLE_REASONING_MODEL"
 
   azure_openai:
     enabled_env: "AZURE_OPENAI_API_KEY"
     type: "cloud_enterprise"
+    endpoint_env: "AZURE_OPENAI_ENDPOINT"
+    deployment_env: "AZURE_OPENAI_DEPLOYMENT_NAME"
     strengths:
       - "enterprise_control"
       - "reasoning"
       - "structured_output"
       - "security_controlled_deployment"
-    endpoint_env: "AZURE_OPENAI_ENDPOINT"
-    deployment_env: "AZURE_OPENAI_DEPLOYMENT_NAME"
 
   openrouter:
     enabled_env: "OPENROUTER_API_KEY"
     type: "multi_model_gateway"
+    default_model_env: "OPENROUTER_DEFAULT_MODEL"
+    fallback_model_env: "OPENROUTER_FALLBACK_MODEL"
     strengths:
       - "fallback_gateway"
       - "model_variety"
       - "cost_control"
       - "provider_flexibility"
-    default_model_env: "OPENROUTER_DEFAULT_MODEL"
-    fallback_model_env: "OPENROUTER_FALLBACK_MODEL"
 
   mistral:
     enabled_env: "MISTRAL_API_KEY"
     type: "cloud"
+    default_model_env: "MISTRAL_DEFAULT_MODEL"
+    fast_model_env: "MISTRAL_FAST_MODEL"
     strengths:
       - "fast_generation"
       - "cost_effective_generation"
       - "summarization"
-    default_model_env: "MISTRAL_DEFAULT_MODEL"
-    fast_model_env: "MISTRAL_FAST_MODEL"
 
   groq:
     enabled_env: "GROQ_API_KEY"
     type: "cloud"
+    default_model_env: "GROQ_DEFAULT_MODEL"
+    fast_model_env: "GROQ_FAST_MODEL"
     strengths:
       - "very_fast_generation"
       - "bulk_generation"
       - "low_latency"
-    default_model_env: "GROQ_DEFAULT_MODEL"
-    fast_model_env: "GROQ_FAST_MODEL"
 
   together:
     enabled_env: "TOGETHER_API_KEY"
     type: "cloud"
+    default_model_env: "TOGETHER_DEFAULT_MODEL"
     strengths:
       - "open_model_access"
       - "bulk_generation"
       - "cost_control"
-    default_model_env: "TOGETHER_DEFAULT_MODEL"
 
   perplexity:
     enabled_env: "PERPLEXITY_API_KEY"
     type: "cloud_search_augmented"
+    default_model_env: "PERPLEXITY_DEFAULT_MODEL"
     strengths:
       - "research"
       - "current_information"
       - "source_augmented_answers"
-    default_model_env: "PERPLEXITY_DEFAULT_MODEL"
 
   cohere:
     enabled_env: "COHERE_API_KEY"
     type: "cloud"
+    default_model_env: "COHERE_DEFAULT_MODEL"
     strengths:
       - "summarization"
       - "classification"
       - "enterprise_text_workflows"
-    default_model_env: "COHERE_DEFAULT_MODEL"
 
   deepseek:
     enabled_env: "DEEPSEEK_API_KEY"
     type: "cloud"
+    default_model_env: "DEEPSEEK_DEFAULT_MODEL"
     strengths:
       - "code_reasoning"
       - "cost_effective_generation"
       - "technical_analysis"
-    default_model_env: "DEEPSEEK_DEFAULT_MODEL"
 
   xai:
     enabled_env: "XAI_API_KEY"
     type: "cloud"
+    default_model_env: "XAI_DEFAULT_MODEL"
     strengths:
       - "general_reasoning"
       - "fast_generation"
-    default_model_env: "XAI_DEFAULT_MODEL"
 
   ollama:
     enabled_env: "OLLAMA_BASE_URL"
     type: "local"
+    base_url_env: "OLLAMA_BASE_URL"
+    default_model_env: "OLLAMA_DEFAULT_MODEL"
+    fast_model_env: "OLLAMA_FAST_MODEL"
+    reasoning_model_env: "OLLAMA_REASONING_MODEL"
     strengths:
       - "private_context"
       - "local_execution"
       - "offline_capability"
       - "cost_control"
-    base_url_env: "OLLAMA_BASE_URL"
-    default_model_env: "OLLAMA_DEFAULT_MODEL"
-    fast_model_env: "OLLAMA_FAST_MODEL"
-    reasoning_model_env: "OLLAMA_REASONING_MODEL"
 
   lmstudio:
     enabled_env: "LMSTUDIO_BASE_URL"
     type: "local"
+    base_url_env: "LMSTUDIO_BASE_URL"
+    default_model_env: "LMSTUDIO_DEFAULT_MODEL"
     strengths:
       - "private_context"
       - "local_execution"
       - "manual_model_control"
-    base_url_env: "LMSTUDIO_BASE_URL"
-    default_model_env: "LMSTUDIO_DEFAULT_MODEL"
 
 routing_profiles:
   orchestration_and_strategy:
@@ -311,19 +302,15 @@ agent_routing:
     product_intake_agent:
       profile: "orchestration_and_strategy"
       reason: "Needs strong reasoning to compress product context without losing risk-critical information."
-
     test_strategy_agent:
       profile: "orchestration_and_strategy"
       reason: "Needs strong reasoning to define test scope, risk, and validation approach."
-
     task_router_agent:
       profile: "orchestration_and_strategy"
       reason: "Needs strong reasoning to select only necessary agents and avoid token waste."
-
     token_controller_agent:
       profile: "orchestration_and_strategy"
       reason: "Needs strong reasoning to reduce context safely for each specialist agent."
-
     output_reviewer_agent:
       profile: "output_review_and_quality"
       reason: "Needs strong review quality, risk awareness, and format checking."
@@ -331,68 +318,26 @@ agent_routing:
   phase_1_specialist_agents:
     test_planning_agent:
       profile: "orchestration_and_strategy"
-      reason: "Needs risk-based planning and coverage control."
-
     happy_path_test_case_agent:
       profile: "bulk_test_generation"
-      reason: "Generates structured successful-flow test cases."
-
     edge_case_negative_case_agent:
       profile: "bulk_test_generation"
-      reason: "Generates many boundary, edge, and failure scenarios."
-
     product_flow_test_agent:
       profile: "orchestration_and_strategy"
-      reason: "Needs end-to-end flow reasoning across product layers."
-
     feature_validation_agent:
       profile: "orchestration_and_strategy"
-      reason: "Needs acceptance criteria and business rule coverage reasoning."
-
     web_functional_test_agent:
       profile: "ui_and_web_validation"
-      reason: "Focuses on browser-visible behavior, UI state, responsive behavior, and web validation."
-
     api_test_agent:
       profile: "api_and_backend_analysis"
-      reason: "Focuses on endpoint behavior, auth, validation, contract risk, and API consistency."
-
     database_validation_agent:
       profile: "database_validation"
-      reason: "Focuses on DB state, data integrity, transaction risk, and API-DB consistency."
-
     environment_health_agent:
       profile: "reporting_and_summaries"
-      reason: "Summarizes environment readiness and blockers."
-
     jira_trello_work_tracking_agent:
       profile: "reporting_and_summaries"
-      reason: "Creates management-readable and work-tracking-ready drafts."
-
     daily_quality_report_agent:
       profile: "reporting_and_summaries"
-      reason: "Creates management-readable QA summaries."
-
-  ai_tool_compatible_agents:
-    qa_orchestrator_agent:
-      profile: "orchestration_and_strategy"
-      reason: "Coordinates workflow, routing, context reduction, and human approval points."
-
-    test_case_designer_agent:
-      profile: "bulk_test_generation"
-      reason: "Generates structured test case packages."
-
-    api_test_agent_tool:
-      profile: "api_and_backend_analysis"
-      reason: "Generates API validation plans."
-
-    db_validation_agent_tool:
-      profile: "database_validation"
-      reason: "Generates database validation plans."
-
-    web_functional_test_agent_tool:
-      profile: "ui_and_web_validation"
-      reason: "Generates web functional validation plans."
 
 fallback_policy:
   enabled_env: "ENABLE_AI_FALLBACK"
@@ -426,14 +371,12 @@ fallback_policy:
 
 cost_optimization:
   enabled_env: "ENABLE_COST_OPTIMIZATION"
-
   rules:
     - "Use cheaper/faster models for bulk test case generation."
     - "Use stronger models for strategy, orchestration, review, security-sensitive reasoning, and release-risk decisions."
     - "Do not send full product documentation to every agent."
     - "Use Token Controller Agent before specialist execution."
     - "Prefer local models for private context when quality risk is acceptable."
-    - "Run Output Reviewer Agent on important outputs created by cheaper or fallback models."
 
 privacy_and_safety:
   allow_external_ai_for_sensitive_data_env: "ALLOW_EXTERNAL_AI_FOR_SENSITIVE_DATA"
