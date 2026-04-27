@@ -2,6 +2,70 @@
 
 ---
 
+# Roadmap Update - v0.12.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Test plan review example added.
+- Test cases review example added.
+- API validation plan review example added.
+- DB validation plan review example added.
+- Executive summary review example added.
+- Validation coverage updated for output review examples.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Output review example validation passes.
+- GitHub Actions repository validation workflow should pass on main.
+
+## Impact
+
+This update strengthens the Output Reviewer Agent behavior with concrete examples.
+
+The repository now defines review examples for:
+
+- Test plans
+- Test cases
+- API validation plans
+- DB validation plans
+- Executive summaries
+
+These examples clarify how generated QA artifacts should be scored, reviewed, approved, revised, or marked as requiring human approval.
+
+## Important Rule
+
+Output review examples are not executed QA results.
+
+They show how generated outputs should be reviewed before use.
+
+A reviewed planning artifact must not be reported as passed, verified, executed, or release-ready unless real execution evidence exists.
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Update README with v0.12.0 output review example capabilities.
+2. Add release readiness demo output.
+3. Add more demo feature packs beyond login.
+4. Add Phase 2 and Phase 3 agent prompts.
+5. Add dashboard operator workflow documentation.
+6. Add example automation draft outputs.
+7. Add live integration dry-run examples.
+8. Later, implement actual automation generation scripts.
+9. Later, implement actual live integrations.
+10. Later, implement actual dashboard application.
+
+---
+
+
+---
+
 # Roadmap Update - v0.11.0
 
 ## Status
@@ -727,6 +791,7 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
 
 
 
