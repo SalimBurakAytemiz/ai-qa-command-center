@@ -276,3 +276,134 @@ The next major development areas are:
 - Integration templates
 - Automation generation patterns
 - Dashboard mockups
+
+---
+
+## Advanced QA Operations Capabilities
+
+The repository now includes advanced QA operation references and templates added in the v0.7.0 layer.
+
+### Risk and Release Readiness References
+
+Risk and release readiness references are available under references/patterns/.
+
+Current files include:
+
+- references/patterns/risk-analysis-patterns.md
+- references/patterns/release-readiness-patterns.md
+
+These references help AI agents create better risk matrices, release readiness drafts, P0/P1 decisions, mitigation actions, and human approval points.
+
+### Security Testing Reference
+
+Security testing guidance is available under references/security-testing/.
+
+Current file:
+
+- references/security-testing/security-checklist.md
+
+This reference improves coverage for authentication, authorization, direct URL access, API security, session/token handling, sensitive data exposure, account enumeration, and human approval gates.
+
+### Performance Testing Reference
+
+Performance testing guidance is available under references/performance-testing/.
+
+Current file:
+
+- references/performance-testing/performance-test-patterns.md
+
+This reference improves planning for load testing, stress testing, spike testing, soak testing, frontend performance, API response time risks, DB performance risks, and tool candidates such as JMeter and k6.
+
+### Mobile Testing Reference
+
+Mobile testing guidance is available under references/mobile-testing/.
+
+Current file:
+
+- references/mobile-testing/mobile-testing-patterns.md
+
+This reference improves planning for iOS, Android, mobile web, device matrix, OS version coverage, app lifecycle, poor network behavior, permissions, deep links, push notifications, crash risks, and Appium candidates.
+
+### Firebase Event Validation Reference
+
+Firebase and analytics validation guidance is available under references/firebase/.
+
+Current file:
+
+- references/firebase/firebase-event-validation-patterns.md
+
+This reference improves planning for analytics events, event parameters, screen_view checks, conversion events, duplicate event risks, missing event risks, user properties, notification tracking, and deep link tracking.
+
+### Automation Generation Reference
+
+Automation candidate selection guidance is available under references/automation/.
+
+Current file:
+
+- references/automation/automation-generation-patterns.md
+
+This reference helps decide whether a test should be automated now, automated later, or not automated. It also supports Playwright, Appium, API, DB, and performance automation planning.
+
+### Integration Draft Templates
+
+Integration draft templates are available under 07-integrations/.
+
+Current integration template areas:
+
+- Jira
+- Trello
+- GitHub Issues
+- Slack
+- Firebase
+- Figma
+
+These templates are draft-only. AI agents must not create external tickets, cards, issues, Slack messages, or integration actions without explicit human approval.
+
+### Expanded Validation Coverage
+
+The validation script now checks the expanded reference library, integration templates, and automation reference.
+
+Validation script:
+
+- 10-scripts/validation/check-agent-prompt-coverage.py
+
+GitHub Actions workflow:
+
+- .github/workflows/validate-repo.yml
+
+Current validation expectations:
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Expanded reference validation passes.
+- Integration template validation passes.
+- Automation reference validation passes.
+- GitHub Actions repository validation passes on main.
+
+### Current v0.7.0 Capability Summary
+
+The AI QA Command Center now supports:
+
+- Structured AI QA team architecture
+- Multi-provider AI model routing
+- Token and context policy
+- Output review and quality scoring
+- Product and feature intake templates
+- Complete login feature demo
+- Sample output library
+- AI tool instructions
+- Reference examples
+- Risk analysis patterns
+- Release readiness patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Automation candidate selection patterns
+- Validation scripts
+- GitHub Actions CI
+
+Important rule:
+
+Generated outputs, plans, test cases, reports, automation candidates, and integration drafts are planning artifacts only unless real execution evidence exists.
