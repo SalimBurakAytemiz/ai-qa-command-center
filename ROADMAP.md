@@ -2,6 +2,86 @@
 
 ---
 
+# Roadmap Update - v0.15.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Product packaging documentation layer added.
+- Product overview documentation added.
+- Target users documentation added.
+- Value proposition documentation added.
+- Demo script documentation added.
+- Limitations and safety documentation added.
+- Buyer FAQ documentation added.
+- Validation coverage updated for product packaging documentation.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Product packaging documentation validation passes.
+- GitHub Actions repository validation workflow should pass on main.
+
+## Impact
+
+This update improves the productization readiness of the AI QA Command Center.
+
+The repository now includes buyer-facing and demo-facing documentation that explains:
+
+- What the system is
+- What the system is not
+- Who it is for
+- What value it provides
+- How to demo it
+- What limitations exist
+- What safety rules must be respected
+- How to answer buyer questions honestly
+
+## Important Rule
+
+The product packaging documentation must not oversell the current framework.
+
+The honest current position is:
+
+- Demo-ready
+- Framework foundation
+- Productized service foundation
+- Repository-based AI QA operating kit
+- Validation-backed
+- CI-enabled
+- Ready for structured demos
+
+It is not yet:
+
+- A completed SaaS product
+- A live dashboard application
+- A fully autonomous QA execution engine
+- A live integration platform
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Add Phase 2 and Phase 3 agent prompts.
+2. Add dashboard operator workflow documentation.
+3. Add example automation draft outputs.
+4. Add live integration dry-run examples.
+5. Add advanced output review scoring examples.
+6. Add pricing and packaging ideas.
+7. Add onboarding guide for new users.
+8. Add real automation generation scripts later.
+9. Add real live integrations later.
+10. Add real dashboard application later.
+
+---
+
+
+---
+
 # Roadmap Update - v0.14.0
 
 ## Status
@@ -940,6 +1020,7 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
 
 
 

@@ -8,6 +8,45 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.15.0] - Product Packaging Documentation Layer
+
+### Added
+
+- Added product packaging documentation layer.
+- Added product overview documentation.
+- Added target users documentation.
+- Added value proposition documentation.
+- Added demo script documentation.
+- Added limitations and safety documentation.
+- Added buyer FAQ documentation.
+- Updated validation coverage for product packaging documentation.
+
+### Changed
+
+- Expanded the repository from a technical QA framework into a more productizable AI QA operating framework.
+- Added buyer-facing documentation for positioning, demo flow, target users, value, safety, and limitations.
+- Clarified what the framework is and what it is not.
+- Clarified that the current version is a strong framework foundation, not a completed SaaS product.
+- Reinforced honest sales positioning and generated vs executed safety rules.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Product packaging documentation validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+This phase improves product readiness and buyer communication.
+
+The repository can now be presented more clearly as a demo-ready, validation-backed, AI-assisted QA operating framework.
+
+It should not be marketed as a fully autonomous QA execution platform yet.
+
+---
+
+
 ## [0.14.0] - Content Publishing Demo Feature Pack Layer
 
 ### Added
@@ -583,6 +622,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 
