@@ -121,6 +121,12 @@ REQUIRED_FILES = {
         "demo/login-feature/02-outputs/executive-summary.md",
         "demo/login-feature/02-outputs/release-readiness-report.md",
     ],
+    "Integration dry-run examples": [
+        "examples/integration-dry-runs/jira-dry-run-example.md",
+        "examples/integration-dry-runs/slack-dry-run-example.md",
+        "examples/integration-dry-runs/github-issue-dry-run-example.md",
+        "examples/integration-dry-runs/trello-dry-run-example.md",
+    ],
     "Automation draft examples": [
         "examples/automation-drafts/playwright-login-draft-example.md",
         "examples/automation-drafts/api-login-draft-example.md",
@@ -255,6 +261,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
