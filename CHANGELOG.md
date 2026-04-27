@@ -8,6 +8,44 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.10.0] - Integration Configuration Example Layer
+
+### Added
+
+- Added Jira configuration example.
+- Added Trello configuration example.
+- Added GitHub Issues configuration example.
+- Added Slack configuration example.
+- Added Firebase configuration example.
+- Added Figma configuration example.
+- Updated validation coverage for integration configuration examples.
+
+### Changed
+
+- Expanded integration layer from draft templates into configuration planning readiness.
+- Standardized environment variable expectations for future integrations.
+- Added human approval and safety rules for integration configuration.
+- Reinforced dry-run-first behavior for external systems.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Integration template validation passes.
+- Integration configuration example validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+This phase does not implement live integrations.
+
+It defines safe configuration examples for future Jira, Trello, GitHub, Slack, Firebase, and Figma integrations.
+
+No real secrets, tokens, private URLs, customer data, or production credentials should be committed.
+
+---
+
+
 ## [0.9.0] - Automation Generation Template Layer
 
 ### Added
@@ -369,6 +407,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 
