@@ -8,6 +8,49 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.12.0] - Output Review Examples Layer
+
+### Added
+
+- Added output review examples for generated QA artifacts.
+- Added test plan review example.
+- Added test cases review example.
+- Added API validation plan review example.
+- Added DB validation plan review example.
+- Added executive summary review example.
+- Updated validation coverage for output review examples.
+
+### Changed
+
+- Strengthened Output Reviewer Agent reference behavior with concrete review examples.
+- Standardized quality scoring examples for generated outputs.
+- Clarified review decisions such as:
+  - Approved
+  - Approved with Minor Notes
+  - Needs Minor Revision
+  - Needs Revision
+  - Approved with Required Clarifications
+  - Approved with Safety Note
+- Reinforced generated vs executed distinction in review examples.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Output review example validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+This phase does not execute QA outputs.
+
+It defines examples for reviewing generated QA artifacts before they are used by human test leaders.
+
+Reviewed generated outputs remain planning artifacts unless real execution evidence exists.
+
+---
+
+
 ## [0.11.0] - Sample GitHub Actions Workflow Examples Layer
 
 ### Added
@@ -446,6 +489,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 
