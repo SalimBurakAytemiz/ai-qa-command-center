@@ -790,3 +790,101 @@ The AI QA Command Center now includes:
 - Future executable automation generation scripts
 - Future live integrations
 - Future dashboard implementation
+
+---
+
+## Output Review Examples Layer
+
+The repository now includes output review examples added in the v0.12.0 layer.
+
+Current output review examples are available under examples/output-reviews/.
+
+Output review example files include:
+
+- examples/output-reviews/test-plan-review-example.md
+- examples/output-reviews/test-cases-review-example.md
+- examples/output-reviews/api-plan-review-example.md
+- examples/output-reviews/db-plan-review-example.md
+- examples/output-reviews/executive-summary-review-example.md
+
+These files define how generated QA artifacts should be reviewed before human use.
+
+## Output Review Purpose
+
+The output review examples help standardize:
+
+- Quality scoring
+- Completeness checks
+- Risk coverage checks
+- Missing information detection
+- Unsupported assumption detection
+- Human approval points
+- Review decisions
+- Generated vs executed distinction
+
+## Review Decision Examples
+
+The examples include review decisions such as:
+
+- Approved
+- Approved with Minor Notes
+- Needs Minor Revision
+- Needs Revision
+- Approved with Required Clarifications
+- Approved with Safety Note
+- Human Approval Required
+
+## Output Review Safety Rule
+
+Output review examples are not executed QA results.
+
+They show how generated outputs should be reviewed before use.
+
+A reviewed planning artifact must not be reported as passed, verified, executed, tested successfully, or release-ready unless real execution evidence exists.
+
+## Current v0.12.0 Capability Summary
+
+The AI QA Command Center now includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Output review examples
+- Permissions policy
+- Input templates
+- Complete login feature demo
+- Sample output library
+- Reference examples
+- Risk analysis patterns
+- Release readiness patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Integration configuration examples
+- Automation candidate selection patterns
+- Automation generation templates
+- Dashboard mockup documentation
+- Sample GitHub Actions workflow examples
+- Validation scripts
+- GitHub Actions CI
+
+## Next Major Development Areas
+
+- Release readiness demo output
+- More demo feature packs beyond login
+- Phase 2 and Phase 3 agent prompts
+- Dashboard operator workflow documentation
+- Example automation draft outputs
+- Live integration dry-run examples
+- Future executable automation generation scripts
+- Future live integrations
+- Future dashboard implementation
