@@ -122,11 +122,17 @@ REQUIRED_FILES = {
     ],
     "Integration templates": [
         "07-integrations/jira/jira-ticket-template.md",
+        "07-integrations/jira/jira-config-example.md",
         "07-integrations/trello/trello-card-template.md",
+        "07-integrations/trello/trello-config-example.md",
         "07-integrations/github/github-issue-template.md",
+        "07-integrations/github/github-config-example.md",
         "07-integrations/slack/slack-report-template.md",
+        "07-integrations/slack/slack-config-example.md",
         "07-integrations/firebase/firebase-validation-template.md",
+        "07-integrations/firebase/firebase-config-example.md",
         "07-integrations/figma/figma-review-template.md",
+        "07-integrations/figma/figma-config-example.md",
     ],
     "Dashboard mockups": [
         "11-dashboard/mockups/operator-dashboard.md",
@@ -192,6 +198,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
