@@ -407,3 +407,98 @@ The AI QA Command Center now supports:
 Important rule:
 
 Generated outputs, plans, test cases, reports, automation candidates, and integration drafts are planning artifacts only unless real execution evidence exists.
+
+---
+
+## Dashboard Mockup Layer
+
+The repository now includes dashboard mockup documentation added in the v0.8.0 layer.
+
+Current dashboard mockups are available under 11-dashboard/mockups/.
+
+Dashboard mockup files include:
+
+- 11-dashboard/mockups/operator-dashboard.md
+- 11-dashboard/mockups/feature-intake-screen.md
+- 11-dashboard/mockups/agent-routing-screen.md
+- 11-dashboard/mockups/output-review-screen.md
+- 11-dashboard/mockups/quality-report-screen.md
+
+These mockups define the future operator-facing dashboard concept for the AI QA Command Center.
+
+## Dashboard Purpose
+
+The future dashboard should help the human test leader review:
+
+- Active product or feature
+- Workflow status
+- Selected and skipped agents
+- Generated output package
+- Output review score
+- Open risks
+- Blockers
+- Human approval queue
+- Validation status
+- Recommended next actions
+
+## Dashboard Safety Rule
+
+The dashboard mockups are documentation only.
+
+They are not a working dashboard application yet.
+
+Generated outputs shown in dashboard concepts must not be treated as executed test results.
+
+Safe dashboard labels include:
+
+- Generated
+- Reviewed
+- Needs Revision
+- Blocked
+- Human Approval Required
+
+Unsafe labels must not be used unless execution evidence exists:
+
+- Passed
+- Verified
+- Tested successfully
+- Release ready
+
+## Current v0.8.0 Capability Summary
+
+The AI QA Command Center now includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Input templates
+- Complete demo feature pack
+- Sample output library
+- Reference examples
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Automation candidate selection patterns
+- Dashboard mockup documentation
+- Validation scripts
+- GitHub Actions CI
+
+Next major development areas:
+
+- Automation generation templates
+- Integration configuration examples
+- Test execution workflow examples
+- Phase 2 and Phase 3 agent prompts
+- Additional demo feature packs
+- Output review examples
+- Release readiness demo output
+- Future dashboard implementation
