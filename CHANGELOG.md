@@ -8,6 +8,42 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.18.0] - Pricing and Packaging Documentation Layer
+
+### Added
+
+- Added pricing documentation layer.
+- Added pricing models documentation.
+- Added package tiers documentation.
+- Added service offers documentation.
+- Updated validation coverage for pricing documentation.
+
+### Changed
+
+- Expanded product packaging documentation with commercial positioning guidance.
+- Added realistic pricing model options for the current framework maturity.
+- Added package tier guidance for demo, starter, professional, agency/team, and enterprise custom offers.
+- Added service offer guidance for setup, workflow design, custom demo feature packs, training, support, integration planning, automation planning, and dashboard planning.
+- Reinforced that the current product should not be sold as a completed SaaS or autonomous QA execution platform.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Pricing documentation validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+This phase improves commercial readiness.
+
+The repository now includes practical guidance for packaging the AI QA Command Center as a framework, productized service foundation, training offer, customization offer, and future SaaS base.
+
+Pricing and packaging guidance must remain honest about current limitations.
+
+---
+
+
 ## [0.17.0] - Contributor Guide Layer
 
 ### Added
@@ -699,6 +735,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 

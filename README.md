@@ -1455,3 +1455,150 @@ The AI QA Command Center now includes:
 - Future executable automation generation scripts
 - Future live integrations
 - Future dashboard implementation
+
+---
+
+## Pricing and Packaging Documentation Layer
+
+The repository now includes pricing and packaging documentation added in the v0.18.0 layer.
+
+Current pricing documentation is available under:
+
+- 09-docs/product-packaging/pricing/
+
+Pricing documentation files include:
+
+- 09-docs/product-packaging/pricing/pricing-models.md
+- 09-docs/product-packaging/pricing/package-tiers.md
+- 09-docs/product-packaging/pricing/service-offers.md
+
+## Pricing Documentation Purpose
+
+The pricing documentation explains how the AI QA Command Center can be packaged and offered honestly based on the current framework maturity.
+
+It covers:
+
+- Pricing model options
+- Productized setup services
+- Training offers
+- Monthly support retainers
+- Custom implementation options
+- Future SaaS pricing ideas
+- Future integration add-on ideas
+- Future automation add-on ideas
+- Package tier options
+- Service offer examples
+- What can be sold now
+- What should not be sold yet
+
+## Recommended Current Commercial Position
+
+The strongest current commercial position is:
+
+Framework + setup + customization + training + support.
+
+The current repository is strongest as:
+
+- Demo-ready AI QA framework
+- Productized QA service foundation
+- Internal QA operating kit
+- AI-assisted QA documentation system
+- Future dashboard, automation, and integration base
+
+The current repository should not be sold as:
+
+- A completed SaaS product
+- A live dashboard application
+- A fully autonomous QA execution platform
+- A live Jira/Slack/Figma/Firebase integration platform
+- A replacement for QA engineers
+- A replacement for human release approval
+
+## Recommended Package Direction
+
+Recommended current packages include:
+
+- Demo / Evaluation
+- Starter Setup
+- Professional Setup
+- Agency / Team Package
+- Enterprise Custom
+
+Recommended current services include:
+
+- Framework setup
+- QA workflow design
+- Custom demo feature pack
+- Template customization
+- Output review setup
+- Team training
+- Monthly improvement retainer
+- Integration planning
+- Automation planning
+- Dashboard planning
+
+## Pricing Safety Rule
+
+Pricing and packaging must not overclaim the current system.
+
+Generated QA artifacts are not executed test results.
+
+Reviewed artifacts are not release approval.
+
+Release readiness requires execution evidence and human approval.
+
+Do not sell automatic execution, live integrations, or SaaS dashboard capabilities until they are actually implemented.
+
+## Current v0.18.0 Capability Summary
+
+The AI QA Command Center now includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Output review examples
+- Permissions policy
+- Input templates
+- Complete login feature demo
+- Complete content publishing feature demo
+- Release readiness demo outputs
+- Sample output library
+- Reference examples
+- Risk analysis patterns
+- Release readiness patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Integration configuration examples
+- Automation candidate selection patterns
+- Automation generation templates
+- Dashboard mockup documentation
+- Sample GitHub Actions workflow examples
+- Product packaging documentation
+- Pricing and packaging documentation
+- Onboarding documentation
+- Contributor guide
+- Validation scripts
+- GitHub Actions CI
+
+## Next Major Development Areas
+
+- Phase 2 and Phase 3 agent prompts
+- Dashboard operator workflow documentation
+- Example automation draft outputs
+- Live integration dry-run examples
+- Advanced output review scoring examples
+- Maintainers guide if needed
+- Sales one-pager if needed
+- Future executable automation generation scripts
+- Future live integrations
+- Future dashboard implementation

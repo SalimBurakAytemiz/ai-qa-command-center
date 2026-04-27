@@ -2,6 +2,86 @@
 
 ---
 
+# Roadmap Update - v0.18.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Pricing documentation layer added.
+- Pricing models documentation added.
+- Package tiers documentation added.
+- Service offers documentation added.
+- Validation coverage updated for pricing documentation.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Pricing documentation validation passes.
+- GitHub Actions repository validation workflow should pass on main.
+
+## Impact
+
+This update improves commercial readiness for the AI QA Command Center.
+
+The repository now includes pricing and packaging guidance for:
+
+- One-time framework license thinking
+- Productized setup service
+- Monthly support retainer
+- Training workshops
+- Custom implementation
+- Future SaaS subscription
+- Future integration add-ons
+- Future automation add-ons
+- Demo / Evaluation package
+- Starter setup package
+- Professional setup package
+- Agency / Team package
+- Enterprise custom package
+
+## Important Rule
+
+The pricing documentation must stay honest about the current product maturity.
+
+The current repository is strong as:
+
+- Demo-ready framework
+- Productized QA service foundation
+- Repository-based AI QA operating kit
+- Internal QA process framework
+- Future dashboard, integration, and automation base
+
+It is not yet:
+
+- A completed SaaS product
+- A live dashboard application
+- A fully autonomous QA execution engine
+- A live external integration platform
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Add Phase 2 and Phase 3 agent prompts.
+2. Add dashboard operator workflow documentation.
+3. Add example automation draft outputs.
+4. Add live integration dry-run examples.
+5. Add advanced output review scoring examples.
+6. Add maintainers guide if needed.
+7. Add sales one-pager if needed.
+8. Add real automation generation scripts later.
+9. Add real live integrations later.
+10. Add real dashboard application later.
+
+---
+
+
+---
+
 # Roadmap Update - v0.17.0
 
 ## Status
@@ -1178,6 +1258,7 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
 
 
 
