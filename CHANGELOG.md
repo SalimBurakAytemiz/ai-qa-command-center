@@ -8,6 +8,62 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.7.0] - Advanced Reference, Integration, and Automation Layer
+
+### Added
+
+- Added risk analysis reference patterns.
+- Added release readiness reference patterns.
+- Added security testing checklist reference.
+- Added performance testing patterns reference.
+- Added mobile testing patterns reference.
+- Added Firebase event validation patterns reference.
+- Added automation generation patterns reference.
+- Added integration draft templates for:
+  - Jira
+  - Trello
+  - GitHub Issues
+  - Slack
+  - Firebase
+  - Figma
+- Updated validation coverage for expanded reference library.
+- Updated validation coverage for integration templates.
+- Updated validation coverage for automation reference.
+
+### Changed
+
+- Improved framework coverage for security, performance, mobile, Firebase analytics, release readiness, and automation planning.
+- Strengthened validation script so new reference and integration files are checked automatically.
+- Expanded repository capability beyond basic QA planning into risk-aware, release-aware, and automation-aware QA operations.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Expanded reference validation passes.
+- Integration template validation passes.
+- Automation reference validation passes.
+- GitHub Actions repository validation workflow is expected to pass on `main`.
+
+### Notes
+
+This phase strengthens the repository as a more complete AI-assisted QA operating framework.
+
+The repository now supports stronger reasoning around:
+
+- Security risks
+- Performance risks
+- Mobile testing risks
+- Firebase analytics validation
+- Release readiness
+- Integration draft preparation
+- Automation candidate selection
+
+Generated outputs remain planning artifacts unless real execution evidence exists.
+
+---
+
+
 ## [0.6.0] - Demo, References, Instructions, and Validation Layer
 
 ### Added
@@ -236,3 +292,4 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
