@@ -121,6 +121,13 @@ REQUIRED_FILES = {
         "07-integrations/firebase/firebase-validation-template.md",
         "07-integrations/figma/figma-review-template.md",
     ],
+    "Dashboard mockups": [
+        "11-dashboard/mockups/operator-dashboard.md",
+        "11-dashboard/mockups/feature-intake-screen.md",
+        "11-dashboard/mockups/agent-routing-screen.md",
+        "11-dashboard/mockups/output-review-screen.md",
+        "11-dashboard/mockups/quality-report-screen.md",
+    ],
     "Architecture and docs": [
         "09-docs/architecture/system-architecture.md",
         "09-docs/prompt-standards/README.md",
@@ -178,6 +185,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
