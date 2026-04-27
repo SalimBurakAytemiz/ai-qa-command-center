@@ -2,6 +2,76 @@
 
 ---
 
+# Roadmap Update - v0.7.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Risk analysis reference patterns added.
+- Release readiness reference patterns added.
+- Security testing checklist added.
+- Performance testing patterns added.
+- Mobile testing patterns added.
+- Firebase event validation patterns added.
+- Automation generation patterns added.
+- Integration draft templates added for:
+  - Jira
+  - Trello
+  - GitHub Issues
+  - Slack
+  - Firebase
+  - Figma
+- Validation coverage updated for expanded reference library.
+- Validation coverage updated for integration templates.
+- Validation coverage updated for automation reference.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Expanded reference validation passes.
+- Integration template validation passes.
+- Automation reference validation passes.
+- GitHub Actions repository validation workflow should pass on `main`.
+
+## Impact
+
+This update expands the AI QA Command Center from a demo-ready QA framework into a more advanced QA operations framework.
+
+The repository now supports stronger guidance for:
+
+- Risk analysis
+- Release readiness
+- Security testing
+- Performance testing
+- Mobile testing
+- Firebase analytics validation
+- Integration draft preparation
+- Automation candidate selection
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Update README with v0.7.0 capabilities.
+2. Add dashboard mockups.
+3. Add automation generation templates for Playwright, API, DB, Appium, and performance tests.
+4. Add integration configuration examples.
+5. Add sample GitHub Actions workflows for future test execution.
+6. Add Phase 2 and Phase 3 agent prompts.
+7. Add more demo feature packs beyond login.
+8. Add output review examples.
+9. Add release readiness demo output.
+10. Add dashboard/operator workflow documentation.
+
+---
+
+
+---
+
 # Roadmap Update - v0.6.0
 
 ## Status
@@ -402,3 +472,4 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
