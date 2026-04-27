@@ -1602,3 +1602,123 @@ The AI QA Command Center now includes:
 - Future executable automation generation scripts
 - Future live integrations
 - Future dashboard implementation
+
+---
+
+## Sales One-Pager Documentation Layer
+
+The repository now includes sales one-pager documentation added in the v0.19.0 layer.
+
+Current sales one-pager:
+
+- 09-docs/product-packaging/sales-one-pager.md
+
+## Sales One-Pager Purpose
+
+The sales one-pager provides a concise buyer-facing summary of the AI QA Command Center.
+
+It explains:
+
+- One-line product pitch
+- What the system is
+- Who it is for
+- What problem it solves
+- Main benefits
+- Current included capabilities
+- Demo feature packs
+- Current limitations
+- Recommended current commercial offer
+- Why it is different from a prompt pack
+- Suggested demo flow
+- Best next step for interested buyers
+
+## Recommended Use
+
+Use the sales one-pager for:
+
+- Discovery calls
+- Short demos
+- Repository introductions
+- Buyer education
+- Internal stakeholder alignment
+- Productized service positioning
+
+Do not use it to overclaim product maturity.
+
+## Sales Safety Rule
+
+The sales one-pager must stay honest.
+
+The current repository is:
+
+- Demo-ready
+- Validation-backed
+- CI-enabled
+- Product packaging ready
+- Pricing documentation ready
+- Strong as a productized QA service foundation
+- Strong as a future SaaS/dashboard/automation base
+
+The current repository is not yet:
+
+- A completed SaaS product
+- A live dashboard application
+- A fully autonomous QA execution engine
+- A live Jira/Trello/Slack/Figma/Firebase integration platform
+- A replacement for QA engineers
+- A replacement for human release approval
+
+## Current v0.19.0 Capability Summary
+
+The AI QA Command Center now includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Output review examples
+- Permissions policy
+- Input templates
+- Complete login feature demo
+- Complete content publishing feature demo
+- Release readiness demo outputs
+- Sample output library
+- Reference examples
+- Risk analysis patterns
+- Release readiness patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Integration configuration examples
+- Automation candidate selection patterns
+- Automation generation templates
+- Dashboard mockup documentation
+- Sample GitHub Actions workflow examples
+- Product packaging documentation
+- Pricing and packaging documentation
+- Sales one-pager documentation
+- Onboarding documentation
+- Contributor guide
+- Validation scripts
+- GitHub Actions CI
+
+## Next Major Development Areas
+
+- Phase 2 and Phase 3 agent prompts
+- Dashboard operator workflow documentation
+- Example automation draft outputs
+- Live integration dry-run examples
+- Advanced output review scoring examples
+- Maintainers guide if needed
+- Sales deck outline if needed
+- Future executable automation generation scripts
+- Future live integrations
+- Future dashboard implementation

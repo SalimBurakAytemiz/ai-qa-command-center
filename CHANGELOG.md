@@ -8,6 +8,43 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.19.0] - Sales One-Pager Documentation Layer
+
+### Added
+
+- Added sales one-pager documentation.
+- Added buyer-facing one-page product summary.
+- Added concise positioning for target users, benefits, current capabilities, limitations, demo flow, and next steps.
+- Updated validation coverage for sales one-pager documentation.
+
+### Changed
+
+- Improved buyer-facing communication readiness.
+- Added a shorter sales artifact for demos, discovery calls, and repository presentation.
+- Reinforced honest current product maturity:
+  - Demo-ready
+  - Validation-backed
+  - CI-enabled
+  - Productized QA service foundation
+  - Future SaaS/dashboard/automation base
+- Reinforced that the current version is not a completed SaaS, live dashboard, autonomous test execution engine, or live integration platform.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Sales one-pager validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+This phase improves sales readiness.
+
+The sales one-pager should be used as a concise buyer-facing summary, not as a replacement for the full product packaging documentation.
+
+---
+
+
 ## [0.18.0] - Pricing and Packaging Documentation Layer
 
 ### Added
@@ -735,6 +772,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 

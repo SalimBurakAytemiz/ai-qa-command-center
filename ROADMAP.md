@@ -2,6 +2,87 @@
 
 ---
 
+# Roadmap Update - v0.19.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Sales one-pager documentation added.
+- Buyer-facing one-page product summary added.
+- Target user summary added.
+- Problem and benefit summary added.
+- Current capability summary added.
+- Current limitation summary added.
+- Recommended commercial offer summary added.
+- Short demo flow summary added.
+- Validation coverage updated for sales one-pager documentation.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Sales one-pager validation passes.
+- GitHub Actions repository validation workflow should pass on main.
+
+## Impact
+
+This update improves sales and demo readiness.
+
+The repository now includes a concise buyer-facing one-pager that explains:
+
+- What the AI QA Command Center is
+- Who it is for
+- What problem it solves
+- Main benefits
+- Current included capabilities
+- Demo feature packs
+- Current limitations
+- Recommended current commercial offer
+- Why it is different from a prompt pack
+- Suggested demo flow
+- Best next step for interested buyers
+
+## Important Rule
+
+The sales one-pager must not overclaim the current maturity of the product.
+
+The current repository is strong as:
+
+- Demo-ready framework
+- Validation-backed QA operating kit
+- Productized QA service foundation
+- Future SaaS/dashboard/automation base
+
+It is not yet:
+
+- A completed SaaS product
+- A live dashboard application
+- A fully autonomous QA execution engine
+- A live external integration platform
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Add Phase 2 and Phase 3 agent prompts.
+2. Add dashboard operator workflow documentation.
+3. Add example automation draft outputs.
+4. Add live integration dry-run examples.
+5. Add advanced output review scoring examples.
+6. Add maintainers guide if needed.
+7. Add sales deck outline if needed.
+8. Add real automation generation scripts later.
+9. Add real live integrations later.
+10. Add real dashboard application later.
+
+---
+
+
+---
+
 # Roadmap Update - v0.18.0
 
 ## Status
@@ -1258,6 +1339,7 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
 
 
 
