@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 from pathlib import Path
 from typing import Dict, List
@@ -92,6 +92,9 @@ REQUIRED_FILES: Dict[str, List[str]] = {
         "demo/content-publishing-feature/02-outputs/release-readiness-report.md",
     ],
 
+    "Execution evidence templates": [
+        "templates/execution-evidence-template.md",
+    ],
     "Automation draft examples": [
         "examples/automation-drafts/playwright-login-draft-example.md",
         "examples/automation-drafts/api-login-draft-example.md",
@@ -200,3 +203,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
