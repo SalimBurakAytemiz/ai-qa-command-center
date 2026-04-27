@@ -98,6 +98,13 @@ REQUIRED_FILES = {
         "demo/login-feature/02-outputs/daily-quality-report.md",
         "demo/login-feature/02-outputs/executive-summary.md",
     ],
+    "Output review examples": [
+        "examples/output-reviews/test-plan-review-example.md",
+        "examples/output-reviews/test-cases-review-example.md",
+        "examples/output-reviews/api-plan-review-example.md",
+        "examples/output-reviews/db-plan-review-example.md",
+        "examples/output-reviews/executive-summary-review-example.md",
+    ],
     "Example output library": [
         "examples/outputs/sample-test-plan.md",
         "examples/outputs/sample-happy-path-test-cases.md",
@@ -204,6 +211,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
