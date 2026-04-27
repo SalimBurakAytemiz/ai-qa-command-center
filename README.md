@@ -699,3 +699,94 @@ The AI QA Command Center now includes:
 - Future executable automation generation scripts
 - Future live integrations
 - Future dashboard implementation
+
+---
+
+## Sample GitHub Actions Workflow Examples Layer
+
+The repository now includes inactive sample GitHub Actions workflow examples added in the v0.11.0 layer.
+
+Current workflow examples are available under .github/workflows/examples/.
+
+Workflow example files include:
+
+- .github/workflows/examples/playwright-example.yml
+- .github/workflows/examples/api-tests-example.yml
+- .github/workflows/examples/db-validation-example.yml
+- .github/workflows/examples/performance-tests-example.yml
+
+These files are examples for future test execution CI design.
+
+## Workflow Example Purpose
+
+The workflow examples document how future CI execution may be structured for:
+
+- Playwright web tests
+- API tests
+- DB validation
+- Performance tests
+
+## Workflow Safety Rule
+
+These workflow examples are not active execution workflows.
+
+They do not prove test execution.
+
+They must not be reported as passed, verified, executed, or release-ready.
+
+Future execution workflows must use GitHub Actions secrets for sensitive values.
+
+Human approval is required before running workflows against:
+
+- Production environments
+- Shared high-risk environments
+- Real customer data
+- Destructive DB actions
+- Payment or financial flows
+- High-load performance scenarios
+
+## Current v0.11.0 Capability Summary
+
+The AI QA Command Center now includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Permissions policy
+- Input templates
+- Complete login feature demo
+- Sample output library
+- Reference examples
+- Risk analysis patterns
+- Release readiness patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Integration configuration examples
+- Automation candidate selection patterns
+- Automation generation templates
+- Dashboard mockup documentation
+- Sample GitHub Actions workflow examples
+- Validation scripts
+- GitHub Actions CI
+
+## Next Major Development Areas
+
+- Output review examples
+- Release readiness demo output
+- More demo feature packs beyond login
+- Phase 2 and Phase 3 agent prompts
+- Dashboard operator workflow documentation
+- Example automation draft outputs
+- Future executable automation generation scripts
+- Future live integrations
+- Future dashboard implementation
