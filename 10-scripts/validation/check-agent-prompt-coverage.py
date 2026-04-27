@@ -10,6 +10,7 @@ REQUIRED_FILES = {
         "CHANGELOG.md",
         "LICENSE",
         "CONTRIBUTING.md",
+        "MAINTAINERS.md",
         ".env.example",
         ".gitignore",
     ],
@@ -272,6 +273,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
