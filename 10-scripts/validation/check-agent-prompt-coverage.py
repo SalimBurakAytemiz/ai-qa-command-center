@@ -71,6 +71,13 @@ REQUIRED_FILES = {
         "templates/db-notes-template.md",
         "templates/release-scope-template.md",
     ],
+    "Automation templates": [
+        "templates/automation/playwright-test-template.md",
+        "templates/automation/api-test-template.md",
+        "templates/automation/db-validation-script-template.md",
+        "templates/automation/appium-test-template.md",
+        "templates/automation/performance-test-template.md",
+    ],
     "Demo login feature inputs": [
         "demo/login-feature/01-input/feature-brief.md",
         "demo/login-feature/01-input/acceptance-criteria.md",
@@ -185,6 +192,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
