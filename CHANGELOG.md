@@ -8,6 +8,49 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.17.0] - Contributor Guide Layer
+
+### Added
+
+- Added CONTRIBUTING.md.
+- Added contributor guidance for safe repository development.
+- Added contribution rules for:
+  - New demo feature packs
+  - New agent prompts
+  - New templates
+  - New references
+  - New integration docs
+  - New automation docs
+  - Validation updates
+  - README / ROADMAP / CHANGELOG updates
+- Added PR checklist and review checklist.
+- Added safety escalation guidance.
+- Updated validation coverage for CONTRIBUTING.md.
+
+### Changed
+
+- Improved repository maintainability for future contributors.
+- Clarified when validation scripts must be updated.
+- Clarified when README, ROADMAP, and CHANGELOG should be updated.
+- Reinforced generated vs executed language rules for contributors.
+- Reinforced secret, token, production data, and customer data restrictions.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Contributing guide validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+This phase improves long-term maintainability.
+
+The repository now has a clear contribution model for future development, review, validation, and safety.
+
+---
+
+
 ## [0.16.0] - Onboarding Documentation Layer
 
 ### Added
@@ -656,6 +699,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 

@@ -2,6 +2,89 @@
 
 ---
 
+# Roadmap Update - v0.17.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- CONTRIBUTING.md added.
+- Contributor rules added.
+- Generated vs executed contributor guidance added.
+- Secret and production data contribution rules added.
+- New demo feature contribution guidance added.
+- New agent prompt contribution guidance added.
+- New template contribution guidance added.
+- New reference contribution guidance added.
+- Integration documentation contribution guidance added.
+- Automation documentation contribution guidance added.
+- Local validation before commit guidance added.
+- Commit message guidance added.
+- Pull request checklist added.
+- Review checklist added.
+- Safety escalation guidance added.
+- Validation coverage updated for CONTRIBUTING.md.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Contributing guide validation passes.
+- GitHub Actions repository validation workflow should pass on main.
+
+## Impact
+
+This update improves long-term repository maintainability.
+
+The repository now has contributor guidance that explains:
+
+- What contributions are welcome
+- What must not be added
+- How to preserve generated vs executed safety
+- When to update validation scripts
+- When to update README, ROADMAP, and CHANGELOG
+- How to add new demo feature packs
+- How to add new agent prompts
+- How to add new templates and references
+- How to handle integration and automation documentation
+- How to run local validation
+- How to write commit messages
+- How to review pull requests safely
+
+## Important Rule
+
+Contributions must not make the framework sound more powerful than it currently is.
+
+The repository should become more useful without becoming less safe.
+
+Generated QA artifacts are not executed test results.
+
+Reviewed artifacts are not release approval.
+
+Release readiness requires execution evidence and human approval.
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Add Phase 2 and Phase 3 agent prompts.
+2. Add dashboard operator workflow documentation.
+3. Add example automation draft outputs.
+4. Add live integration dry-run examples.
+5. Add advanced output review scoring examples.
+6. Add pricing and packaging ideas.
+7. Add maintainers guide if needed.
+8. Add real automation generation scripts later.
+9. Add real live integrations later.
+10. Add real dashboard application later.
+
+---
+
+
+---
+
 # Roadmap Update - v0.16.0
 
 ## Status
@@ -1095,6 +1178,7 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
 
 
 

@@ -1353,3 +1353,105 @@ The AI QA Command Center now includes:
 - Future executable automation generation scripts
 - Future live integrations
 - Future dashboard implementation
+
+---
+
+## Contributor Guide Layer
+
+The repository now includes a contributor guide added in the v0.17.0 layer.
+
+Current contributor guide:
+
+- CONTRIBUTING.md
+
+## Contributor Guide Purpose
+
+The contributor guide explains how future contributors should safely extend the AI QA Command Center repository.
+
+It covers:
+
+- Core contribution principles
+- Welcome contribution types
+- What must not be added
+- Generated vs executed language rules
+- When to update validation scripts
+- When to update README, ROADMAP, and CHANGELOG
+- How to add new demo feature packs
+- How to add new agent prompts
+- How to add new templates
+- How to add new references
+- How to add integration documentation
+- How to add automation documentation
+- Local validation before commit
+- Git workflow
+- Commit message guidance
+- Pull request checklist
+- Review checklist
+- Safety escalation rules
+
+## Contributor Safety Rule
+
+Contributions must preserve the main system principle:
+
+AI may generate, organize, review, and recommend.
+
+Humans approve, execute, verify, and decide.
+
+Generated QA artifacts are not executed test results.
+
+Reviewed artifacts are not release approval.
+
+Release readiness requires execution evidence and human approval.
+
+## Current v0.17.0 Capability Summary
+
+The AI QA Command Center now includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Output review examples
+- Permissions policy
+- Input templates
+- Complete login feature demo
+- Complete content publishing feature demo
+- Release readiness demo outputs
+- Sample output library
+- Reference examples
+- Risk analysis patterns
+- Release readiness patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Integration configuration examples
+- Automation candidate selection patterns
+- Automation generation templates
+- Dashboard mockup documentation
+- Sample GitHub Actions workflow examples
+- Product packaging documentation
+- Onboarding documentation
+- Contributor guide
+- Validation scripts
+- GitHub Actions CI
+
+## Next Major Development Areas
+
+- Phase 2 and Phase 3 agent prompts
+- Dashboard operator workflow documentation
+- Example automation draft outputs
+- Live integration dry-run examples
+- Advanced output review scoring examples
+- Pricing and packaging ideas
+- Maintainers guide if needed
+- Future executable automation generation scripts
+- Future live integrations
+- Future dashboard implementation
