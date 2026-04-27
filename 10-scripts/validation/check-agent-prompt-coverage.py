@@ -121,6 +121,12 @@ REQUIRED_FILES = {
         "demo/login-feature/02-outputs/executive-summary.md",
         "demo/login-feature/02-outputs/release-readiness-report.md",
     ],
+    "Automation draft examples": [
+        "examples/automation-drafts/playwright-login-draft-example.md",
+        "examples/automation-drafts/api-login-draft-example.md",
+        "examples/automation-drafts/db-validation-login-draft-example.md",
+        "examples/automation-drafts/performance-login-draft-example.md",
+    ],
     "Output review examples": [
         "examples/output-reviews/test-plan-review-example.md",
         "examples/output-reviews/test-cases-review-example.md",
@@ -249,6 +255,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
