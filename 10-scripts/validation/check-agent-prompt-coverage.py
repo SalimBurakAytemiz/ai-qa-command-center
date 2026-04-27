@@ -113,6 +113,14 @@ REQUIRED_FILES = {
         "references/patterns/db-validation-patterns.md",
         "references/playwright/playwright-patterns.md",
     ],
+    "Integration templates": [
+        "07-integrations/jira/jira-ticket-template.md",
+        "07-integrations/trello/trello-card-template.md",
+        "07-integrations/github/github-issue-template.md",
+        "07-integrations/slack/slack-report-template.md",
+        "07-integrations/firebase/firebase-validation-template.md",
+        "07-integrations/figma/figma-review-template.md",
+    ],
     "Architecture and docs": [
         "09-docs/architecture/system-architecture.md",
         "09-docs/prompt-standards/README.md",
@@ -170,3 +178,5 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
+
