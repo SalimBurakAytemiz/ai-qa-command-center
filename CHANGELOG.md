@@ -8,6 +8,45 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.11.0] - Sample GitHub Actions Workflow Examples Layer
+
+### Added
+
+- Added sample GitHub Actions workflow examples for future test execution.
+- Added Playwright example workflow.
+- Added API tests example workflow.
+- Added DB validation example workflow.
+- Added performance tests example workflow.
+- Updated validation coverage for workflow examples.
+
+### Changed
+
+- Expanded CI documentation readiness beyond repository validation.
+- Added future execution workflow examples while keeping them inactive.
+- Clarified safe execution expectations for web, API, DB, and performance tests.
+- Reinforced use of GitHub Actions secrets for sensitive values.
+- Reinforced human approval requirements for production, destructive, high-load, or sensitive test execution.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Workflow example validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+This phase does not enable live test execution.
+
+The workflow examples are stored under `.github/workflows/examples/` and are not active GitHub Actions workflows.
+
+They are examples for future execution CI design.
+
+Generated or example workflows must not be treated as executed tests.
+
+---
+
+
 ## [0.10.0] - Integration Configuration Example Layer
 
 ### Added
@@ -407,6 +446,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 
