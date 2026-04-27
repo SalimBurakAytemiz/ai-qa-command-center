@@ -2,6 +2,81 @@
 
 ---
 
+# Roadmap Update - v0.16.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Onboarding documentation layer added.
+- Getting started guide added.
+- Recommended first reading order added.
+- Demo inspection guidance added.
+- Local validation instructions added.
+- New feature demo creation guidance added.
+- Output review guidance added.
+- Automation template usage guidance added.
+- Integration template usage guidance added.
+- Safety and anti-overclaiming guidance added.
+- Validation coverage updated for onboarding documentation.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Onboarding documentation validation passes.
+- GitHub Actions repository validation workflow should pass on main.
+
+## Impact
+
+This update improves repository usability for new users, buyers, demo viewers, contributors, and future maintainers.
+
+The repository now has a clear getting-started path that explains:
+
+- What the repository is
+- What it is not
+- Which files to read first
+- How to inspect demos
+- How to run validation
+- How to add a new feature demo
+- How to review generated outputs
+- How to use automation templates
+- How to use integration templates
+- What not to do
+- How to continue development safely
+
+## Important Rule
+
+The onboarding guide must reinforce the core safety principle:
+
+Generated QA artifacts are not executed test results.
+
+Reviewed artifacts are not release approval.
+
+Release readiness requires execution evidence and human approval.
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Add Phase 2 and Phase 3 agent prompts.
+2. Add dashboard operator workflow documentation.
+3. Add example automation draft outputs.
+4. Add live integration dry-run examples.
+5. Add advanced output review scoring examples.
+6. Add pricing and packaging ideas.
+7. Add contributor guide.
+8. Add real automation generation scripts later.
+9. Add real live integrations later.
+10. Add real dashboard application later.
+
+---
+
+
+---
+
 # Roadmap Update - v0.15.0
 
 ## Status
@@ -1020,6 +1095,7 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
 
 
 

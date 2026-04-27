@@ -1250,3 +1250,106 @@ The AI QA Command Center now includes:
 - Future executable automation generation scripts
 - Future live integrations
 - Future dashboard implementation
+
+---
+
+## Onboarding Documentation Layer
+
+The repository now includes onboarding documentation added in the v0.16.0 layer.
+
+Current onboarding documentation:
+
+- 09-docs/onboarding/getting-started.md
+
+## Onboarding Purpose
+
+The onboarding guide helps new users understand how to start using the AI QA Command Center repository.
+
+It explains:
+
+- What the repository is
+- What the repository is not
+- Recommended first reading order
+- Key folder map
+- How to inspect the login demo
+- How to inspect the content publishing demo
+- How to run local validation
+- How GitHub Actions validation works
+- How to add a new feature demo
+- How to review generated outputs
+- How to use automation templates
+- How to use integration templates
+- What not to do
+- Recommended development flow
+
+## Recommended Starting Point
+
+New users should start with:
+
+1. README.md
+2. 09-docs/product-packaging/product-overview.md
+3. 09-docs/product-packaging/value-proposition.md
+4. 09-docs/product-packaging/limitations-and-safety.md
+5. 09-docs/onboarding/getting-started.md
+6. demo/login-feature/
+7. demo/content-publishing-feature/
+
+## Onboarding Safety Rule
+
+The onboarding documentation reinforces the main system rule:
+
+Generated QA artifacts are planning artifacts only unless real execution evidence exists.
+
+Do not claim generated outputs are passed, verified, executed, tested successfully, production-safe, or release-ready without real execution evidence and human approval.
+
+## Current v0.16.0 Capability Summary
+
+The AI QA Command Center now includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Output review examples
+- Permissions policy
+- Input templates
+- Complete login feature demo
+- Complete content publishing feature demo
+- Release readiness demo outputs
+- Sample output library
+- Reference examples
+- Risk analysis patterns
+- Release readiness patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Integration configuration examples
+- Automation candidate selection patterns
+- Automation generation templates
+- Dashboard mockup documentation
+- Sample GitHub Actions workflow examples
+- Product packaging documentation
+- Onboarding documentation
+- Validation scripts
+- GitHub Actions CI
+
+## Next Major Development Areas
+
+- Phase 2 and Phase 3 agent prompts
+- Dashboard operator workflow documentation
+- Example automation draft outputs
+- Live integration dry-run examples
+- Advanced output review scoring examples
+- Pricing and packaging ideas
+- Contributor guide
+- Future executable automation generation scripts
+- Future live integrations
+- Future dashboard implementation

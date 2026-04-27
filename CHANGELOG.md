@@ -8,6 +8,40 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.16.0] - Onboarding Documentation Layer
+
+### Added
+
+- Added onboarding documentation layer.
+- Added getting started guide for new users.
+- Updated validation coverage for onboarding documentation.
+
+### Changed
+
+- Improved new-user usability for the repository.
+- Added a recommended first reading order.
+- Added guidance for inspecting demo feature packs.
+- Added local validation instructions.
+- Added guidance for adding new feature demos.
+- Added review, automation, integration, and safety onboarding notes.
+- Reinforced generated vs executed distinction for new users.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Onboarding documentation validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+This phase improves usability for new contributors, buyers, demo viewers, and future maintainers.
+
+The repository is now easier to understand, inspect, validate, and extend.
+
+---
+
+
 ## [0.15.0] - Product Packaging Documentation Layer
 
 ### Added
@@ -622,6 +656,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 
