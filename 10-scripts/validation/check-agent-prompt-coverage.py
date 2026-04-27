@@ -22,6 +22,16 @@ REQUIRED_FILES = {
         "02-agent-registry/token-policy.yaml",
         "02-agent-registry/workflow-routing.yaml",
     ],
+    "Phase 2 specialist prompts": [
+        "03-prompts/phase-2-specialists/security-test-agent.md",
+        "03-prompts/phase-2-specialists/performance-test-agent.md",
+        "03-prompts/phase-2-specialists/mobile-test-agent.md",
+        "03-prompts/phase-2-specialists/firebase-analytics-agent.md",
+    ],
+    "Phase 3 operations prompts": [
+        "03-prompts/phase-3-operations/release-readiness-agent.md",
+        "03-prompts/phase-3-operations/automation-candidate-agent.md",
+    ],
     "Management prompts": [
         "03-prompts/01-management-team/product-intake-agent.md",
         "03-prompts/01-management-team/test-strategy-agent.md",
@@ -262,6 +272,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
