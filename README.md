@@ -989,3 +989,121 @@ The AI QA Command Center now includes:
 - Future executable automation generation scripts
 - Future live integrations
 - Future dashboard implementation
+
+---
+
+## Content Publishing Demo Feature Pack Layer
+
+The repository now includes a second complete demo feature pack added in the v0.14.0 layer.
+
+Current content publishing demo location:
+
+- demo/content-publishing-feature/
+
+## Content Publishing Demo Purpose
+
+The content publishing demo shows how the AI QA Command Center handles a workflow-heavy CMS-style feature.
+
+It is designed to demonstrate QA planning for:
+
+- CMS content creation
+- Draft and published content states
+- Admin publishing
+- Editor role behavior
+- Guest and registered user restrictions
+- Public content visibility
+- API validation
+- DB state transitions
+- Slug uniqueness
+- Audit and timestamp risks
+- Jira/Trello draft generation
+- Daily quality reporting
+- Release readiness reporting
+
+## Content Publishing Demo Input Pack
+
+Input files are available under demo/content-publishing-feature/01-input/.
+
+Input files include:
+
+- feature-brief.md
+- acceptance-criteria.md
+- api-notes.md
+- db-notes.md
+- ui-notes.md
+
+## Content Publishing Demo Output Pack
+
+Output files are available under demo/content-publishing-feature/02-outputs/.
+
+Output files include:
+
+- product-testing-context.md
+- test-strategy.md
+- agent-routing-plan.md
+- test-plan.md
+- happy-path-test-cases.md
+- edge-negative-test-cases.md
+- api-validation-plan.md
+- db-validation-plan.md
+- jira-trello-drafts.md
+- daily-quality-report.md
+- executive-summary.md
+- release-readiness-report.md
+
+## Demo Safety Rule
+
+The content publishing demo outputs are generated planning artifacts only.
+
+They are not executed test results.
+
+They must not be reported as passed, verified, executed, tested successfully, production-safe, or release-ready unless real execution evidence and human approval exist.
+
+## Current v0.14.0 Capability Summary
+
+The AI QA Command Center now includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Output review examples
+- Permissions policy
+- Input templates
+- Complete login feature demo
+- Complete content publishing feature demo
+- Release readiness demo outputs
+- Sample output library
+- Reference examples
+- Risk analysis patterns
+- Release readiness patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Integration configuration examples
+- Automation candidate selection patterns
+- Automation generation templates
+- Dashboard mockup documentation
+- Sample GitHub Actions workflow examples
+- Validation scripts
+- GitHub Actions CI
+
+## Next Major Development Areas
+
+- Phase 2 and Phase 3 agent prompts
+- Dashboard operator workflow documentation
+- Example automation draft outputs
+- Live integration dry-run examples
+- Advanced output review scoring examples
+- Product packaging documentation
+- Future executable automation generation scripts
+- Future live integrations
+- Future dashboard implementation

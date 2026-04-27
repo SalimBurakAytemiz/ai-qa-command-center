@@ -8,6 +8,57 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.14.0] - Content Publishing Demo Feature Pack Layer
+
+### Added
+
+- Added second complete demo feature pack: Content Publishing.
+- Added content publishing demo input pack.
+- Added content publishing feature brief.
+- Added content publishing acceptance criteria.
+- Added content publishing API notes.
+- Added content publishing DB notes.
+- Added content publishing UI notes.
+- Added content publishing demo output pack.
+- Added content publishing product testing context.
+- Added content publishing test strategy.
+- Added content publishing agent routing plan.
+- Added content publishing test plan.
+- Added content publishing happy path test cases.
+- Added content publishing edge and negative test cases.
+- Added content publishing API validation plan.
+- Added content publishing DB validation plan.
+- Added content publishing Jira/Trello drafts.
+- Added content publishing daily quality report.
+- Added content publishing executive summary.
+- Added content publishing release readiness report.
+- Updated validation coverage for the content publishing demo feature pack.
+
+### Changed
+
+- Expanded demo coverage beyond authentication/login into CMS-style workflow testing.
+- Added a workflow-heavy demo covering draft, publish, unpublish, archive, role-based access, API validation, DB state transitions, audit/timestamp risks, and release readiness.
+- Strengthened productization value by showing that the framework can support more than one feature type.
+- Reinforced generated vs executed distinction across the second demo feature pack.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Content publishing demo validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+This phase adds a second complete feature demo.
+
+The content publishing demo is designed to show CMS, workflow, role-based access, API, DB, reporting, and release readiness capabilities.
+
+Generated demo outputs remain planning artifacts unless real execution evidence exists.
+
+---
+
+
 ## [0.13.0] - Release Readiness Demo Output Layer
 
 ### Added
@@ -532,6 +583,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 

@@ -2,6 +2,84 @@
 
 ---
 
+# Roadmap Update - v0.14.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Content publishing demo feature pack added.
+- Content publishing input pack added.
+- Content publishing output pack added.
+- Product testing context added.
+- Test strategy added.
+- Agent routing plan added.
+- Test plan added.
+- Happy path test cases added.
+- Edge and negative test cases added.
+- API validation plan added.
+- DB validation plan added.
+- Jira/Trello drafts added.
+- Daily quality report added.
+- Executive summary added.
+- Release readiness report added.
+- Validation coverage updated for content publishing demo.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Content publishing demo validation passes.
+- GitHub Actions repository validation workflow should pass on main.
+
+## Impact
+
+This update expands the repository from a single login demo into a multi-feature demo framework.
+
+The content publishing demo demonstrates coverage for:
+
+- CMS workflow
+- Draft and publish state transitions
+- Editor and admin role boundaries
+- Guest and registered user access restrictions
+- API validation
+- DB validation
+- Slug uniqueness
+- Audit and timestamp risks
+- Jira/Trello draft generation
+- Daily quality reporting
+- Release readiness reporting
+
+## Important Rule
+
+The content publishing demo outputs are generated planning artifacts.
+
+They are not executed test results.
+
+They must not be reported as passed, verified, executed, tested successfully, or release-ready unless real execution evidence and human approval exist.
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Add Phase 2 and Phase 3 agent prompts.
+2. Add dashboard operator workflow documentation.
+3. Add example automation draft outputs.
+4. Add live integration dry-run examples.
+5. Add advanced output review scoring examples.
+6. Add more demo feature packs if needed.
+7. Add real automation generation scripts later.
+8. Add real live integrations later.
+9. Add real dashboard application later.
+10. Prepare product packaging documentation.
+
+---
+
+
+---
+
 # Roadmap Update - v0.13.0
 
 ## Status
@@ -862,6 +940,7 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
 
 
 
