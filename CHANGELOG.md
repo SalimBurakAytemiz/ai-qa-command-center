@@ -8,6 +8,49 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.13.0] - Release Readiness Demo Output Layer
+
+### Added
+
+- Added login feature release readiness report demo output.
+- Added release readiness status example for generated QA artifacts.
+- Added safe release readiness wording for:
+  - Generated outputs
+  - Execution status
+  - Open risks
+  - Open blockers
+  - Known bugs
+  - Human approval points
+  - Release decision draft
+- Updated validation coverage for release readiness demo output.
+
+### Changed
+
+- Expanded the login feature demo output package with release readiness evaluation.
+- Strengthened generated vs executed distinction for release reporting.
+- Reinforced that generated release readiness drafts are not release approvals.
+- Clarified that confirmed bugs require execution evidence.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Release readiness demo validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+This phase does not approve any release.
+
+The release readiness report is a generated demo output.
+
+It demonstrates safe, evidence-aware release readiness language for human review.
+
+Generated release readiness drafts must not be reported as passed, verified, executed, or release-ready unless real execution evidence and human approval exist.
+
+---
+
+
 ## [0.12.0] - Output Review Examples Layer
 
 ### Added
@@ -489,6 +532,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 
