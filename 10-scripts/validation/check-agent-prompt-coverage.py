@@ -182,6 +182,7 @@ REQUIRED_FILES = {
         "11-dashboard/mockups/agent-routing-screen.md",
         "11-dashboard/mockups/output-review-screen.md",
         "11-dashboard/mockups/quality-report-screen.md",
+        "11-dashboard/operator-workflow.md",
     ],
     "Workflow examples": [
         ".github/workflows/examples/playwright-example.yml",
@@ -261,6 +262,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
