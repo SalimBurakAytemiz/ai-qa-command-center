@@ -4,6 +4,57 @@ All notable changes to AI QA Command Center are documented here.
 
 ---
 
+## [1.1.0] - Repository Hygiene, Evidence, Design/UI, and DIT Expansion
+
+### Added
+
+- Added `.gitattributes` for line ending normalization.
+- Added `SECURITY.md`.
+- Added GitHub pull request template.
+- Added GitHub issue templates.
+- Added GitHub CODEOWNERS.
+- Added execution evidence template.
+- Added Design/UI specialist prompts:
+  - Web Pixel Perfect Agent
+  - Mobile Responsive Agent
+  - iOS UI Agent
+  - Android UI Agent
+  - Visual Regression Agent
+  - Accessibility Agent
+- Added DIT specialist prompts:
+  - Backend DIT Agent
+  - Android DIT Agent
+  - iOS DIT Agent
+  - Testability Agent
+- Added validation coverage for new evidence, Design/UI, and DIT assets.
+
+### Changed
+
+- Rewrote `.gitignore` into a proper line-based ignore file.
+- Rewrote GitHub Actions workflow as clean YAML.
+- Rewrote validation scripts into clean Python files.
+- Added `PyYAML` to `requirements.txt`.
+- Added missing permissions policy under agent registry.
+- Simplified README into a professional project landing page.
+- Normalized CHANGELOG and ROADMAP for readability.
+- Improved public repository hygiene and maintainability.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- GitHub Actions repository validation is expected to pass.
+
+### Notes
+
+v1.1 improves repository quality and closes several framework coverage gaps.
+
+Design/UI and DIT prompts generate planning and review artifacts only.
+
+Execution evidence still requires real execution, safe evidence handling, and human review.
+
+---
+
 ## [1.0.0] - Stable Framework Release
 
 ### Added

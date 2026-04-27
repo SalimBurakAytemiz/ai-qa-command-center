@@ -311,6 +311,57 @@ See:
 
 ---
 
+
+---
+
+## Current v1.1.0 Update
+
+v1.1.0 improves repository hygiene and expands advanced prompt coverage.
+
+Added in v1.1.0:
+
+- P0 technical hygiene cleanup
+- Clean `.gitignore`
+- `.gitattributes`
+- Clean GitHub Actions workflow
+- Clean validation scripts
+- `requirements.txt` dependency definition
+- Missing permissions policy
+- Simplified README
+- Normalized CHANGELOG and ROADMAP
+- SECURITY.md
+- Pull request template
+- Issue templates
+- CODEOWNERS
+- Execution evidence template
+- Design/UI specialist prompts
+- DIT specialist prompts
+- Validation coverage updates
+
+New Design/UI prompts:
+
+- `03-prompts/phase-2-specialists/design-ui/web-pixel-perfect-agent.md`
+- `03-prompts/phase-2-specialists/design-ui/mobile-responsive-agent.md`
+- `03-prompts/phase-2-specialists/design-ui/ios-ui-agent.md`
+- `03-prompts/phase-2-specialists/design-ui/android-ui-agent.md`
+- `03-prompts/phase-2-specialists/design-ui/visual-regression-agent.md`
+- `03-prompts/phase-2-specialists/design-ui/accessibility-agent.md`
+
+New DIT prompts:
+
+- `03-prompts/phase-2-specialists/dit/backend-dit-agent.md`
+- `03-prompts/phase-2-specialists/dit/android-dit-agent.md`
+- `03-prompts/phase-2-specialists/dit/ios-dit-agent.md`
+- `03-prompts/phase-2-specialists/dit/testability-agent.md`
+
+Execution evidence template:
+
+- `templates/execution-evidence-template.md`
+
+Design/UI and DIT outputs are generated planning or review artifacts only.
+
+They are not execution evidence.
+
 ## Post-v1.0 Roadmap
 
 Post-v1.0 work should focus on implementation:

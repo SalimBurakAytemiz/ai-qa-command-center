@@ -1,6 +1,6 @@
 # AI QA Command Center Roadmap
 
-This roadmap separates the completed v1.0 framework release from future post-v1.0 implementation work.
+This roadmap separates the completed framework releases from future implementation work.
 
 ---
 
@@ -8,7 +8,7 @@ This roadmap separates the completed v1.0 framework release from future post-v1.
 
 Current release:
 
-- v1.0.0 Stable Framework Release
+- v1.1.0 Repository Hygiene, Evidence, Design/UI, and DIT Expansion
 
 Current status:
 
@@ -24,6 +24,35 @@ Current status:
 - Automation-draft-ready
 - Integration-dry-run-ready
 - Dashboard-workflow-ready
+- Design/UI prompt coverage expanded
+- DIT prompt coverage expanded
+- Execution evidence template added
+- Public repository hygiene improved
+
+---
+
+## v1.1 Completed Scope
+
+v1.1 includes:
+
+- P0 technical hygiene cleanup
+- Clean `.gitignore`
+- `.gitattributes`
+- Clean GitHub Actions workflow
+- Clean validation scripts
+- `requirements.txt` dependency definition
+- Missing permissions policy
+- Simplified README
+- Normalized CHANGELOG
+- Normalized ROADMAP
+- SECURITY.md
+- Pull request template
+- Issue templates
+- CODEOWNERS
+- Execution evidence template
+- Design/UI specialist prompts
+- DIT specialist prompts
+- Validation coverage updates
 
 ---
 
@@ -75,9 +104,9 @@ v1.0 includes:
 
 ---
 
-## What v1.0 Does Not Include
+## What The Framework Still Does Not Include
 
-v1.0 does not include:
+The framework does not yet include:
 
 - A completed SaaS product
 - A live dashboard application
@@ -94,41 +123,22 @@ v1.0 does not include:
 
 ---
 
-## Post-v1.0 Roadmap
-
-Post-v1.0 implementation work should focus on:
-
-1. Real automation generation scripts.
-2. Real live integrations.
-3. Real dashboard application.
-4. Execution evidence import.
-5. Approval workflow implementation.
-6. User and project management.
-7. SaaS/product implementation plan.
-8. Hosted documentation site if needed.
-9. External integration API implementation.
-10. Automation execution CI implementation.
-
----
-
-## Suggested v1.1 Scope
-
-Recommended v1.1 cleanup and expansion:
-
-- Add GitHub issue templates.
-- Add pull request template.
-- Add SECURITY.md.
-- Add CODEOWNERS if needed.
-- Add execution evidence template.
-- Add design/UI specialist prompts.
-- Add DIT specialist prompts.
-- Add 09-docs/README.md documentation index.
-
----
-
 ## Suggested v1.2 Scope
 
-Recommended v1.2 implementation direction:
+Recommended v1.2 direction:
+
+- Add `09-docs/README.md` documentation index.
+- Add architecture diagram source or Mermaid diagram.
+- Add agent coverage matrix.
+- Add prompt coverage matrix.
+- Add evidence example files.
+- Add mobile-heavy third demo feature pack if needed.
+
+---
+
+## Suggested v1.3 Scope
+
+Recommended v1.3 implementation direction:
 
 - Add real automation generation scripts.
 - Add example generated Playwright output from templates.
@@ -138,9 +148,9 @@ Recommended v1.2 implementation direction:
 
 ---
 
-## Suggested v1.3 Scope
+## Suggested v1.4 Scope
 
-Recommended v1.3 implementation direction:
+Recommended v1.4 implementation direction:
 
 - Add real integration dry-run CLI.
 - Add Jira dry-run generator.
