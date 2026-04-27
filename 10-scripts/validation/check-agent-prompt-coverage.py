@@ -201,6 +201,9 @@ REQUIRED_FILES = {
         ".github/workflows/examples/db-validation-example.yml",
         ".github/workflows/examples/performance-tests-example.yml",
     ],
+    "Release docs": [
+        "09-docs/releases/v1.0-release-candidate.md",
+    ],
     "Onboarding docs": [
         "09-docs/onboarding/getting-started.md",
     ],
@@ -273,6 +276,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
