@@ -1722,3 +1722,108 @@ The AI QA Command Center now includes:
 - Future executable automation generation scripts
 - Future live integrations
 - Future dashboard implementation
+
+---
+
+## Automation Draft Examples Layer
+
+The repository now includes automation draft examples added in the v0.20.0 layer.
+
+Current automation draft examples are available under:
+
+- examples/automation-drafts/
+
+Automation draft example files include:
+
+- examples/automation-drafts/playwright-login-draft-example.md
+- examples/automation-drafts/api-login-draft-example.md
+- examples/automation-drafts/db-validation-login-draft-example.md
+- examples/automation-drafts/performance-login-draft-example.md
+
+## Automation Draft Examples Purpose
+
+The automation draft examples show how future AI-generated automation drafts may look.
+
+They currently cover:
+
+- Playwright login automation draft
+- API login automation draft
+- DB validation login draft
+- Performance login draft
+
+These examples complement the automation templates under:
+
+- templates/automation/
+
+## Automation Draft Safety Rule
+
+Automation draft examples are not executed test results.
+
+They are generated planning artifacts only.
+
+They must not be reported as passed, verified, executed, stable, scalable, or release-ready unless real execution evidence exists.
+
+Human approval is required before running automation against:
+
+- Production environments
+- Shared high-risk environments
+- Real customer data
+- Destructive DB actions
+- Payment or financial flows
+- High-load performance scenarios
+
+## Current v0.20.0 Capability Summary
+
+The AI QA Command Center now includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Output review examples
+- Permissions policy
+- Input templates
+- Complete login feature demo
+- Complete content publishing feature demo
+- Release readiness demo outputs
+- Sample output library
+- Reference examples
+- Risk analysis patterns
+- Release readiness patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Integration configuration examples
+- Automation candidate selection patterns
+- Automation generation templates
+- Automation draft examples
+- Dashboard mockup documentation
+- Sample GitHub Actions workflow examples
+- Product packaging documentation
+- Pricing and packaging documentation
+- Sales one-pager documentation
+- Onboarding documentation
+- Contributor guide
+- Validation scripts
+- GitHub Actions CI
+
+## Next Major Development Areas
+
+- Live integration dry-run examples
+- Dashboard operator workflow documentation
+- Phase 2 and Phase 3 agent prompts
+- Advanced output review scoring examples
+- Maintainers guide if needed
+- Sales deck outline if needed
+- Future executable automation generation scripts
+- Future live integrations
+- Future dashboard implementation
+- v1.0 release candidate audit

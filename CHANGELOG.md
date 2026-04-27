@@ -8,6 +8,42 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.20.0] - Automation Draft Examples Layer
+
+### Added
+
+- Added automation draft examples layer.
+- Added Playwright login automation draft example.
+- Added API login automation draft example.
+- Added DB validation login draft example.
+- Added performance login draft example.
+- Updated validation coverage for automation draft examples.
+
+### Changed
+
+- Expanded automation readiness from templates into concrete generated draft examples.
+- Clarified how future AI-generated automation drafts may look for web, API, DB, and performance testing.
+- Reinforced that automation draft examples are not executed results.
+- Reinforced execution evidence requirements for reporting automation as passed, verified, executed, stable, scalable, or release-ready.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Automation draft example validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+This phase improves automation demo readiness.
+
+The automation draft examples are planning artifacts only.
+
+They must not be reported as executed tests unless real execution evidence exists.
+
+---
+
+
 ## [0.19.0] - Sales One-Pager Documentation Layer
 
 ### Added
@@ -772,6 +808,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 

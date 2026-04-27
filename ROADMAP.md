@@ -2,6 +2,67 @@
 
 ---
 
+# Roadmap Update - v0.20.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Automation draft examples layer added.
+- Playwright login automation draft example added.
+- API login automation draft example added.
+- DB validation login draft example added.
+- Performance login draft example added.
+- Validation coverage updated for automation draft examples.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Automation draft example validation passes.
+- GitHub Actions repository validation workflow should pass on main.
+
+## Impact
+
+This update improves automation readiness by adding concrete draft examples.
+
+The repository now demonstrates how future AI-generated automation drafts may look for:
+
+- Playwright web automation
+- API automation
+- DB validation automation
+- Performance automation
+
+## Important Rule
+
+Automation draft examples are not executed test results.
+
+They are generated planning artifacts.
+
+They must not be reported as passed, verified, executed, stable, scalable, or release-ready unless real execution evidence exists.
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Add live integration dry-run examples.
+2. Add dashboard operator workflow documentation.
+3. Add Phase 2 and Phase 3 agent prompts.
+4. Add advanced output review scoring examples.
+5. Add maintainers guide if needed.
+6. Add sales deck outline if needed.
+7. Add real automation generation scripts later.
+8. Add real live integrations later.
+9. Add real dashboard application later.
+10. Prepare v1.0 release candidate audit.
+
+---
+
+
+---
+
 # Roadmap Update - v0.19.0
 
 ## Status
@@ -1339,6 +1400,7 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
 
 
 
