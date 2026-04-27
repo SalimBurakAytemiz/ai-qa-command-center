@@ -1,0 +1,42 @@
+﻿name: Example - DB Validation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  db-validation-example:
+    name: Example DB validation execution
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run DB validation
+        env:
+          DATABASE_READONLY_URL: ${{ secrets.DATABASE_READONLY_URL }}
+        run: python 06-tests/db-validation/run-db-validation.py
+
+      - name: Upload DB validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: db-validation-report
+          path: reports/db/
+          retention-days: 7
+
+# Notes:
+# This is an example workflow only.
+# Prefer read-only DB validation.
+# Do not run against production without human approval.
+# Do not run destructive DB queries from CI.

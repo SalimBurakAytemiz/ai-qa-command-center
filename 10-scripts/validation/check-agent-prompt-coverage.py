@@ -141,6 +141,12 @@ REQUIRED_FILES = {
         "11-dashboard/mockups/output-review-screen.md",
         "11-dashboard/mockups/quality-report-screen.md",
     ],
+    "Workflow examples": [
+        ".github/workflows/examples/playwright-example.yml",
+        ".github/workflows/examples/api-tests-example.yml",
+        ".github/workflows/examples/db-validation-example.yml",
+        ".github/workflows/examples/performance-tests-example.yml",
+    ],
     "Architecture and docs": [
         "09-docs/architecture/system-architecture.md",
         "09-docs/prompt-standards/README.md",
@@ -198,6 +204,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 

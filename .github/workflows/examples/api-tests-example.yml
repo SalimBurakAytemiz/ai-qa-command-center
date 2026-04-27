@@ -1,0 +1,42 @@
+﻿name: Example - API Tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  api-tests-example:
+    name: Example API test execution
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run API tests
+        env:
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
+          TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+        run: npm run test:api
+
+      - name: Upload API test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-test-report
+          path: reports/api/
+          retention-days: 7
+
+# Notes:
+# This is an example workflow only.
+# Endpoint paths, status codes, and schemas must be confirmed before execution.
+# Do not run destructive API tests without human approval.
