@@ -97,6 +97,7 @@ REQUIRED_FILES = {
         "demo/login-feature/02-outputs/jira-trello-drafts.md",
         "demo/login-feature/02-outputs/daily-quality-report.md",
         "demo/login-feature/02-outputs/executive-summary.md",
+        "demo/login-feature/02-outputs/release-readiness-report.md",
     ],
     "Output review examples": [
         "examples/output-reviews/test-plan-review-example.md",
@@ -211,6 +212,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
