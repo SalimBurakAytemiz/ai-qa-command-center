@@ -8,6 +8,84 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [1.0.0] - Stable Framework Release
+
+### Added
+
+- Added v1.0 release candidate documentation.
+- Added v1.0 release notes.
+- Updated validation coverage for v1 release documentation.
+- Finalized the first stable AI QA Command Center framework release.
+
+### Included In v1.0
+
+- Structured AI QA team architecture.
+- Agent registry.
+- Team registry.
+- Prompt library.
+- Phase 2 specialist prompts.
+- Phase 3 operations prompts.
+- Workflow documentation.
+- Output templates.
+- Skill library.
+- AI tool compatibility layer.
+- Multi-provider model routing.
+- Token and context policy.
+- Permissions policy.
+- Output review rules.
+- Output review examples.
+- Input templates.
+- Complete login feature demo.
+- Complete content publishing feature demo.
+- Release readiness demo outputs.
+- Reference library.
+- Anti-patterns.
+- Security testing checklist.
+- Performance testing patterns.
+- Mobile testing patterns.
+- Firebase analytics validation patterns.
+- Integration draft templates.
+- Integration configuration examples.
+- Integration dry-run examples.
+- Automation candidate guidance.
+- Automation generation templates.
+- Automation draft examples.
+- Dashboard mockup documentation.
+- Dashboard operator workflow documentation.
+- Sample GitHub Actions workflow examples.
+- Product packaging documentation.
+- Pricing and packaging documentation.
+- Sales one-pager.
+- Onboarding guide.
+- Contributor guide.
+- Maintainers guide.
+- Validation scripts.
+- GitHub Actions CI.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- v1 release documentation validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+v1.0 is a stable framework release.
+
+It is demo-ready, validation-backed, CI-enabled, product-packaging-ready, onboarding-ready, contributor-ready, and maintainer-ready.
+
+v1.0 is not a completed SaaS product, live dashboard application, autonomous QA execution engine, or live integration platform.
+
+Generated QA artifacts are not executed test results.
+
+Reviewed artifacts are not release approval.
+
+Release readiness requires execution evidence and human approval.
+
+---
+
+
 ## [0.24.0] - Maintainers Guide Layer
 
 ### Added
@@ -967,6 +1045,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 

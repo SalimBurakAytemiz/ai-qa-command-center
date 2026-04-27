@@ -2258,3 +2258,110 @@ The AI QA Command Center now includes:
 - Post-v1.0 live integrations
 - Post-v1.0 dashboard application
 - Post-v1.0 SaaS/product implementation plan
+
+---
+
+## v1.0 Stable Framework Release
+
+AI QA Command Center has reached v1.0 stable framework release status.
+
+v1.0 release documentation:
+
+- 09-docs/releases/v1.0-release-candidate.md
+- 09-docs/releases/v1.0-release-notes.md
+
+## v1.0 Release Positioning
+
+AI QA Command Center v1.0 is a structured AI-assisted QA operating framework.
+
+It is strongest as:
+
+- Demo-ready QA framework
+- Repository-based QA operating kit
+- Productized QA service foundation
+- Internal QA process framework
+- Future dashboard, automation, and integration base
+
+v1.0 is not:
+
+- A completed SaaS product
+- A live dashboard application
+- A fully autonomous QA execution platform
+- A live external integration platform
+- A replacement for QA engineers
+- A replacement for human release approval
+
+## v1.0 Included Capability Summary
+
+v1.0 includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Phase 2 specialist prompts
+- Phase 3 operations prompts
+- Workflow documentation
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Permissions policy
+- Output review rules
+- Output review examples
+- Input templates
+- Complete login feature demo
+- Complete content publishing feature demo
+- Release readiness demo outputs
+- Reference examples
+- Anti-patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration templates
+- Integration configuration examples
+- Integration dry-run examples
+- Automation candidate guidance
+- Automation templates
+- Automation draft examples
+- Dashboard mockups
+- Dashboard operator workflow documentation
+- Sample GitHub Actions workflow examples
+- Product packaging documentation
+- Pricing and packaging documentation
+- Sales one-pager
+- Onboarding guide
+- Contributor guide
+- Maintainers guide
+- Validation scripts
+- GitHub Actions CI
+
+## v1.0 Safety Rule
+
+v1.0 preserves the core framework principle:
+
+AI may generate, organize, review, and recommend.
+
+Humans approve, execute, verify, and decide.
+
+Generated QA artifacts are not executed test results.
+
+Reviewed artifacts are not release approval.
+
+Release readiness requires execution evidence and human approval.
+
+## Post-v1.0 Development Areas
+
+Post-v1.0 work should focus on implementation:
+
+- Real automation generation scripts
+- Real live integrations
+- Real dashboard application
+- Execution evidence import
+- Approval workflow implementation
+- User/project management
+- SaaS/product implementation plan
+- Hosted documentation site if needed
+- External integration API implementation
+- Automation execution CI implementation
