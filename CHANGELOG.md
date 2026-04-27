@@ -8,6 +8,47 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.9.0] - Automation Generation Template Layer
+
+### Added
+
+- Added Playwright automation template.
+- Added API test automation template.
+- Added DB validation script template.
+- Added Appium automation template.
+- Added performance test automation template.
+- Updated validation coverage for automation templates.
+
+### Changed
+
+- Expanded the repository from automation planning guidance into automation output template readiness.
+- Standardized how AI agents should prepare automation drafts for:
+  - Web automation
+  - API automation
+  - DB validation automation
+  - Mobile automation
+  - Performance automation
+- Strengthened generated vs executed wording for automation outputs.
+- Added safety rules for production execution, destructive DB validation, sensitive data, and high-load performance tests.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Automation template validation passes.
+- GitHub Actions repository validation workflow is expected to pass on `main`.
+
+### Notes
+
+This phase does not implement executable automation suites.
+
+It defines the expected template structure for future generated automation drafts.
+
+Generated automation outputs remain planning artifacts unless real execution evidence exists.
+
+---
+
+
 ## [0.8.0] - Dashboard Mockup and Operator Workflow Layer
 
 ### Added
@@ -328,5 +369,6 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
