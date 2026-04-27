@@ -9,6 +9,7 @@ REQUIRED_FILES = {
         "ROADMAP.md",
         "CHANGELOG.md",
         "LICENSE",
+        "CONTRIBUTING.md",
         ".env.example",
         ".gitignore",
     ],
@@ -244,6 +245,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
