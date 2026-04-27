@@ -1,0 +1,45 @@
+﻿# AI QA Command Center - Permissions Policy
+
+version: "1.0"
+
+purpose: "Define what AI QA agents are allowed and not allowed to do."
+
+global_rules:
+  - "AI agents may generate plans, drafts, reports, and recommendations."
+  - "AI agents must not execute tests unless explicitly instructed in a controlled environment."
+  - "AI agents must not create external Jira, Trello, GitHub, Slack, or email actions without human approval."
+  - "AI agents must not use production data without human approval."
+  - "AI agents must not perform destructive database actions."
+  - "AI agents must not claim generated outputs are executed results."
+
+allowed_actions:
+  generate_test_plan: true
+  generate_test_cases: true
+  generate_api_validation_plan: true
+  generate_db_validation_plan: true
+  generate_jira_trello_drafts: true
+  generate_daily_report: true
+  review_outputs: true
+  suggest_automation_candidates: true
+
+restricted_actions:
+  create_external_tickets_without_approval: true
+  send_external_messages_without_approval: true
+  execute_destructive_db_queries: true
+  use_production_data_without_approval: true
+  declare_release_ready_without_approval: true
+  mark_tests_passed_without_execution_evidence: true
+
+human_approval_required_for:
+  - "P0 classification"
+  - "Release go/no-go decision"
+  - "External ticket creation"
+  - "Production data usage"
+  - "Destructive DB validation"
+  - "Security-sensitive findings"
+  - "Fallback-generated critical outputs"
+  - "Final management reports"
+
+notes:
+  - "This policy is a governance file. It does not execute actions by itself."
+  - "Human test leader remains the final decision maker."
