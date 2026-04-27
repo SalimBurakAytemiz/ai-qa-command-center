@@ -1939,3 +1939,117 @@ The AI QA Command Center now includes:
 - Future dashboard implementation
 - v1.0 release candidate audit
 - v1.0 final documentation cleanup
+
+---
+
+## Dashboard Operator Workflow Documentation Layer
+
+The repository now includes dashboard operator workflow documentation added in the v0.22.0 layer.
+
+Current dashboard operator workflow document:
+
+- 11-dashboard/operator-workflow.md
+
+## Dashboard Operator Workflow Purpose
+
+The dashboard operator workflow document explains how a future Human Test Leader should use the AI QA Command Center dashboard.
+
+It covers:
+
+- Operator role
+- Core dashboard principle
+- High-level workflow
+- Workflow statuses
+- Feature intake workflow
+- Agent routing workflow
+- Output package workflow
+- Output review workflow
+- Risk and blocker workflow
+- Human approval queue
+- External action rules
+- Execution evidence workflow
+- Release readiness workflow
+- Dashboard status colors
+- Operator decision matrix
+- Audit trail expectations
+- Minimum dashboard MVP
+- Safety requirements
+
+## Dashboard Workflow Safety Rule
+
+The dashboard operator workflow is documentation only.
+
+It does not implement a real dashboard application.
+
+A future dashboard must preserve the core framework principle:
+
+AI may generate, organize, review, and recommend.
+
+Humans approve, execute, verify, and decide.
+
+The dashboard must clearly separate:
+
+- Generated planning artifacts
+- Reviewed artifacts
+- Executed evidence
+- Approved decisions
+
+Generated outputs must not be labeled as passed, verified, executed, or release-ready unless real execution evidence and human approval exist.
+
+## Current v0.22.0 Capability Summary
+
+The AI QA Command Center now includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Output review examples
+- Permissions policy
+- Input templates
+- Complete login feature demo
+- Complete content publishing feature demo
+- Release readiness demo outputs
+- Sample output library
+- Reference examples
+- Risk analysis patterns
+- Release readiness patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Integration configuration examples
+- Integration dry-run examples
+- Automation candidate selection patterns
+- Automation generation templates
+- Automation draft examples
+- Dashboard mockup documentation
+- Dashboard operator workflow documentation
+- Sample GitHub Actions workflow examples
+- Product packaging documentation
+- Pricing and packaging documentation
+- Sales one-pager documentation
+- Onboarding documentation
+- Contributor guide
+- Validation scripts
+- GitHub Actions CI
+
+## Next Major Development Areas
+
+- Phase 2 and Phase 3 agent prompts
+- Advanced output review scoring examples
+- Maintainers guide if needed
+- Sales deck outline if needed
+- Future executable automation generation scripts
+- Future live integrations
+- Future dashboard implementation
+- v1.0 release candidate audit
+- v1.0 final documentation cleanup
+- v1.0 release notes

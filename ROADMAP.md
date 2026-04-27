@@ -2,6 +2,87 @@
 
 ---
 
+# Roadmap Update - v0.22.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Dashboard operator workflow documentation added.
+- Human Test Leader dashboard workflow added.
+- Workflow status guidance added.
+- Feature intake dashboard workflow added.
+- Agent routing dashboard workflow added.
+- Output package dashboard workflow added.
+- Output review dashboard workflow added.
+- Risk and blocker dashboard workflow added.
+- Human approval queue guidance added.
+- External action dashboard safety rules added.
+- Execution evidence dashboard workflow added.
+- Release readiness dashboard workflow added.
+- Validation coverage updated for dashboard operator workflow documentation.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Dashboard operator workflow validation passes.
+- GitHub Actions repository validation workflow should pass on main.
+
+## Impact
+
+This update improves dashboard readiness by defining how a future dashboard should be operated.
+
+The repository now explains how a human test leader should use the dashboard to:
+
+- Review feature intake
+- Inspect selected and skipped agents
+- Review generated output packages
+- Review output quality scores
+- Review risks and blockers
+- Manage human approval queues
+- Keep external actions in dry-run until approved
+- Separate generated artifacts from execution evidence
+- Review release readiness safely
+
+## Important Rule
+
+The dashboard operator workflow is documentation only.
+
+It does not implement a real dashboard.
+
+It must preserve the core framework principle:
+
+AI may generate, organize, review, and recommend.
+
+Humans approve, execute, verify, and decide.
+
+Generated planning artifacts are not executed test results.
+
+Reviewed artifacts are not release approval.
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Add Phase 2 and Phase 3 agent prompts.
+2. Add advanced output review scoring examples.
+3. Add maintainers guide if needed.
+4. Add sales deck outline if needed.
+5. Add real automation generation scripts later.
+6. Add real live integrations later.
+7. Add real dashboard application later.
+8. Prepare v1.0 release candidate audit.
+9. Prepare v1.0 final documentation cleanup.
+10. Prepare v1.0 release notes.
+
+---
+
+
+---
+
 # Roadmap Update - v0.21.0
 
 ## Status
@@ -1465,6 +1546,7 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
 
 
 

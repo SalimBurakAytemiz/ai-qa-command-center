@@ -8,6 +8,49 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.22.0] - Dashboard Operator Workflow Documentation Layer
+
+### Added
+
+- Added dashboard operator workflow documentation.
+- Added future Human Test Leader dashboard usage flow.
+- Added workflow status definitions.
+- Added feature intake workflow guidance.
+- Added agent routing workflow guidance.
+- Added output package workflow guidance.
+- Added output review workflow guidance.
+- Added risk and blocker workflow guidance.
+- Added human approval queue guidance.
+- Added external action safety rules.
+- Added execution evidence workflow guidance.
+- Added release readiness dashboard workflow guidance.
+- Updated validation coverage for dashboard operator workflow documentation.
+
+### Changed
+
+- Expanded dashboard readiness beyond mockups into operational workflow documentation.
+- Clarified how future dashboard users should inspect generated outputs, risks, blockers, reviews, approvals, and release readiness.
+- Reinforced generated vs executed separation inside future dashboard behavior.
+- Reinforced dry-run and human approval requirements for dashboard-triggered external actions.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Dashboard operator workflow validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+This phase does not implement a real dashboard application.
+
+It defines how a future dashboard should be operated safely by a human test leader.
+
+The dashboard must not turn generated planning artifacts into fake execution evidence.
+
+---
+
+
 ## [0.21.0] - Integration Dry-Run Examples Layer
 
 ### Added
@@ -845,6 +888,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 
