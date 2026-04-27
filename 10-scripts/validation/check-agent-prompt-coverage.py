@@ -203,6 +203,7 @@ REQUIRED_FILES = {
     ],
     "Release docs": [
         "09-docs/releases/v1.0-release-candidate.md",
+        "09-docs/releases/v1.0-release-notes.md",
     ],
     "Onboarding docs": [
         "09-docs/onboarding/getting-started.md",
@@ -276,6 +277,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
