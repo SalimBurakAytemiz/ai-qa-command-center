@@ -1,4 +1,73 @@
-# AI QA Command Center Roadmap
+﻿# AI QA Command Center Roadmap
+
+---
+
+# Roadmap Update - v0.6.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Product and feature intake templates added.
+- Acceptance criteria, API notes, DB notes, and release scope templates added.
+- Complete login feature demo input pack added.
+- Complete login feature demo output pack added.
+- Sample output library added.
+- Specialized AI tool instructions added for:
+  - Test case design
+  - API testing
+  - DB validation
+  - Playwright
+  - QA reporting
+- Reference examples added for:
+  - API testing
+  - DB validation
+  - Bug reports
+  - Jira tickets
+  - Daily reports
+- Permissions policy added.
+- Agent prompt coverage validation script added.
+- Python requirements file added.
+- GitHub Actions repository validation workflow added.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- GitHub Actions validation workflow passes on `main`.
+
+## Impact
+
+This update improves the repository from a structured AI QA foundation into a demonstrable AI QA framework.
+
+The repository now has:
+
+- Reusable input templates
+- A complete demo feature pack
+- Sample output examples
+- Expanded AI tool instructions
+- Expanded reference examples
+- Automated validation scripts
+- GitHub Actions CI validation
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Update README with the latest demo, examples, instructions, references, and CI status.
+2. Add more reference patterns for risk analysis and release readiness.
+3. Add security testing checklist.
+4. Add performance testing patterns.
+5. Add mobile testing patterns.
+6. Add Firebase event validation patterns.
+7. Add integration templates for Jira, Trello, GitHub, Slack, Firebase, and Figma.
+8. Add automation generation patterns.
+9. Add dashboard mockups.
+
+---
+
 
 ## Purpose
 
@@ -36,7 +105,7 @@ The roadmap follows these principles:
 
 ---
 
-# Phase 1 — Foundation Layer
+# Phase 1 â€” Foundation Layer
 
 ## Goal
 
@@ -81,7 +150,7 @@ Phase 1 is successful when:
 
 ---
 
-# Phase 2 — Prompt and Workflow Layer
+# Phase 2 â€” Prompt and Workflow Layer
 
 ## Goal
 
@@ -128,7 +197,7 @@ Phase 2 is successful when:
 
 ---
 
-# Phase 3 — AI Tool Compatibility Layer
+# Phase 3 â€” AI Tool Compatibility Layer
 
 ## Goal
 
@@ -187,7 +256,7 @@ Phase 3 is successful when:
 
 ---
 
-# Phase 4 — Reference and Pattern Library
+# Phase 4 â€” Reference and Pattern Library
 
 ## Goal
 
@@ -239,7 +308,7 @@ Phase 4 is successful when:
 
 ---
 
-# Phase 5 — Repository Completeness Layer
+# Phase 5 â€” Repository Completeness Layer
 
 ## Goal
 
@@ -292,7 +361,7 @@ Phase 5 is successful when:
 
 ---
 
-# Phase 6 — Demo Feature Packs
+# Phase 6 â€” Demo Feature Packs
 
 ## Goal
 
