@@ -596,3 +596,106 @@ The AI QA Command Center now includes:
 - Dashboard operator workflow documentation
 - Future executable automation generation scripts
 - Future dashboard implementation
+
+---
+
+## Integration Configuration Example Layer
+
+The repository now includes integration configuration examples added in the v0.10.0 layer.
+
+Current integration configuration examples are available under 07-integrations/.
+
+Configuration example files include:
+
+- 07-integrations/jira/jira-config-example.md
+- 07-integrations/trello/trello-config-example.md
+- 07-integrations/github/github-config-example.md
+- 07-integrations/slack/slack-config-example.md
+- 07-integrations/firebase/firebase-config-example.md
+- 07-integrations/figma/figma-config-example.md
+
+These files define safe future configuration expectations for external integrations.
+
+## Integration Configuration Purpose
+
+The integration configuration examples document:
+
+- Required environment variables
+- Required permissions
+- Dry-run defaults
+- Human approval gates
+- Safety rules
+- Secret handling rules
+- External action restrictions
+
+## Supported Future Integration Areas
+
+The repository now has draft templates and configuration examples for:
+
+- Jira
+- Trello
+- GitHub Issues
+- Slack
+- Firebase
+- Figma
+
+## Integration Safety Rule
+
+These files do not implement live integrations.
+
+They are configuration planning examples only.
+
+No real secrets, tokens, private URLs, service account files, customer data, or production credentials should be committed.
+
+AI agents must not create external tickets, cards, issues, Slack messages, analytics changes, Figma comments, or integration actions without explicit human approval.
+
+Recommended default mode for future integrations:
+
+- dry_run
+
+External action defaults should remain disabled until approved.
+
+## Current v0.10.0 Capability Summary
+
+The AI QA Command Center now includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Permissions policy
+- Input templates
+- Complete login feature demo
+- Sample output library
+- Reference examples
+- Risk analysis patterns
+- Release readiness patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Integration configuration examples
+- Automation candidate selection patterns
+- Automation generation templates
+- Dashboard mockup documentation
+- Validation scripts
+- GitHub Actions CI
+
+## Next Major Development Areas
+
+- Sample GitHub Actions workflows for future test execution
+- Output review examples
+- Release readiness demo output
+- More demo feature packs beyond login
+- Phase 2 and Phase 3 agent prompts
+- Dashboard operator workflow documentation
+- Future executable automation generation scripts
+- Future live integrations
+- Future dashboard implementation
