@@ -2,6 +2,72 @@
 
 ---
 
+# Roadmap Update - v0.8.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Operator dashboard mockup added.
+- Feature intake screen mockup added.
+- Agent routing screen mockup added.
+- Output review screen mockup added.
+- Quality report screen mockup added.
+- Validation coverage updated for dashboard mockups.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Dashboard mockup validation passes.
+- GitHub Actions repository validation workflow should pass on `main`.
+
+## Impact
+
+This update defines the future operator dashboard layer.
+
+The repository now describes how a human test leader may review:
+
+- Active product or feature
+- Workflow status
+- Selected and skipped agents
+- Generated output package
+- Output review score
+- Risks and blockers
+- Human approval queue
+- Quality report
+- Recommended next actions
+
+## Important Rule
+
+The dashboard layer is documentation and mockup only.
+
+It is not a working dashboard application yet.
+
+Generated outputs shown in dashboard concepts must remain clearly separated from executed test results.
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Update README with v0.8.0 dashboard capabilities.
+2. Add automation generation templates for Playwright, API, DB, Appium, and performance tests.
+3. Add integration configuration examples.
+4. Add sample GitHub Actions workflows for future test execution.
+5. Add Phase 2 and Phase 3 agent prompts.
+6. Add more demo feature packs beyond login.
+7. Add output review examples.
+8. Add release readiness demo output.
+9. Add dashboard/operator workflow documentation.
+10. Later, implement an actual dashboard application.
+
+---
+
+
+---
+
 # Roadmap Update - v0.7.0
 
 ## Status
@@ -472,4 +538,5 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
 
