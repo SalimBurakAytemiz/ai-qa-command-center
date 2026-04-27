@@ -133,3 +133,146 @@ ai-qa-command-center/
 ├── LICENSE
 ├── README.md
 └── ROADMAP.md
+---
+
+## Latest Repository Capabilities
+
+The repository now includes the following completed capability layers:
+
+### Templates Layer
+
+Reusable input templates are available under templates/.
+
+Current templates include:
+
+- Product intake form
+- Feature intake form
+- Acceptance criteria template
+- API notes template
+- DB notes template
+- Release scope template
+
+### Demo Feature Pack
+
+A complete login feature demo is available under demo/login-feature/.
+
+The demo includes input files and generated planning outputs for a login feature.
+
+Demo input files include:
+
+- Feature brief
+- Acceptance criteria
+- API notes
+- DB notes
+- UI notes
+
+Demo output files include:
+
+- Product testing context
+- Test strategy
+- Agent routing plan
+- Test plan
+- Happy path test cases
+- Edge and negative test cases
+- API validation plan
+- DB validation plan
+- Jira/Trello drafts
+- Daily quality report
+- Executive summary
+
+Important: demo outputs are generated planning artifacts only. They are not executed test results.
+
+### Example Output Library
+
+Reusable sample outputs are available under examples/outputs/.
+
+Current sample outputs include:
+
+- Sample test plan
+- Sample happy path test cases
+- Sample edge and negative test cases
+- Sample API validation plan
+- Sample DB validation plan
+- Sample Jira drafts
+- Sample daily quality report
+- Sample executive summary
+
+### Expanded AI Instructions
+
+Specialized AI tool instructions are available under .github/instructions/.
+
+Current instruction files include:
+
+- General QA instructions
+- Test case design instructions
+- API testing instructions
+- DB validation instructions
+- Playwright instructions
+- QA reporting instructions
+
+### Expanded Reference Examples
+
+Reference examples are available under references/examples/.
+
+Current reference examples include:
+
+- Test case examples
+- API test examples
+- DB validation examples
+- Bug report examples
+- Jira ticket examples
+- Daily report examples
+
+### Validation and CI
+
+The repository includes validation scripts under 10-scripts/validation/.
+
+Current validation scripts include:
+
+- Agent registry validation
+- Agent prompt coverage validation
+- Required files validation
+
+The repository also includes GitHub Actions validation under .github/workflows/validate-repo.yml.
+
+The workflow runs on push and pull request to main.
+
+Current validation status:
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- GitHub Actions repository validation passes on main.
+
+### Current Framework Maturity
+
+The repository is now more than a prompt collection.
+
+It currently includes:
+
+- AI QA organization structure
+- Agent registry
+- Prompt library
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Input templates
+- Complete demo feature pack
+- Sample output library
+- Reference examples
+- Validation scripts
+- GitHub Actions CI
+
+The next major development areas are:
+
+- More reference patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase validation patterns
+- Integration templates
+- Automation generation patterns
+- Dashboard mockups
