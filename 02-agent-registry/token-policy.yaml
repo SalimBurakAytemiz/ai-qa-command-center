@@ -1,19 +1,14 @@
-# AI QA Command Center - Token Policy
+﻿# AI QA Command Center - Token Policy
 #
 # Purpose:
-# This file defines how token usage, context size, cost control,
-# fallback review, and sensitive data handling should work across
-# AI QA agents.
+# Defines how token usage, context size, cost control, fallback review,
+# and sensitive data handling should work across AI QA agents.
 #
 # Important:
 # - This file does not execute anything by itself.
-# - This file defines policy for future orchestrators, scripts,
-#   AI tools, and human operators.
-# - This policy must work together with:
-#   - 02-agent-registry/model-routing.yaml
-#   - 02-agent-registry/agents.yaml
-#   - 02-agent-registry/workflow-routing.yaml
-#   - 03-prompts/01-management-team/token-controller-agent.md
+# - This file defines policy for future orchestrators, scripts, AI tools, and human operators.
+# - This policy works together with model-routing.yaml, agents.yaml, workflow-routing.yaml,
+#   and the Token Controller Agent prompt.
 
 version: "1.0"
 
@@ -42,47 +37,22 @@ context_policy:
   mode_definitions:
     minimal:
       description: "Only the exact task, short feature summary, and required output format."
-      recommended_for:
-        - "small edits"
-        - "format conversion"
-        - "simple summaries"
-        - "single test case improvement"
       human_approval_required: false
 
     compact:
       description: "Feature summary, relevant acceptance criteria, relevant user roles, relevant platforms, relevant risks, and expected output."
-      recommended_for:
-        - "specialist agent execution"
-        - "test case generation"
-        - "API validation planning"
-        - "DB validation planning"
-        - "web functional validation"
       human_approval_required: false
 
     standard:
       description: "Compact context plus selected workflow notes, related previous outputs, and selected technical notes."
-      recommended_for:
-        - "test planning"
-        - "feature validation"
-        - "product flow validation"
-        - "daily reporting"
       human_approval_required: false
 
     extended:
       description: "Standard context plus broader product context and multiple related outputs."
-      recommended_for:
-        - "test strategy"
-        - "agent routing"
-        - "output review"
-        - "risk analysis"
       human_approval_required: false
 
     full_requires_approval:
       description: "Full raw PRD, full API documentation, full Figma notes, full product documentation, or large multi-file context."
-      recommended_for:
-        - "rare deep review"
-        - "major release planning"
-        - "complex cross-module analysis"
       human_approval_required: true
 
 context_reduction_rules:
@@ -197,27 +167,6 @@ agent_context_profiles:
       default_context_mode: "standard"
       max_context_policy: "extended"
 
-  ai_tool_compatible_agents:
-    qa_orchestrator_agent:
-      default_context_mode: "extended"
-      max_context_policy: "extended"
-
-    test_case_designer_agent:
-      default_context_mode: "compact"
-      max_context_policy: "standard"
-
-    api_test_agent_tool:
-      default_context_mode: "compact"
-      max_context_policy: "standard"
-
-    db_validation_agent_tool:
-      default_context_mode: "compact"
-      max_context_policy: "standard"
-
-    web_functional_test_agent_tool:
-      default_context_mode: "compact"
-      max_context_policy: "standard"
-
 task_token_profiles:
   orchestration_and_strategy:
     default_context_mode: "extended"
@@ -280,37 +229,15 @@ budget_rules:
   token_budget_levels:
     low:
       description: "Small task with limited context."
-      recommended_for:
-        - "single test case edit"
-        - "small summary"
-        - "format cleanup"
-        - "simple checklist"
 
     medium:
       description: "Normal specialist agent task."
-      recommended_for:
-        - "test case generation"
-        - "API validation planning"
-        - "DB validation planning"
-        - "web validation planning"
-        - "daily report"
 
     high:
       description: "Complex reasoning or review task."
-      recommended_for:
-        - "test strategy"
-        - "agent routing"
-        - "output review"
-        - "risk analysis"
-        - "cross-module product flow"
 
     approval_required:
       description: "Large full-context work that may be expensive or sensitive."
-      recommended_for:
-        - "full PRD analysis"
-        - "major release planning"
-        - "full product review"
-        - "large multi-file analysis"
       human_approval_required: true
 
   default_budget_by_agent_type:
