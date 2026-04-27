@@ -2,6 +2,77 @@
 
 ---
 
+# Roadmap Update - v0.13.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Login feature release readiness report demo output added.
+- Release readiness status example added.
+- Open risks section added to demo release readiness output.
+- Open blockers section added to demo release readiness output.
+- Known bugs section added with execution-evidence warning.
+- Human approval points added.
+- Release decision draft added.
+- Validation coverage updated for release readiness demo output.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Release readiness demo validation passes.
+- GitHub Actions repository validation workflow should pass on main.
+
+## Impact
+
+This update strengthens the login feature demo by adding a release readiness report.
+
+The repository now demonstrates how AI QA outputs should handle release-readiness language safely and realistically.
+
+The release readiness demo shows how to separate:
+
+- Generated planning artifacts
+- Reviewed artifacts
+- Executed evidence
+- Open risks
+- Open blockers
+- Known bugs
+- Human approval points
+- Release decision drafts
+
+## Important Rule
+
+The release readiness report is a generated demo output.
+
+It is not a release approval.
+
+It does not prove test execution.
+
+It must not be reported as passed, verified, executed, or release-ready unless real execution evidence and human approval exist.
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Update README with v0.13.0 release readiness demo capability.
+2. Add more demo feature packs beyond login.
+3. Add Phase 2 and Phase 3 agent prompts.
+4. Add dashboard operator workflow documentation.
+5. Add example automation draft outputs.
+6. Add live integration dry-run examples.
+7. Add advanced output review scoring examples.
+8. Later, implement actual automation generation scripts.
+9. Later, implement actual live integrations.
+10. Later, implement actual dashboard application.
+
+---
+
+
+---
+
 # Roadmap Update - v0.12.0
 
 ## Status
@@ -791,6 +862,7 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
 
 
 
