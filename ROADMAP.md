@@ -2,6 +2,74 @@
 
 ---
 
+# Roadmap Update - v0.23.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Minimum Phase 2 specialist agent prompts added.
+- Security Test Agent prompt added.
+- Performance Test Agent prompt added.
+- Mobile Test Agent prompt added.
+- Firebase Analytics Agent prompt added.
+- Minimum Phase 3 operations agent prompts added.
+- Release Readiness Agent prompt added.
+- Automation Candidate Agent prompt added.
+- Validation coverage updated for Phase 2 and Phase 3 prompts.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Phase 2 and Phase 3 prompt validation passes.
+- GitHub Actions repository validation workflow should pass on main.
+
+## Impact
+
+This update strengthens the advanced agent layer for the AI QA Command Center.
+
+The repository now includes minimum advanced prompts for:
+
+- Security testing planning
+- Performance testing planning
+- Mobile testing planning
+- Firebase analytics validation planning
+- Release readiness drafting
+- Automation candidate decision-making
+
+These prompts improve v1.0 readiness by covering advanced QA planning and operational decision support.
+
+## Important Rule
+
+Phase 2 and Phase 3 prompts generate plans, reviews, decisions, and recommendations.
+
+They do not prove execution.
+
+They must not claim that tests passed, security was verified, performance was verified, analytics were validated, mobile behavior was verified, automation executed, or release was approved unless real execution evidence and human approval exist.
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Add advanced output review scoring examples if needed.
+2. Add maintainers guide if needed.
+3. Add sales deck outline if needed.
+4. Prepare v1.0 release candidate audit.
+5. Prepare v1.0 final documentation cleanup.
+6. Prepare v1.0 release notes.
+7. Add real automation generation scripts later.
+8. Add real live integrations later.
+9. Add real dashboard application later.
+10. Move future implementation work to post-v1.0 roadmap.
+
+---
+
+
+---
+
 # Roadmap Update - v0.22.0
 
 ## Status
@@ -1546,6 +1614,7 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
 
 
 

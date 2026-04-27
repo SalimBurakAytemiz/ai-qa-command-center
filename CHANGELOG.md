@@ -8,6 +8,46 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.23.0] - Phase 2 and Phase 3 Minimum Agent Prompts Layer
+
+### Added
+
+- Added minimum Phase 2 specialist agent prompts.
+- Added Security Test Agent prompt.
+- Added Performance Test Agent prompt.
+- Added Mobile Test Agent prompt.
+- Added Firebase Analytics Agent prompt.
+- Added minimum Phase 3 operations agent prompts.
+- Added Release Readiness Agent prompt.
+- Added Automation Candidate Agent prompt.
+- Updated validation coverage for Phase 2 and Phase 3 prompts.
+
+### Changed
+
+- Expanded the prompt library beyond foundation and Phase 1 coverage.
+- Added specialist prompts for security, performance, mobile, and Firebase analytics planning.
+- Added operational prompts for release readiness and automation candidate decision-making.
+- Reinforced evidence-aware language across advanced agent prompts.
+- Reinforced human approval requirements for security-sensitive, production, destructive, high-load, and external-impact scenarios.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Phase 2 and Phase 3 prompt validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+This phase adds a minimum advanced agent layer for v1.0 readiness.
+
+These prompts generate plans, reviews, and recommendations.
+
+They do not execute tests, approve releases, verify security, verify performance, or confirm production readiness without real evidence.
+
+---
+
+
 ## [0.22.0] - Dashboard Operator Workflow Documentation Layer
 
 ### Added
@@ -888,6 +928,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 

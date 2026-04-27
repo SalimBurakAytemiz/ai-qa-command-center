@@ -2053,3 +2053,104 @@ The AI QA Command Center now includes:
 - v1.0 release candidate audit
 - v1.0 final documentation cleanup
 - v1.0 release notes
+
+---
+
+## Phase 2 and Phase 3 Minimum Agent Prompts Layer
+
+The repository now includes minimum Phase 2 and Phase 3 agent prompts added in the v0.23.0 layer.
+
+Current Phase 2 specialist prompts:
+
+- 03-prompts/phase-2-specialists/security-test-agent.md
+- 03-prompts/phase-2-specialists/performance-test-agent.md
+- 03-prompts/phase-2-specialists/mobile-test-agent.md
+- 03-prompts/phase-2-specialists/firebase-analytics-agent.md
+
+Current Phase 3 operations prompts:
+
+- 03-prompts/phase-3-operations/release-readiness-agent.md
+- 03-prompts/phase-3-operations/automation-candidate-agent.md
+
+## Phase 2 and Phase 3 Prompt Purpose
+
+These prompts add minimum advanced agent coverage for:
+
+- Security testing planning
+- Performance testing planning
+- Mobile testing planning
+- Firebase analytics validation planning
+- Release readiness drafting
+- Automation candidate decision-making
+
+## Advanced Agent Safety Rule
+
+Phase 2 and Phase 3 prompts generate plans, reviews, decisions, and recommendations.
+
+They do not execute tests.
+
+They do not approve releases.
+
+They do not verify security, performance, analytics, mobile behavior, automation execution, or production readiness without evidence.
+
+Generated outputs must not be reported as passed, verified, executed, secure, stable, scalable, mobile-verified, analytics-verified, automated, or release-ready unless real execution evidence and human approval exist.
+
+## Current v0.23.0 Capability Summary
+
+The AI QA Command Center now includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Phase 2 specialist prompts
+- Phase 3 operations prompts
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Output review examples
+- Permissions policy
+- Input templates
+- Complete login feature demo
+- Complete content publishing feature demo
+- Release readiness demo outputs
+- Sample output library
+- Reference examples
+- Risk analysis patterns
+- Release readiness patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Integration configuration examples
+- Integration dry-run examples
+- Automation candidate selection patterns
+- Automation generation templates
+- Automation draft examples
+- Dashboard mockup documentation
+- Dashboard operator workflow documentation
+- Sample GitHub Actions workflow examples
+- Product packaging documentation
+- Pricing and packaging documentation
+- Sales one-pager documentation
+- Onboarding documentation
+- Contributor guide
+- Validation scripts
+- GitHub Actions CI
+
+## Next Major Development Areas
+
+- Advanced output review scoring examples if needed
+- Maintainers guide if needed
+- Sales deck outline if needed
+- v1.0 release candidate audit
+- v1.0 final documentation cleanup
+- v1.0 release notes
+- Future executable automation generation scripts
+- Future live integrations
+- Future dashboard implementation
+- Post-v1.0 implementation roadmap
