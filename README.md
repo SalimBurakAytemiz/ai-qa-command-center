@@ -502,3 +502,97 @@ Next major development areas:
 - Output review examples
 - Release readiness demo output
 - Future dashboard implementation
+
+---
+
+## Automation Generation Template Layer
+
+The repository now includes automation generation templates added in the v0.9.0 layer.
+
+Current automation templates are available under templates/automation/.
+
+Automation template files include:
+
+- templates/automation/playwright-test-template.md
+- templates/automation/api-test-template.md
+- templates/automation/db-validation-script-template.md
+- templates/automation/appium-test-template.md
+- templates/automation/performance-test-template.md
+
+These templates define how future AI agents should prepare automation drafts.
+
+## Automation Template Purpose
+
+The automation templates support future draft generation for:
+
+- Web automation with Playwright
+- API automation
+- Database validation automation
+- Mobile automation with Appium
+- Performance automation with k6, JMeter, Gatling, Lighthouse, or similar tools
+
+## Automation Safety Rule
+
+Generated automation drafts are not executed test results.
+
+They must not be reported as passed, verified, executed, stable, scalable, or release-ready unless real execution evidence exists.
+
+Safe wording:
+
+- Automation candidate identified
+- Automation template prepared
+- Automation draft generated
+- Execution evidence required
+- Human approval required
+
+Unsafe wording without evidence:
+
+- Automation passed
+- Test executed successfully
+- Regression passed
+- Performance verified
+- Mobile verified
+- Release ready
+
+## Current v0.9.0 Capability Summary
+
+The AI QA Command Center now includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Input templates
+- Complete login feature demo
+- Sample output library
+- Reference examples
+- Risk analysis patterns
+- Release readiness patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Automation candidate selection patterns
+- Automation generation templates
+- Dashboard mockup documentation
+- Validation scripts
+- GitHub Actions CI
+
+## Next Major Development Areas
+
+- Integration configuration examples
+- Sample GitHub Actions workflows for future test execution
+- Output review examples
+- Release readiness demo output
+- More demo feature packs beyond login
+- Phase 2 and Phase 3 agent prompts
+- Dashboard operator workflow documentation
+- Future executable automation generation scripts
+- Future dashboard implementation
