@@ -1827,3 +1827,115 @@ The AI QA Command Center now includes:
 - Future live integrations
 - Future dashboard implementation
 - v1.0 release candidate audit
+
+---
+
+## Integration Dry-Run Examples Layer
+
+The repository now includes integration dry-run examples added in the v0.21.0 layer.
+
+Current integration dry-run examples are available under:
+
+- examples/integration-dry-runs/
+
+Integration dry-run example files include:
+
+- examples/integration-dry-runs/jira-dry-run-example.md
+- examples/integration-dry-runs/slack-dry-run-example.md
+- examples/integration-dry-runs/github-issue-dry-run-example.md
+- examples/integration-dry-runs/trello-dry-run-example.md
+
+## Integration Dry-Run Examples Purpose
+
+The integration dry-run examples show how future AI-generated integration drafts may look before any external action is taken.
+
+They currently cover:
+
+- Jira ticket draft preview
+- Slack message draft preview
+- GitHub issue draft preview
+- Trello card draft preview
+
+These examples complement:
+
+- 07-integrations/
+- 07-integrations/*/*-config-example.md
+
+## Integration Dry-Run Safety Rule
+
+Integration dry-run examples are draft previews only.
+
+They are not real external actions.
+
+They must not be treated as:
+
+- Created Jira tickets
+- Created Trello cards
+- Created GitHub issues
+- Sent Slack messages
+- Confirmed bugs
+- Executed QA reports
+- Release evidence
+
+Human approval is required before any external integration action.
+
+Recommended default mode for future integrations:
+
+- dry_run
+
+## Current v0.21.0 Capability Summary
+
+The AI QA Command Center now includes:
+
+- Structured AI QA team architecture
+- Agent registry
+- Prompt library
+- Workflow layer
+- Output templates
+- Skill library
+- AI tool compatibility layer
+- Multi-provider model routing
+- Token and context policy
+- Output review rules
+- Output review examples
+- Permissions policy
+- Input templates
+- Complete login feature demo
+- Complete content publishing feature demo
+- Release readiness demo outputs
+- Sample output library
+- Reference examples
+- Risk analysis patterns
+- Release readiness patterns
+- Security testing checklist
+- Performance testing patterns
+- Mobile testing patterns
+- Firebase analytics validation patterns
+- Integration draft templates
+- Integration configuration examples
+- Integration dry-run examples
+- Automation candidate selection patterns
+- Automation generation templates
+- Automation draft examples
+- Dashboard mockup documentation
+- Sample GitHub Actions workflow examples
+- Product packaging documentation
+- Pricing and packaging documentation
+- Sales one-pager documentation
+- Onboarding documentation
+- Contributor guide
+- Validation scripts
+- GitHub Actions CI
+
+## Next Major Development Areas
+
+- Dashboard operator workflow documentation
+- Phase 2 and Phase 3 agent prompts
+- Advanced output review scoring examples
+- Maintainers guide if needed
+- Sales deck outline if needed
+- Future executable automation generation scripts
+- Future live integrations
+- Future dashboard implementation
+- v1.0 release candidate audit
+- v1.0 final documentation cleanup

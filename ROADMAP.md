@@ -2,6 +2,71 @@
 
 ---
 
+# Roadmap Update - v0.21.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Integration dry-run examples layer added.
+- Jira dry-run example added.
+- Slack dry-run example added.
+- GitHub issue dry-run example added.
+- Trello dry-run example added.
+- Validation coverage updated for integration dry-run examples.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Integration dry-run example validation passes.
+- GitHub Actions repository validation workflow should pass on main.
+
+## Impact
+
+This update improves integration readiness by adding concrete dry-run examples.
+
+The repository now demonstrates how future AI-generated integration drafts may look for:
+
+- Jira ticket drafts
+- Slack report drafts
+- GitHub issue drafts
+- Trello card drafts
+
+These examples show how external integration outputs should be previewed safely before any real external action is taken.
+
+## Important Rule
+
+Integration dry-run examples are draft previews only.
+
+They are not created external tickets, cards, issues, or messages.
+
+They must not be treated as confirmed bugs, sent reports, executed QA tasks, or release evidence.
+
+Human approval is required before any external integration action.
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Add dashboard operator workflow documentation.
+2. Add Phase 2 and Phase 3 agent prompts.
+3. Add advanced output review scoring examples.
+4. Add maintainers guide if needed.
+5. Add sales deck outline if needed.
+6. Add real automation generation scripts later.
+7. Add real live integrations later.
+8. Add real dashboard application later.
+9. Prepare v1.0 release candidate audit.
+10. Prepare v1.0 final documentation cleanup.
+
+---
+
+
+---
+
 # Roadmap Update - v0.20.0
 
 ## Status
@@ -1400,6 +1465,7 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
 
 
 

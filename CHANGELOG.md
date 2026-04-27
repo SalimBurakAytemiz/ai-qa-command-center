@@ -8,6 +8,43 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.21.0] - Integration Dry-Run Examples Layer
+
+### Added
+
+- Added integration dry-run examples layer.
+- Added Jira dry-run example.
+- Added Slack dry-run example.
+- Added GitHub issue dry-run example.
+- Added Trello dry-run example.
+- Updated validation coverage for integration dry-run examples.
+
+### Changed
+
+- Expanded integration readiness from templates and configuration examples into concrete dry-run examples.
+- Clarified how future external integration actions should be previewed before execution.
+- Reinforced dry-run-first behavior for external systems.
+- Reinforced human approval requirements before creating Jira tickets, Trello cards, GitHub issues, or Slack messages.
+- Reinforced that generated integration drafts are not external actions.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Integration dry-run example validation passes.
+- GitHub Actions repository validation workflow is expected to pass on main.
+
+### Notes
+
+This phase improves integration demo readiness.
+
+The integration dry-run examples are draft previews only.
+
+They must not be treated as created tickets, cards, issues, messages, confirmed bugs, or executed QA results.
+
+---
+
+
 ## [0.20.0] - Automation Draft Examples Layer
 
 ### Added
@@ -808,6 +845,7 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
 
 
