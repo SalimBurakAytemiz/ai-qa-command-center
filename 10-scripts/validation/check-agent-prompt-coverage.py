@@ -187,6 +187,9 @@ REQUIRED_FILES = {
         "09-docs/product-packaging/demo-script.md",
         "09-docs/product-packaging/limitations-and-safety.md",
         "09-docs/product-packaging/buyer-faq.md",
+        "09-docs/product-packaging/pricing/pricing-models.md",
+        "09-docs/product-packaging/pricing/package-tiers.md",
+        "09-docs/product-packaging/pricing/service-offers.md",
     ],
     "Architecture and docs": [
         "09-docs/architecture/system-architecture.md",
@@ -245,6 +248,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
