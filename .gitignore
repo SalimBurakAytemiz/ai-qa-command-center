@@ -1,65 +1,64 @@
+# Environment files
 .env
-.env.local
-.env.production
-.env.test
+.env.*
+!.env.example
 
+# Secrets and credentials
+credentials.json
+service-account.json
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+build/
+dist/
+*.egg-info/
+
+# Node / frontend
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-.venv/
-venv/
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.pytest_cache/
+# Logs
+*.log
+logs/
 
+# OS / editor
 .DS_Store
 Thumbs.db
-
 .vscode/
 .idea/
 
-test-results/
+# Temporary files
+remote-files.txt
+scratch.md
+scratch.txt
+temp-output.txt
+local-debug.txt
+debug.txt
+_create_*.py
+*.tmp
+*.bak
+
+# Test / coverage artifacts
+coverage/
 playwright-report/
+test-results/
 allure-results/
 allure-report/
-screenshots/
-videos/
-traces/
 
-05-outputs/reports/*
-05-outputs/test-plans/*
-05-outputs/test-cases/*
-05-outputs/happy-path/*
-05-outputs/edge-cases/*
-05-outputs/negative-cases/*
-05-outputs/risk-analysis/*
-05-outputs/automation-candidates/*
-05-outputs/design-review/*
-05-outputs/api-review/*
-05-outputs/db-review/*
-05-outputs/mobile-review/*
-05-outputs/security-review/*
-05-outputs/performance-review/*
-05-outputs/jira-trello/*
-
-data/
-artifacts/
-tmp/
-temp/
-
-*.log
-*.key
-*.pem
-*.crt
-*.p12
-*.jks
-
-secrets/
-credentials/
-!05-outputs/**/
-!05-outputs/**/*-template.md
+# Local exports
+exports/
+local/

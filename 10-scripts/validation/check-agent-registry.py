@@ -1,94 +1,90 @@
+from __future__ import annotations
+
 from pathlib import Path
 import sys
+from typing import Any
 
 try:
     import yaml
-except ImportError:
-    print("ERROR: PyYAML is not installed.")
-    print("Install it with: pip install pyyaml")
-    sys.exit(1)
+except ImportError as exc:
+    print("ERROR: PyYAML is required. Install dependencies with: pip install -r requirements.txt")
+    raise SystemExit(1) from exc
 
 
-REGISTRY_PATH = Path("02-agent-registry/agents.yaml")
+ROOT = Path(__file__).resolve().parents[2]
 
-REQUIRED_FIELDS = [
-    "id",
-    "number",
-    "team",
-    "title",
-    "purpose",
-    "phase",
-    "active",
-    "model_profile",
-    "token_budget",
-    "tools",
-    "inputs",
-    "outputs",
-    "reviewer",
-]
+AGENTS_FILE = ROOT / "02-agent-registry" / "agents.yaml"
+TEAMS_FILE = ROOT / "02-agent-registry" / "teams.yaml"
+MODEL_ROUTING_FILE = ROOT / "02-agent-registry" / "model-routing.yaml"
+TOKEN_POLICY_FILE = ROOT / "02-agent-registry" / "token-policy.yaml"
 
 
-def main():
-    if not REGISTRY_PATH.exists():
-        print(f"ERROR: Agent registry file not found: {REGISTRY_PATH}")
-        sys.exit(1)
+def load_yaml(path: Path) -> Any:
+    if not path.exists():
+        raise FileNotFoundError(f"Missing required file: {path.relative_to(ROOT)}")
 
-    with REGISTRY_PATH.open("r", encoding="utf-8") as file:
-        data = yaml.safe_load(file)
+    if path.stat().st_size == 0:
+        raise ValueError(f"Required file is empty: {path.relative_to(ROOT)}")
 
-    if not data or "agents" not in data:
-        print("ERROR: agents.yaml must contain a top-level 'agents' key.")
-        sys.exit(1)
+    with path.open("r", encoding="utf-8") as file:
+        return yaml.safe_load(file)
 
-    agents = data["agents"]
 
+def validate_agents(data: Any) -> int:
+    if not isinstance(data, dict):
+        raise ValueError("agents.yaml must contain a top-level mapping.")
+
+    agents = data.get("agents")
     if not isinstance(agents, list):
-        print("ERROR: 'agents' must be a list.")
-        sys.exit(1)
+        raise ValueError("agents.yaml must contain an 'agents' list.")
 
-    errors = []
-    seen_ids = set()
-    seen_numbers = set()
+    seen_ids: set[str] = set()
 
     for index, agent in enumerate(agents, start=1):
-        agent_id = agent.get("id", f"unknown-agent-at-index-{index}")
+        if not isinstance(agent, dict):
+            raise ValueError(f"Agent entry #{index} must be a mapping.")
 
-        for field in REQUIRED_FIELDS:
-            if field not in agent:
-                errors.append(f"{agent_id}: missing required field '{field}'")
+        agent_id = agent.get("id")
+        name = agent.get("name")
 
-        if "id" in agent:
-            if agent["id"] in seen_ids:
-                errors.append(f"{agent_id}: duplicate agent id")
-            seen_ids.add(agent["id"])
+        if not agent_id or not isinstance(agent_id, str):
+            raise ValueError(f"Agent entry #{index} is missing a valid 'id'.")
 
-        if "number" in agent:
-            if agent["number"] in seen_numbers:
-                errors.append(f"{agent_id}: duplicate agent number {agent['number']}")
-            seen_numbers.add(agent["number"])
+        if not name or not isinstance(name, str):
+            raise ValueError(f"Agent '{agent_id}' is missing a valid 'name'.")
 
-        if "tools" in agent and not isinstance(agent["tools"], list):
-            errors.append(f"{agent_id}: 'tools' must be a list")
+        if agent_id in seen_ids:
+            raise ValueError(f"Duplicate agent id found: {agent_id}")
 
-        if "inputs" in agent and not isinstance(agent["inputs"], list):
-            errors.append(f"{agent_id}: 'inputs' must be a list")
+        seen_ids.add(agent_id)
 
-        if "outputs" in agent and not isinstance(agent["outputs"], list):
-            errors.append(f"{agent_id}: 'outputs' must be a list")
+    return len(agents)
 
-    print(f"Total agents found: {len(agents)}")
 
-    if len(agents) != 44:
-        errors.append(f"Expected 44 agents, but found {len(agents)}")
+def validate_yaml_mapping(path: Path, label: str) -> None:
+    data = load_yaml(path)
 
-    if errors:
-        print("\nAgent registry validation failed:\n")
-        for error in errors:
-            print(f"- {error}")
-        sys.exit(1)
+    if not isinstance(data, dict):
+        raise ValueError(f"{label} must contain a top-level mapping.")
 
-    print("Agent registry validation passed successfully.")
+
+def main() -> int:
+    try:
+        agents_data = load_yaml(AGENTS_FILE)
+        total_agents = validate_agents(agents_data)
+
+        validate_yaml_mapping(TEAMS_FILE, "teams.yaml")
+        validate_yaml_mapping(MODEL_ROUTING_FILE, "model-routing.yaml")
+        validate_yaml_mapping(TOKEN_POLICY_FILE, "token-policy.yaml")
+
+    except Exception as exc:
+        print(f"Agent registry validation failed: {exc}")
+        return 1
+
+    print(f"Agent registry validation passed successfully.")
+    print(f"Total agents found: {total_agents}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

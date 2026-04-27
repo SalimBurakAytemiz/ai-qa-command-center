@@ -1,0 +1,19 @@
+# Normalize text files
+* text=auto
+
+# Force LF for source/config/docs
+*.md text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+
+# Treat common binaries correctly
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.pdf binary
+*.zip binary
