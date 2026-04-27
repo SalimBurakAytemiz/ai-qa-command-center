@@ -176,6 +176,14 @@ REQUIRED_FILES = {
         ".github/workflows/examples/db-validation-example.yml",
         ".github/workflows/examples/performance-tests-example.yml",
     ],
+    "Product packaging docs": [
+        "09-docs/product-packaging/product-overview.md",
+        "09-docs/product-packaging/target-users.md",
+        "09-docs/product-packaging/value-proposition.md",
+        "09-docs/product-packaging/demo-script.md",
+        "09-docs/product-packaging/limitations-and-safety.md",
+        "09-docs/product-packaging/buyer-faq.md",
+    ],
     "Architecture and docs": [
         "09-docs/architecture/system-architecture.md",
         "09-docs/prompt-standards/README.md",
@@ -233,6 +241,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
