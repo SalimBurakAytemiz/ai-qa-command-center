@@ -2,6 +2,68 @@
 
 ---
 
+# Roadmap Update - v0.11.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Playwright sample GitHub Actions workflow added.
+- API tests sample GitHub Actions workflow added.
+- DB validation sample GitHub Actions workflow added.
+- Performance tests sample GitHub Actions workflow added.
+- Validation coverage updated for workflow examples.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Workflow example validation passes.
+- GitHub Actions repository validation workflow should pass on main.
+
+## Impact
+
+This update adds inactive example CI workflows for future test execution design.
+
+The repository now documents how future GitHub Actions workflows may be structured for:
+
+- Playwright web tests
+- API tests
+- DB validation
+- Performance tests
+
+## Important Rule
+
+These workflow examples are not active execution workflows.
+
+They are stored under .github/workflows/examples/ and are intended as future CI design references.
+
+They do not prove test execution.
+
+Generated or sample workflows must not be reported as passed, verified, executed, or release-ready.
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Update README with v0.11.0 workflow example capabilities.
+2. Add output review examples.
+3. Add release readiness demo output.
+4. Add more demo feature packs beyond login.
+5. Add Phase 2 and Phase 3 agent prompts.
+6. Add dashboard operator workflow documentation.
+7. Add example automation draft outputs.
+8. Later, implement actual automation generation scripts.
+9. Later, implement actual live integrations.
+10. Later, implement actual dashboard application.
+
+---
+
+
+---
+
 # Roadmap Update - v0.10.0
 
 ## Status
@@ -665,6 +727,7 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
 
 
 
