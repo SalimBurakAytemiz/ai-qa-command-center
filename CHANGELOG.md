@@ -8,6 +8,42 @@ This changelog tracks repository-level progress, not executed QA results.
 
 ## [Unreleased]
 
+## [0.8.0] - Dashboard Mockup and Operator Workflow Layer
+
+### Added
+
+- Added dashboard mockup documentation.
+- Added operator dashboard mockup.
+- Added feature intake screen mockup.
+- Added agent routing screen mockup.
+- Added output review screen mockup.
+- Added quality report screen mockup.
+- Updated validation coverage for dashboard mockups.
+
+### Changed
+
+- Expanded the repository toward a future operator-facing dashboard layer.
+- Clarified how human test leaders may review workflow status, selected agents, generated outputs, risks, blockers, quality scores, and approval gates.
+- Strengthened generated vs executed wording inside dashboard concepts.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Dashboard mockup validation passes.
+- GitHub Actions repository validation workflow is expected to pass on `main`.
+
+### Notes
+
+This phase does not implement a real dashboard application.
+
+It defines dashboard information architecture and operator workflow expectations.
+
+Generated outputs remain planning artifacts unless real execution evidence exists.
+
+---
+
+
 ## [0.7.0] - Advanced Reference, Integration, and Automation Layer
 
 ### Added
@@ -292,4 +328,5 @@ This phase establishes the core AI QA Command Center structure and the first usa
 ### Notes
 
 This was the starting point of the AI QA Command Center repository.
+
 
