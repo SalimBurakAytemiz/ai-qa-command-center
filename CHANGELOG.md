@@ -1,4 +1,4 @@
-# Changelog
+﻿# Changelog
 
 All notable changes to the AI QA Command Center repository will be documented in this file.
 
@@ -7,6 +7,72 @@ This changelog tracks repository-level progress, not executed QA results.
 ---
 
 ## [Unreleased]
+
+## [0.6.0] - Demo, References, Instructions, and Validation Layer
+
+### Added
+
+- Added product and feature intake templates.
+- Added acceptance criteria template.
+- Added API notes template.
+- Added DB notes template.
+- Added release scope template.
+- Added complete login feature demo input pack.
+- Added complete login feature demo output pack.
+- Added sample output library.
+- Added sample test plan output.
+- Added sample happy path test cases output.
+- Added sample edge and negative test cases output.
+- Added sample API validation plan output.
+- Added sample DB validation plan output.
+- Added sample Jira draft output.
+- Added sample daily quality report output.
+- Added sample executive summary output.
+- Added specialized AI instruction files for:
+  - Test case design
+  - API testing
+  - DB validation
+  - Playwright
+  - QA reporting
+- Added reference examples for:
+  - API testing
+  - DB validation
+  - Bug reports
+  - Jira tickets
+  - Daily reports
+- Added permissions policy file.
+- Added agent prompt coverage validation script.
+- Added Python requirements file.
+- Added GitHub Actions workflow for repository validation.
+
+### Changed
+
+- Improved repository validation coverage.
+- Strengthened CI readiness.
+- Aligned repository structure with demo, examples, references, templates, and AI tool instructions.
+- Renamed prompt files for better validation consistency:
+  - `edge-negative-case-agent.md` to `edge-case-negative-case-agent.md`
+  - `db-validation-agent.md` to `database-validation-agent.md`
+  - `jira-trello-agent.md` to `jira-trello-work-tracking-agent.md`
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- GitHub Actions repository validation workflow passes on `main`.
+
+### Notes
+
+This phase turns the repository from a structured foundation into a demonstrable AI QA framework.
+
+The repository now includes reusable input templates, a complete login feature demo, sample outputs, expanded AI tool instructions, stronger reference examples, validation scripts, and GitHub Actions CI.
+
+Generated demo outputs are still planning artifacts only.
+
+They must not be reported as executed test results.
+
+---
+
 
 ### Planned
 
