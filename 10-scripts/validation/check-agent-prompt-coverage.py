@@ -78,6 +78,27 @@ REQUIRED_FILES = {
         "templates/automation/appium-test-template.md",
         "templates/automation/performance-test-template.md",
     ],
+    "Demo content publishing feature inputs": [
+        "demo/content-publishing-feature/01-input/feature-brief.md",
+        "demo/content-publishing-feature/01-input/acceptance-criteria.md",
+        "demo/content-publishing-feature/01-input/api-notes.md",
+        "demo/content-publishing-feature/01-input/db-notes.md",
+        "demo/content-publishing-feature/01-input/ui-notes.md",
+    ],
+    "Demo content publishing feature outputs": [
+        "demo/content-publishing-feature/02-outputs/product-testing-context.md",
+        "demo/content-publishing-feature/02-outputs/test-strategy.md",
+        "demo/content-publishing-feature/02-outputs/agent-routing-plan.md",
+        "demo/content-publishing-feature/02-outputs/test-plan.md",
+        "demo/content-publishing-feature/02-outputs/happy-path-test-cases.md",
+        "demo/content-publishing-feature/02-outputs/edge-negative-test-cases.md",
+        "demo/content-publishing-feature/02-outputs/api-validation-plan.md",
+        "demo/content-publishing-feature/02-outputs/db-validation-plan.md",
+        "demo/content-publishing-feature/02-outputs/jira-trello-drafts.md",
+        "demo/content-publishing-feature/02-outputs/daily-quality-report.md",
+        "demo/content-publishing-feature/02-outputs/executive-summary.md",
+        "demo/content-publishing-feature/02-outputs/release-readiness-report.md",
+    ],
     "Demo login feature inputs": [
         "demo/login-feature/01-input/feature-brief.md",
         "demo/login-feature/01-input/acceptance-criteria.md",
@@ -212,6 +233,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
