@@ -2,6 +2,68 @@
 
 ---
 
+# Roadmap Update - v0.9.0
+
+## Status
+
+Completed.
+
+## Completed In This Update
+
+- Playwright automation template added.
+- API test automation template added.
+- DB validation script template added.
+- Appium automation template added.
+- Performance test automation template added.
+- Validation coverage updated for automation templates.
+
+## Validation Status
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Automation template validation passes.
+- GitHub Actions repository validation workflow should pass on `main`.
+
+## Impact
+
+This update expands the AI QA Command Center from automation planning guidance into automation draft template readiness.
+
+The repository now defines how future AI agents should prepare automation drafts for:
+
+- Web automation with Playwright
+- API automation
+- Database validation automation
+- Mobile automation with Appium
+- Performance automation with k6, JMeter, or similar tools
+
+## Important Rule
+
+This layer does not implement executable automation suites yet.
+
+It defines template standards for future generated automation drafts.
+
+Generated automation drafts must not be reported as executed, passed, verified, or release-ready unless real execution evidence exists.
+
+## Remaining High-Priority Work
+
+The next roadmap priorities are:
+
+1. Update README with v0.9.0 automation template capabilities.
+2. Add integration configuration examples.
+3. Add sample GitHub Actions workflows for future test execution.
+4. Add output review examples.
+5. Add release readiness demo output.
+6. Add more demo feature packs beyond login.
+7. Add Phase 2 and Phase 3 agent prompts.
+8. Add dashboard/operator workflow documentation.
+9. Later, implement actual automation generation scripts.
+10. Later, implement actual dashboard application.
+
+---
+
+
+---
+
 # Roadmap Update - v0.8.0
 
 ## Status
@@ -538,5 +600,6 @@ demo/login-feature/
     jira-trello-drafts.md
     daily-quality-report.md
     executive-summary.md
+
 
 
