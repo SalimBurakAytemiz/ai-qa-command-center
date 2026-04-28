@@ -1,6 +1,6 @@
 # AI QA Command Center Roadmap
 
-This roadmap separates the completed framework releases from future implementation work.
+This roadmap separates completed framework releases from future implementation work.
 
 ---
 
@@ -8,7 +8,7 @@ This roadmap separates the completed framework releases from future implementati
 
 Current release:
 
-- v1.1.0 Repository Hygiene, Evidence, Design/UI, and DIT Expansion
+- v1.2.0 Documentation Index and Agent Coverage Matrix
 
 Current status:
 
@@ -27,7 +27,27 @@ Current status:
 - Design/UI prompt coverage expanded
 - DIT prompt coverage expanded
 - Execution evidence template added
+- Documentation index added
+- Agent coverage matrix added
 - Public repository hygiene improved
+
+---
+
+## v1.2 Completed Scope
+
+v1.2 includes:
+
+- `09-docs/README.md` documentation index
+- `09-docs/agent-coverage-matrix.md` agent coverage matrix
+- Validation coverage for documentation index
+- Validation coverage for agent coverage matrix
+- Clear coverage status categories:
+  - Covered
+  - Partially Covered
+  - Planned
+  - Not Started
+  - Not Applicable
+- Known remaining gaps section
 
 ---
 
@@ -123,22 +143,21 @@ The framework does not yet include:
 
 ---
 
-## Suggested v1.2 Scope
+## Suggested v1.3 Scope
 
-Recommended v1.2 direction:
+Recommended v1.3 direction:
 
-- Add `09-docs/README.md` documentation index.
 - Add architecture diagram source or Mermaid diagram.
-- Add agent coverage matrix.
-- Add prompt coverage matrix.
-- Add evidence example files.
+- Add prompt coverage matrix if separate from agent coverage matrix is needed.
+- Add execution evidence example files.
 - Add mobile-heavy third demo feature pack if needed.
+- Add documentation quality review checklist.
 
 ---
 
-## Suggested v1.3 Scope
+## Suggested v1.4 Scope
 
-Recommended v1.3 implementation direction:
+Recommended v1.4 implementation direction:
 
 - Add real automation generation scripts.
 - Add example generated Playwright output from templates.
@@ -148,9 +167,9 @@ Recommended v1.3 implementation direction:
 
 ---
 
-## Suggested v1.4 Scope
+## Suggested v1.5 Scope
 
-Recommended v1.4 implementation direction:
+Recommended v1.5 implementation direction:
 
 - Add real integration dry-run CLI.
 - Add Jira dry-run generator.

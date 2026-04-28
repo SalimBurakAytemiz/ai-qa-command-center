@@ -4,6 +4,38 @@ All notable changes to AI QA Command Center are documented here.
 
 ---
 
+## [1.2.0] - Documentation Index and Agent Coverage Matrix
+
+### Added
+
+- Added documentation index at `09-docs/README.md`.
+- Added agent coverage matrix at `09-docs/agent-coverage-matrix.md`.
+- Added validation coverage for the documentation index and agent coverage matrix.
+
+### Changed
+
+- Improved documentation navigation for new users, buyers, contributors, and maintainers.
+- Clarified current agent/prompt coverage.
+- Clarified covered, partially covered, planned, and not implemented areas.
+- Clarified remaining post-v1.x gaps such as real automation generation, live integrations, real dashboard application, execution evidence examples, mobile-heavy demo, and architecture diagram.
+
+### Validation
+
+- Agent registry validation passes.
+- Agent prompt coverage validation passes.
+- Documentation index and agent coverage matrix validation passes.
+- GitHub Actions repository validation is expected to pass.
+
+### Notes
+
+v1.2 improves repository readability and coverage transparency.
+
+Coverage means planning, prompting, documentation, examples, or templates exist.
+
+Coverage does not mean execution.
+
+---
+
 ## [1.1.0] - Repository Hygiene, Evidence, Design/UI, and DIT Expansion
 
 ### Added
@@ -155,5 +187,5 @@ Major pre-1.0 layers included:
 
 For detailed release notes, see:
 
-- 09-docs/releases/v1.0-release-candidate.md
-- 09-docs/releases/v1.0-release-notes.md
+- `09-docs/releases/v1.0-release-candidate.md`
+- `09-docs/releases/v1.0-release-notes.md`

@@ -4,7 +4,7 @@ AI QA Command Center is a structured AI-assisted QA operating framework.
 
 It helps software teams generate, review, organize, and govern QA planning artifacts across product analysis, test planning, API validation, DB validation, reporting, release readiness, automation planning, integration planning, and future dashboard workflows.
 
-> Current release: v1.0.0 Stable Framework Release
+> Current release: v1.2.0 Documentation Index and Agent Coverage Matrix
 
 ---
 
@@ -361,6 +361,36 @@ Execution evidence template:
 Design/UI and DIT outputs are generated planning or review artifacts only.
 
 They are not execution evidence.
+
+
+---
+
+## Current v1.2.0 Update
+
+v1.2.0 improves documentation navigation and coverage transparency.
+
+Added in v1.2.0:
+
+- Documentation index
+- Agent coverage matrix
+- Validation coverage for the documentation index and coverage matrix
+
+New documentation files:
+
+- `09-docs/README.md`
+- `09-docs/agent-coverage-matrix.md`
+
+The agent coverage matrix clarifies:
+
+- Covered agent areas
+- Partially covered areas
+- Planned areas
+- Remaining implementation gaps
+- Difference between planning coverage and execution evidence
+
+Coverage does not mean execution.
+
+Generated QA artifacts are not executed test results.
 
 ## Post-v1.0 Roadmap
 
