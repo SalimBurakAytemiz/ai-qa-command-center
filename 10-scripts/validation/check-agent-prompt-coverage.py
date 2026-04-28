@@ -106,6 +106,25 @@ REQUIRED_FILES: Dict[str, List[str]] = {
         "demo/content-publishing-feature/02-outputs/release-readiness-report.md",
     ],
 
+    "API testing references": [
+        "references/api-testing/ajv-contract-testing-patterns.md",
+    ],
+    "Runnable test skeleton": [
+        "06-tests/README.md",
+        "06-tests/playwright/package.json",
+        "06-tests/playwright/tsconfig.json",
+        "06-tests/playwright/playwright.config.ts",
+        "06-tests/playwright/helpers/env.ts",
+        "06-tests/playwright/fixtures/test-users.ts",
+        "06-tests/playwright/pages/LoginPage.ts",
+        "06-tests/playwright/tests/login.spec.ts",
+        "06-tests/api/requirements.txt",
+        "06-tests/api/pytest.ini",
+        "06-tests/api/tests/test_login_api.py",
+        "06-tests/db-validation/validate_login_state.py",
+        "06-tests/db-validation/queries/login_session_checks.sql",
+        "06-tests/performance/login-smoke.k6.js",
+    ],
     "AJV API contract test skeleton": [
         "06-tests/api-ajv/package.json",
         "06-tests/api-ajv/README.md",
@@ -231,6 +250,8 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+
 
 
 
