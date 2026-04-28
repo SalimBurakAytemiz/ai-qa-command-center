@@ -157,6 +157,10 @@ REQUIRED_FILES: Dict[str, List[str]] = {
         "09-docs/onboarding/getting-started.md",
     ],
 
+    "Documentation index and coverage": [
+        "09-docs/README.md",
+        "09-docs/agent-coverage-matrix.md",
+    ],
     "Release docs": [
         "09-docs/releases/v1.0-release-candidate.md",
         "09-docs/releases/v1.0-release-notes.md",
@@ -217,6 +221,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
 
 
 
