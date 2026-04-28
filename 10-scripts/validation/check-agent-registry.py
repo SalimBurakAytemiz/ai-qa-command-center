@@ -45,13 +45,13 @@ def validate_agents(data: Any) -> int:
             raise ValueError(f"Agent entry #{index} must be a mapping.")
 
         agent_id = agent.get("id")
-        name = agent.get("name")
+        display_name = agent.get("name") or agent.get("title")
 
         if not agent_id or not isinstance(agent_id, str):
             raise ValueError(f"Agent entry #{index} is missing a valid 'id'.")
 
-        if not name or not isinstance(name, str):
-            raise ValueError(f"Agent '{agent_id}' is missing a valid 'name'.")
+        if not display_name or not isinstance(display_name, str):
+            raise ValueError(f"Agent '{agent_id}' is missing a valid 'name' or 'title'.")
 
         if agent_id in seen_ids:
             raise ValueError(f"Duplicate agent id found: {agent_id}")
