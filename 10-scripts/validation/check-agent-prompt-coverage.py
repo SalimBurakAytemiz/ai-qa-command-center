@@ -106,6 +106,15 @@ REQUIRED_FILES: Dict[str, List[str]] = {
         "demo/content-publishing-feature/02-outputs/release-readiness-report.md",
     ],
 
+    "AJV API contract test skeleton": [
+        "06-tests/api-ajv/package.json",
+        "06-tests/api-ajv/README.md",
+        "06-tests/api-ajv/schemas/login-request.schema.json",
+        "06-tests/api-ajv/schemas/login-code-response.schema.json",
+        "06-tests/api-ajv/helpers/env.js",
+        "06-tests/api-ajv/helpers/assert-json-contract.js",
+        "06-tests/api-ajv/tests/login-code.contract.test.js",
+    ],
     "Execution evidence templates": [
         "templates/execution-evidence-template.md",
     ],
@@ -222,6 +231,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
 
 
 
