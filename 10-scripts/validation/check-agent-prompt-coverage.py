@@ -160,6 +160,7 @@ REQUIRED_FILES: Dict[str, List[str]] = {
     "Documentation index and coverage": [
         "09-docs/README.md",
         "09-docs/agent-coverage-matrix.md",
+        "09-docs/architecture-diagram.md",
     ],
     "Release docs": [
         "09-docs/releases/v1.0-release-candidate.md",
@@ -221,6 +222,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
 
 
 
