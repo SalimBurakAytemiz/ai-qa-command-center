@@ -95,3 +95,49 @@ SQLITE_DB_PATH=demo-app/demo.db DISABLED_TEST_USER_ID=user-disabled-1 python 06-
 This demo app is local-only.
 
 Do not use production credentials or real customer data.
+
+---
+
+## Docker Compose
+
+From the repository root:
+
+~~~bash
+docker compose up --build
+~~~
+
+The API will be available at:
+
+~~~text
+http://localhost:3000
+~~~
+
+Health check:
+
+~~~bash
+curl http://localhost:3000/health
+~~~
+
+Login request:
+
+~~~bash
+curl -X POST http://localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d "{\"email\":\"test@example.com\",\"password\":\"Password123!\"}"
+~~~
+
+---
+
+## Local Helper Scripts
+
+PowerShell:
+
+~~~powershell
+demo-app/scripts/run-local.ps1
+~~~
+
+Bash:
+
+~~~bash
+bash demo-app/scripts/run-local.sh
+~~~

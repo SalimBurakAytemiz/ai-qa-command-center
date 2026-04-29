@@ -1,0 +1,14 @@
+﻿.git
+.github
+__pycache__
+*.pyc
+.pytest_cache
+node_modules
+playwright-report
+test-results
+.env
+.env.*
+!.env.example
+remote-files.txt
+_create_*.py
+*.log
