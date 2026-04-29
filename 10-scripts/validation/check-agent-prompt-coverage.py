@@ -125,6 +125,15 @@ REQUIRED_FILES: Dict[str, List[str]] = {
         "06-tests/db-validation/queries/login_session_checks.sql",
         "06-tests/performance/login-smoke.k6.js",
     ],
+    "Demo app backend": [
+        "demo-app/README.md",
+        "demo-app/requirements.txt",
+        "demo-app/.env.example",
+        "demo-app/app/main.py",
+        "demo-app/app/db.py",
+        "demo-app/app/schemas.py",
+        "demo-app/app/seed.py",
+    ],
     "AJV API contract test skeleton": [
         "06-tests/api-ajv/package.json",
         "06-tests/api-ajv/README.md",
@@ -250,6 +259,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
 
 
 
