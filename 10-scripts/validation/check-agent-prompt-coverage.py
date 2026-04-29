@@ -19,6 +19,7 @@ REQUIRED_FILES: Dict[str, List[str]] = {
         ".gitattributes",
         "requirements.txt",
         ".github/workflows/validate-repo.yml",
+        ".github/workflows/demo-api-tests.yml",
     ],
 
     "Agent registry": [
