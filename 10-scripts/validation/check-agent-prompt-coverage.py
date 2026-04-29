@@ -159,6 +159,7 @@ REQUIRED_FILES: Dict[str, List[str]] = {
     ],
     "Execution evidence templates": [
         "templates/execution-evidence-template.md",
+        "examples/execution-evidence/demo-api-test-run-evidence.md",
     ],
     "Automation draft examples": [
         "examples/automation-drafts/playwright-login-draft-example.md",
