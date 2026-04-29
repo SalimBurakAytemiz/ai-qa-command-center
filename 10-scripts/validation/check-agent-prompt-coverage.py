@@ -125,6 +125,14 @@ REQUIRED_FILES: Dict[str, List[str]] = {
         "06-tests/db-validation/queries/login_session_checks.sql",
         "06-tests/performance/login-smoke.k6.js",
     ],
+    "Demo app Docker support": [
+        "docker-compose.yml",
+        ".dockerignore",
+        "demo-app/Dockerfile",
+        "demo-app/scripts/run-local.ps1",
+        "demo-app/scripts/run-local.sh",
+    ],
+
     "Demo app backend": [
         "demo-app/README.md",
         "demo-app/requirements.txt",
