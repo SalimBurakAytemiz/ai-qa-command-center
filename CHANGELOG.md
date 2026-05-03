@@ -4,6 +4,85 @@ All notable changes to AI QA Command Center are documented here.
 
 ---
 
+## [1.4.0] - Demo App, Docker Support, CI Test Execution, and Evidence Example
+
+### Added
+
+- Added runnable FastAPI + SQLite demo app backend.
+- Added demo app seed script.
+- Added demo app Dockerfile.
+- Added root `docker-compose.yml`.
+- Added `.dockerignore`.
+- Added local demo app run scripts.
+- Added demo API test runner scripts.
+- Added GitHub Actions Demo API Tests workflow.
+- Added workflow artifact upload for demo API test outputs.
+- Added demo API execution evidence example.
+- Added validation coverage for demo app backend.
+- Added validation coverage for Docker support.
+- Added validation coverage for demo API test runner scripts.
+- Added validation coverage for demo API workflow.
+- Added validation coverage for demo API evidence example.
+
+### Fixed
+
+- Fixed demo app dependency requirements for Pydantic `EmailStr`.
+- Fixed local Windows script execution compatibility by using `python -m pip`.
+- Fixed local Windows pytest execution compatibility by using `python -m pytest`.
+- Fixed PowerShell npm execution compatibility by using `npm.cmd`.
+- Fixed AJV draft 2020-12 schema support with `Ajv2020`.
+- Fixed Demo API workflow database path handling.
+- Fixed local demo API runner health check binding by using `127.0.0.1`.
+
+### Validation
+
+- Repository validation workflow passes.
+- Demo API Tests workflow passes.
+- Demo API test artifacts are uploaded by GitHub Actions.
+- Python API smoke test executes against the demo app.
+- AJV API contract test executes against the demo app.
+- DB validation executes against the demo database.
+
+### Notes
+
+v1.4 is the first release where the repository contains a real runnable demo app and a real CI-executed demo API test workflow.
+
+This still does not make the framework a SaaS product.
+
+It is now a stronger local/CI execution seed for the future SaaS platform.
+
+---
+
+## [1.3.0] - Runnable Test Skeleton and AJV API Contract Testing
+
+### Added
+
+- Added runnable test skeleton under `06-tests/`.
+- Added Playwright web test skeleton.
+- Added API pytest skeleton.
+- Added DB validation skeleton.
+- Added k6 performance smoke skeleton.
+- Added AJV API contract test skeleton.
+- Added AJV JSON schema examples for request and response validation.
+- Added AJV contract testing pattern documentation.
+- Added validation coverage for runnable test skeleton assets.
+- Added validation coverage for AJV API contract test assets.
+- Added validation coverage for AJV contract testing patterns.
+
+### Changed
+
+- Improved the repository from documentation-only examples toward runnable testing infrastructure.
+- Established AJV + JSON Schema as the preferred strict API contract testing pattern.
+- Clarified that status-code-only API tests are not enough for serious API validation.
+
+### Notes
+
+v1.3 introduced the first runnable testing infrastructure layer.
+
+These tests were skeletons and required a real target application or configured environment variables to execute meaningful validations.
+
+---
+
 ## [1.2.0] - Documentation Index and Agent Coverage Matrix
 
 ### Added
@@ -11,28 +90,6 @@ All notable changes to AI QA Command Center are documented here.
 - Added documentation index at `09-docs/README.md`.
 - Added agent coverage matrix at `09-docs/agent-coverage-matrix.md`.
 - Added validation coverage for the documentation index and agent coverage matrix.
-
-### Changed
-
-- Improved documentation navigation for new users, buyers, contributors, and maintainers.
-- Clarified current agent/prompt coverage.
-- Clarified covered, partially covered, planned, and not implemented areas.
-- Clarified remaining post-v1.x gaps such as real automation generation, live integrations, real dashboard application, execution evidence examples, mobile-heavy demo, and architecture diagram.
-
-### Validation
-
-- Agent registry validation passes.
-- Agent prompt coverage validation passes.
-- Documentation index and agent coverage matrix validation passes.
-- GitHub Actions repository validation is expected to pass.
-
-### Notes
-
-v1.2 improves repository readability and coverage transparency.
-
-Coverage means planning, prompting, documentation, examples, or templates exist.
-
-Coverage does not mean execution.
 
 ---
 
@@ -46,44 +103,8 @@ Coverage does not mean execution.
 - Added GitHub issue templates.
 - Added GitHub CODEOWNERS.
 - Added execution evidence template.
-- Added Design/UI specialist prompts:
-  - Web Pixel Perfect Agent
-  - Mobile Responsive Agent
-  - iOS UI Agent
-  - Android UI Agent
-  - Visual Regression Agent
-  - Accessibility Agent
-- Added DIT specialist prompts:
-  - Backend DIT Agent
-  - Android DIT Agent
-  - iOS DIT Agent
-  - Testability Agent
-- Added validation coverage for new evidence, Design/UI, and DIT assets.
-
-### Changed
-
-- Rewrote `.gitignore` into a proper line-based ignore file.
-- Rewrote GitHub Actions workflow as clean YAML.
-- Rewrote validation scripts into clean Python files.
-- Added `PyYAML` to `requirements.txt`.
-- Added missing permissions policy under agent registry.
-- Simplified README into a professional project landing page.
-- Normalized CHANGELOG and ROADMAP for readability.
-- Improved public repository hygiene and maintainability.
-
-### Validation
-
-- Agent registry validation passes.
-- Agent prompt coverage validation passes.
-- GitHub Actions repository validation is expected to pass.
-
-### Notes
-
-v1.1 improves repository quality and closes several framework coverage gaps.
-
-Design/UI and DIT prompts generate planning and review artifacts only.
-
-Execution evidence still requires real execution, safe evidence handling, and human review.
+- Added Design/UI specialist prompts.
+- Added DIT specialist prompts.
 
 ---
 
@@ -95,97 +116,12 @@ Execution evidence still requires real execution, safe evidence handling, and hu
 - Added v1.0 release notes.
 - Finalized the first stable AI QA Command Center framework release.
 
-### Included In v1.0
-
-- Structured AI QA team architecture
-- Agent registry and team registry
-- Prompt library
-- Phase 2 specialist prompts
-- Phase 3 operations prompts
-- Workflow documentation
-- Output templates
-- Skill library
-- AI tool compatibility layer
-- Multi-provider model routing
-- Token and context policy
-- Permissions policy
-- Output review rules and examples
-- Input templates
-- Complete login feature demo
-- Complete content publishing feature demo
-- Release readiness demo outputs
-- Reference library
-- Anti-patterns
-- Security testing checklist
-- Performance testing patterns
-- Mobile testing patterns
-- Firebase analytics validation patterns
-- Integration draft templates
-- Integration configuration examples
-- Integration dry-run examples
-- Automation candidate guidance
-- Automation generation templates
-- Automation draft examples
-- Dashboard mockup documentation
-- Dashboard operator workflow documentation
-- Sample GitHub Actions workflow examples
-- Product packaging documentation
-- Pricing and packaging documentation
-- Sales one-pager
-- Onboarding guide
-- Contributor guide
-- Maintainers guide
-- Validation scripts
-- GitHub Actions CI
-
-### Validation
-
-- Agent registry validation passes.
-- Agent prompt coverage validation passes.
-- GitHub Actions repository validation is available.
-
 ### Notes
 
-v1.0 is a stable framework release.
-
-It is demo-ready, validation-backed, CI-enabled, product-packaging-ready, onboarding-ready, contributor-ready, and maintainer-ready.
-
-v1.0 is not a completed SaaS product, live dashboard application, autonomous QA execution engine, or live integration platform.
+v1.0 was the first stable framework release.
 
 Generated QA artifacts are not executed test results.
 
 Reviewed artifacts are not release approval.
 
 Release readiness requires execution evidence and human approval.
-
----
-
-## Pre-1.0 Development Summary
-
-The pre-1.0 development phase added the main framework foundation across multiple incremental layers.
-
-Major pre-1.0 layers included:
-
-- Repository foundation
-- Agent registry
-- Prompt library
-- Workflow layer
-- Output templates
-- Reference library
-- Demo feature packs
-- Integration templates
-- Automation templates
-- Dashboard mockups
-- GitHub Actions validation
-- Product packaging documentation
-- Pricing documentation
-- Sales one-pager
-- Onboarding guide
-- Contributor guide
-- Maintainers guide
-- Release candidate documentation
-
-For detailed release notes, see:
-
-- `09-docs/releases/v1.0-release-candidate.md`
-- `09-docs/releases/v1.0-release-notes.md`

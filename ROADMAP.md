@@ -8,7 +8,7 @@ This roadmap separates completed framework releases from future implementation w
 
 Current release:
 
-- v1.2.0 Documentation Index and Agent Coverage Matrix
+- v1.4.0 Demo App, Docker Support, CI Test Execution, and Evidence Example
 
 Current status:
 
@@ -21,15 +21,57 @@ Current status:
 - Onboarding-ready
 - Contributor-ready
 - Maintainer-ready
-- Automation-draft-ready
-- Integration-dry-run-ready
-- Dashboard-workflow-ready
-- Design/UI prompt coverage expanded
-- DIT prompt coverage expanded
-- Execution evidence template added
-- Documentation index added
-- Agent coverage matrix added
-- Public repository hygiene improved
+- Runnable test skeleton available
+- AJV API contract testing available
+- FastAPI + SQLite demo app available
+- Docker Compose support available
+- Demo API test runner scripts available
+- Demo API Tests workflow available
+- CI artifact upload available
+- Execution evidence example available
+- Two GitHub workflows passing on latest main
+
+---
+
+## v1.4 Completed Scope
+
+v1.4 includes:
+
+- FastAPI demo app backend
+- SQLite demo database
+- Demo seed script
+- Demo health endpoint
+- Demo login endpoint
+- Dockerfile for demo app
+- Root Docker Compose file
+- `.dockerignore`
+- Local run scripts for demo app
+- Demo API test runner scripts
+- GitHub Actions Demo API Tests workflow
+- Python API test execution in CI
+- AJV API contract test execution in CI
+- DB validation execution in CI
+- Demo app logs uploaded as artifacts
+- Python API JUnit report uploaded as artifact
+- Demo API execution evidence example
+- Validation coverage for all new v1.4 assets
+
+---
+
+## v1.3 Completed Scope
+
+v1.3 includes:
+
+- `06-tests/README.md`
+- Playwright runnable skeleton
+- API pytest runnable skeleton
+- DB validation runnable skeleton
+- k6 performance smoke skeleton
+- AJV API contract test skeleton
+- AJV request schema example
+- AJV response schema example
+- AJV contract assertion helpers
+- AJV contract testing pattern documentation
 
 ---
 
@@ -41,13 +83,6 @@ v1.2 includes:
 - `09-docs/agent-coverage-matrix.md` agent coverage matrix
 - Validation coverage for documentation index
 - Validation coverage for agent coverage matrix
-- Clear coverage status categories:
-  - Covered
-  - Partially Covered
-  - Planned
-  - Not Started
-  - Not Applicable
-- Known remaining gaps section
 
 ---
 
@@ -56,23 +91,11 @@ v1.2 includes:
 v1.1 includes:
 
 - P0 technical hygiene cleanup
-- Clean `.gitignore`
-- `.gitattributes`
-- Clean GitHub Actions workflow
 - Clean validation scripts
-- `requirements.txt` dependency definition
-- Missing permissions policy
-- Simplified README
-- Normalized CHANGELOG
-- Normalized ROADMAP
-- SECURITY.md
-- Pull request template
-- Issue templates
-- CODEOWNERS
+- GitHub community files
 - Execution evidence template
 - Design/UI specialist prompts
 - DIT specialist prompts
-- Validation coverage updates
 
 ---
 
@@ -83,42 +106,10 @@ v1.0 includes:
 - Structured AI QA team architecture
 - Agent registry
 - Prompt library
-- Phase 2 specialist prompts
-- Phase 3 operations prompts
 - Workflow documentation
 - Output templates
-- Skill library
-- AI tool compatibility layer
-- Multi-provider model routing
-- Token and context policy
-- Permissions policy
-- Output review rules
-- Output review examples
-- Input templates
-- Complete login feature demo
-- Complete content publishing feature demo
-- Release readiness demo outputs
-- Reference examples
-- Anti-patterns
-- Security testing checklist
-- Performance testing patterns
-- Mobile testing patterns
-- Firebase analytics validation patterns
-- Integration templates
-- Integration configuration examples
-- Integration dry-run examples
-- Automation candidate guidance
-- Automation templates
-- Automation draft examples
-- Dashboard mockups
-- Dashboard operator workflow documentation
-- Sample GitHub Actions workflow examples
+- Demo feature packs
 - Product packaging documentation
-- Pricing and packaging documentation
-- Sales one-pager
-- Onboarding guide
-- Contributor guide
-- Maintainers guide
 - Validation scripts
 - GitHub Actions CI
 
@@ -129,69 +120,96 @@ v1.0 includes:
 The framework does not yet include:
 
 - A completed SaaS product
-- A live dashboard application
-- A fully autonomous QA execution engine
-- Live Jira/Trello/GitHub/Slack/Figma/Firebase integrations
-- Real automated test execution
-- Production release approval automation
-- Security verification
-- Performance verification
-- Mobile verification
-- Analytics verification
-- Replacement for QA engineers
-- Replacement for human release governance
-
----
-
-## Suggested v1.3 Scope
-
-Recommended v1.3 direction:
-
-- Add architecture diagram source or Mermaid diagram.
-- Add prompt coverage matrix if separate from agent coverage matrix is needed.
-- Add execution evidence example files.
-- Add mobile-heavy third demo feature pack if needed.
-- Add documentation quality review checklist.
-
----
-
-## Suggested v1.4 Scope
-
-Recommended v1.4 implementation direction:
-
-- Add real automation generation scripts.
-- Add example generated Playwright output from templates.
-- Add example generated API test output from templates.
-- Add execution evidence import format.
-- Add CI artifact handling plan.
+- A production dashboard application
+- User authentication for SaaS users
+- Workspace/project persistence
+- Async job queue
+- Worker execution service
+- Artifact storage service
+- Billing/subscription layer
+- Live external integrations
+- Full Appium APK/AAB execution
+- Socket/WebSocket test layer
+- Full SaaS deployment infrastructure
+- Production-grade security hardening
 
 ---
 
 ## Suggested v1.5 Scope
 
-Recommended v1.5 implementation direction:
+Recommended v1.5 direction:
 
-- Add real integration dry-run CLI.
-- Add Jira dry-run generator.
-- Add Slack dry-run generator.
-- Add GitHub issue dry-run generator.
-- Keep external actions disabled by default.
+- Add target configuration system.
+- Add `target-config.example.yaml`.
+- Add target config JSON Schema.
+- Add target config validator.
+- Add docs explaining how users provide domain, API, DB, socket, APK, and AAB information.
+- Keep secrets out of committed config files.
 
 ---
 
-## Suggested v2.0 Direction
+## Suggested v1.6 Scope
 
-v2.0 should only be considered after real implementation exists.
+Recommended v1.6 direction:
 
-Possible v2.0 themes:
+- Add WebSocket/socket test skeleton.
+- Add socket message schema examples.
+- Add socket validation docs.
+- Add socket test workflow or local runner.
 
-- Web dashboard MVP
-- User/project management
-- Approval queue implementation
-- Integration settings UI
-- Execution evidence import
-- Generated output history
-- SaaS packaging
+---
+
+## Suggested v1.7 Scope
+
+Recommended v1.7 direction:
+
+- Add Appium Android APK test skeleton.
+- Add Appium config.
+- Add Android capability examples.
+- Add mobile test data/config docs.
+- Keep real APK/AAB files out of git unless they are safe sample artifacts.
+
+---
+
+## Suggested v1.8 Scope
+
+Recommended v1.8 direction:
+
+- Add orchestrator CLI.
+- Add test selection logic from target config.
+- Add evidence collector.
+- Add report generator.
+
+---
+
+## Suggested v2.0 Local MVP
+
+v2.0 should target:
+
+- Clone repository
+- Configure target
+- Run selected test layers
+- Collect artifacts
+- Generate evidence
+- Generate summary report
+
+---
+
+## SaaS Direction
+
+After local MVP, SaaS work should add:
+
+- Backend API
+- Frontend dashboard
+- Auth
+- Workspace/project model
+- Database persistence
+- Job queue
+- Worker execution service
+- Artifact storage
+- Billing
+- Monitoring
+- Deployment
 
 ---
 

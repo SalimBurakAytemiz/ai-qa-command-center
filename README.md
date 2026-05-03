@@ -4,7 +4,7 @@ AI QA Command Center is a structured AI-assisted QA operating framework.
 
 It helps software teams generate, review, organize, and govern QA planning artifacts across product analysis, test planning, API validation, DB validation, reporting, release readiness, automation planning, integration planning, and future dashboard workflows.
 
-> Current release: v1.2.0 Documentation Index and Agent Coverage Matrix
+> Current release: v1.4.0 Demo App, Docker Support, CI Test Execution, and Evidence Example
 
 ---
 
@@ -391,6 +391,91 @@ The agent coverage matrix clarifies:
 Coverage does not mean execution.
 
 Generated QA artifacts are not executed test results.
+
+
+---
+
+## Current v1.3.0 Update
+
+v1.3.0 adds the first runnable testing infrastructure layer.
+
+Added in v1.3.0:
+
+- Runnable test skeleton under `06-tests/`
+- Playwright web test skeleton
+- API pytest skeleton
+- DB validation skeleton
+- k6 performance smoke skeleton
+- AJV API contract test skeleton
+- AJV request/response schema examples
+- AJV contract assertion helpers
+- AJV contract testing pattern documentation
+- Validation coverage for runnable and AJV test assets
+
+New runnable test locations:
+
+- `06-tests/playwright/`
+- `06-tests/api/`
+- `06-tests/db-validation/`
+- `06-tests/performance/`
+- `06-tests/api-ajv/`
+
+New API testing reference:
+
+- `references/api-testing/ajv-contract-testing-patterns.md`
+
+AJV is now the preferred strict API contract testing approach for response structure checks.
+
+Status-code-only API tests are not enough for serious API validation.
+
+Runnable skeletons still require a real target application or configured environment variables.
+
+Coverage does not mean execution.
+
+Execution evidence still requires actual test execution output and human review.
+
+
+---
+
+## Current v1.4.0 Update
+
+v1.4.0 adds the first real runnable demo app and CI-executed demo API test workflow.
+
+Added in v1.4.0:
+
+- FastAPI + SQLite demo app backend
+- Demo database seed script
+- Dockerfile for demo app
+- Root Docker Compose support
+- Local demo app run scripts
+- Demo API test runner scripts
+- GitHub Actions Demo API Tests workflow
+- CI artifact upload
+- Demo API execution evidence example
+- AJV draft 2020-12 fix
+- Demo workflow DB path fix
+- Validation coverage for all new v1.4 assets
+
+New key files:
+
+- `demo-app/`
+- `docker-compose.yml`
+- `.dockerignore`
+- `scripts/run-demo-api-tests.ps1`
+- `scripts/run-demo-api-tests.sh`
+- `.github/workflows/demo-api-tests.yml`
+- `examples/execution-evidence/demo-api-test-run-evidence.md`
+
+v1.4 is the first release where the repo moves beyond skeletons into real demo execution.
+
+The latest main branch should have both workflows passing:
+
+- `Validate AI QA Command Center Repository`
+- `Demo API Tests`
+
+This is still not a SaaS product.
+
+It is a local and CI execution seed for the future SaaS platform.
 
 ## Post-v1.0 Roadmap
 
