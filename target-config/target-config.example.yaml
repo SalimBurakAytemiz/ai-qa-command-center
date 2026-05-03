@@ -1,0 +1,70 @@
+project:
+  name: "Example Product"
+  key: "example-product"
+  environment: "qa"
+  owner: "qa-team"
+
+safety:
+  allow_production: false
+  allow_real_customer_data: false
+  allow_destructive_db_actions: false
+  allow_high_load_performance_tests: false
+  require_human_approval_for_external_actions: true
+
+web:
+  enabled: true
+  base_url: "https://qa.example.com"
+  login_url: "https://qa.example.com/login"
+  dashboard_url: "https://qa.example.com/dashboard"
+
+api:
+  enabled: true
+  base_url: "https://api.qa.example.com"
+  openapi_url: "https://api.qa.example.com/openapi.json"
+  auth_type: "bearer"
+  response_time_limit_ms: 1000
+
+database:
+  enabled: true
+  type: "postgres"
+  readonly_connection_env: "DATABASE_READONLY_URL"
+  allow_write_connection: false
+
+socket:
+  enabled: true
+  type: "websocket"
+  url: "wss://qa.example.com/ws"
+  auth_required: true
+
+mobile:
+  enabled: true
+  platform: "android"
+  app_type: "apk"
+  artifact_path: "./artifacts/app-debug.apk"
+  app_package: "com.example.app"
+  app_activity: "com.example.MainActivity"
+  device_name: "Android Emulator"
+  automation_name: "UiAutomator2"
+
+test_users:
+  synthetic_user_env:
+    email: "TEST_USER_EMAIL"
+    password: "TEST_USER_PASSWORD"
+  disabled_user_id_env: "DISABLED_TEST_USER_ID"
+
+execution:
+  default_mode: "dry_run"
+  evidence_output_dir: "reports/execution-runs"
+  artifact_output_dir: "test-results"
+  fail_on_missing_required_targets: true
+
+integrations:
+  jira:
+    enabled: false
+    mode: "dry_run"
+  slack:
+    enabled: false
+    mode: "dry_run"
+  github_issues:
+    enabled: false
+    mode: "dry_run"

@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "target-config.schema.json",
+  "title": "AI QA Command Center Target Configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project", "safety", "execution"],
+  "properties": {
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "key", "environment"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "key": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "environment": {
+          "type": "string",
+          "enum": ["local", "dev", "qa", "staging", "uat", "production"]
+        },
+        "owner": { "type": "string" }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allow_production",
+        "allow_real_customer_data",
+        "allow_destructive_db_actions",
+        "allow_high_load_performance_tests",
+        "require_human_approval_for_external_actions"
+      ],
+      "properties": {
+        "allow_production": { "type": "boolean", "const": false },
+        "allow_real_customer_data": { "type": "boolean", "const": false },
+        "allow_destructive_db_actions": { "type": "boolean", "const": false },
+        "allow_high_load_performance_tests": { "type": "boolean", "const": false },
+        "require_human_approval_for_external_actions": { "type": "boolean", "const": true }
+      }
+    },
+    "web": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "base_url": { "type": "string", "pattern": "^https?://" },
+        "login_url": { "type": "string", "pattern": "^https?://" },
+        "dashboard_url": { "type": "string", "pattern": "^https?://" }
+      }
+    },
+    "api": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "base_url": { "type": "string", "pattern": "^https?://" },
+        "openapi_url": { "type": "string", "pattern": "^https?://" },
+        "auth_type": {
+          "type": "string",
+          "enum": ["none", "basic", "bearer", "api_key", "session"]
+        },
+        "response_time_limit_ms": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 60000
+        }
+      }
+    },
+    "database": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "type": {
+          "type": "string",
+          "enum": ["postgres", "mysql", "sqlite", "mssql", "mongodb"]
+        },
+        "readonly_connection_env": {
+          "type": "string",
+          "pattern": "^[A-Z0-9_]+$"
+        },
+        "allow_write_connection": { "type": "boolean", "const": false }
+      }
+    },
+    "socket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "type": {
+          "type": "string",
+          "enum": ["websocket", "socketio"]
+        },
+        "url": { "type": "string", "pattern": "^wss?://" },
+        "auth_required": { "type": "boolean" }
+      }
+    },
+    "mobile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "platform": {
+          "type": "string",
+          "enum": ["android", "ios"]
+        },
+        "app_type": {
+          "type": "string",
+          "enum": ["apk", "aab", "ipa"]
+        },
+        "artifact_path": { "type": "string", "minLength": 1 },
+        "app_package": { "type": "string" },
+        "app_activity": { "type": "string" },
+        "bundle_id": { "type": "string" },
+        "device_name": { "type": "string" },
+        "automation_name": { "type": "string" }
+      }
+    },
+    "test_users": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "synthetic_user_env": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["email", "password"],
+          "properties": {
+            "email": { "type": "string", "pattern": "^[A-Z0-9_]+$" },
+            "password": { "type": "string", "pattern": "^[A-Z0-9_]+$" }
+          }
+        },
+        "disabled_user_id_env": { "type": "string", "pattern": "^[A-Z0-9_]+$" }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default_mode",
+        "evidence_output_dir",
+        "artifact_output_dir",
+        "fail_on_missing_required_targets"
+      ],
+      "properties": {
+        "default_mode": {
+          "type": "string",
+          "enum": ["dry_run", "local_execution", "ci_execution"]
+        },
+        "evidence_output_dir": { "type": "string", "minLength": 1 },
+        "artifact_output_dir": { "type": "string", "minLength": 1 },
+        "fail_on_missing_required_targets": { "type": "boolean" }
+      }
+    },
+    "integrations": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "jira": { "$ref": "#/$defs/integration" },
+        "slack": { "$ref": "#/$defs/integration" },
+        "github_issues": { "$ref": "#/$defs/integration" }
+      }
+    }
+  },
+  "$defs": {
+    "integration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "mode"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "mode": { "type": "string", "enum": ["dry_run", "approved_action"] }
+      }
+    }
+  }
+}
