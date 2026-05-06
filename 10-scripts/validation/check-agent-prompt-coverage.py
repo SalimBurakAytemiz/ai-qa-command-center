@@ -139,6 +139,13 @@ REQUIRED_FILES: Dict[str, List[str]] = {
         "demo-app/scripts/run-local.sh",
     ],
 
+    "Target configuration system": [
+        "target-config/README.md",
+        "target-config/target-config.example.yaml",
+        "target-config/target-config.schema.json",
+        "target-config/validate-target-config.py",
+    ],
+
     "Demo app backend": [
         "demo-app/README.md",
         "demo-app/requirements.txt",
